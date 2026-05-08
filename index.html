@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub portfolio for Jason Persinger: hardware dashboards, self-hosted assistants, command-line tools, web apps, and Linux customization projects.">
+  <title>Jason Persinger | GitHub Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">Jason Persinger</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#repo-index">Repo Index</a>
+        <a href="https://github.com/jasonpersinger">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">GitHub portfolio</p>
+        <h1 id="page-title">Practical software, hardware, and self-hosted tools.</h1>
+        <p class="intro">
+          I build compact dashboards, command-line utilities, embedded projects, and personal web apps that solve specific jobs without extra ceremony.
+        </p>
+        <div class="hero-actions" aria-label="Profile links">
+          <a class="button primary" href="https://github.com/jasonpersinger">GitHub profile</a>
+          <a class="button" href="https://jasonpersinger.cv">Resume site</a>
+        </div>
+      </div>
+      <aside class="profile-card" aria-label="Profile summary">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/22330057?v=4" alt="Jason Persinger GitHub avatar">
+        <div>
+          <div class="profile-name">Jason Persinger</div>
+          <div class="profile-meta">Roanoke, VA</div>
+        </div>
+        <dl class="stats">
+          <div>
+            <dt>Focus</dt>
+            <dd>Web, hardware, CLI</dd>
+          </div>
+          <div>
+            <dt>Languages</dt>
+            <dd>JavaScript, Python, C++, Rust</dd>
+          </div>
+          <div>
+            <dt>Recent work</dt>
+            <dd>Dashboards, voice assistants, ESP32 tools</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="featured-title">
+      <div class="section-heading">
+        <p class="eyebrow">Featured work</p>
+        <h2 id="featured-title">Selected GitHub projects</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card featured">
+          <div class="project-topline">
+            <span class="language py">Python</span>
+            <span class="status">Modeling</span>
+          </div>
+          <h3>Sloplocks</h3>
+          <p>Multi-sport prediction engine that pulls schedules, results, and bookmaker odds, then blends sport-specific ensemble models with calibration and edge detection. The Python pipeline publishes static prediction data for a live frontend.</p>
+          <div class="project-links">
+            <a href="https://sloplocks.lol">Open site</a>
+            <a href="https://github.com/jasonpersinger/sloplocks">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card featured">
+          <div class="project-topline">
+            <span class="language html">HTML</span>
+            <span class="status">Job board</span>
+          </div>
+          <h3>hollerworks</h3>
+          <p>Moderated tech and tech-adjacent job board for Appalachia. The static frontend is backed by Firebase, Cloud Functions, Algolia search, Netlify redirects, Cloudflare Turnstile, structured job pages, and required compensation fields.</p>
+          <div class="project-links">
+            <a href="https://holler.works">Open site</a>
+            <a href="https://github.com/jasonpersinger/hollerworks">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card featured">
+          <div class="project-topline">
+            <span class="language js">JavaScript</span>
+            <span class="status">Bookmarklet</span>
+          </div>
+          <h3>TURBOTRAINER</h3>
+          <p>GemStone IV skill trainer helper that injects bulk rank controls into the browser page. It is a client-side JavaScript bookmarklet, so it stores no login data, sends nothing to a server, and works directly on the existing trainer UI.</p>
+          <div class="project-links">
+            <a href="https://turbotrainer.gamemasters.lol">Open tool</a>
+            <a href="https://github.com/jasonpersinger/TURBOTRAINER">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="language cpp">C++</span>
+            <span class="status">Voice AI</span>
+          </div>
+          <h3>Peambot</h3>
+          <p>Self-hosted AI desktop buddy built around a Waveshare ESP32-S3 AMOLED robot face and a Raspberry Pi server stack. The plan combines xiaozhi-esp32 firmware, Docker services, wake word, ASR, LLM, TTS, memory, and MCP automation.</p>
+          <div class="project-links">
+            <a href="https://github.com/jasonpersinger/peambot">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="language html">HTML</span>
+            <span class="status">Storefront</span>
+          </div>
+          <h3>NIXKEY</h3>
+          <p>Premium static storefront for bootable Linux USB drives. The site pairs a dark teal/orange brand system with a curated distro catalog, Snipcart commerce wiring, product metadata, and operational scripts for USB flashing workflows.</p>
+          <div class="project-links">
+            <a href="https://github.com/jasonpersinger/NIXKEY">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="language rust">Rust</span>
+            <span class="status">CLI/TUI</span>
+          </div>
+          <h3>emarx</h3>
+          <p>Offline-first Rust terminal reader for public-domain Marx and Engels texts. It ships a single executable with a full-screen TUI, plain-text command output, search, bookmarks, themes, source metadata, and script-friendly commands.</p>
+          <div class="project-links">
+            <a href="https://emarx.space">Open site</a>
+            <a href="https://github.com/jasonpersinger/emarx">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="language html">HTML</span>
+            <span class="status">Resume</span>
+          </div>
+          <h3>jasonpersinger-cv</h3>
+          <p>Static resume site built as a focused HTML portfolio surface. It keeps professional history separate from project demos while still publishing through the same GitHub Pages-oriented workflow.</p>
+          <div class="project-links">
+            <a href="https://jasonpersinger.cv">Open site</a>
+            <a href="https://github.com/jasonpersinger/jasonpersinger-cv">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="language js">JavaScript</span>
+            <span class="status">Dashboard</span>
+          </div>
+          <h3>GrowSeason</h3>
+          <p>Single-page Alpine dashboard for season planning: timeline, current phase, recurring tasks, journal entries, shopping state, light-dep mode, import/export, and localStorage persistence with a small validation script.</p>
+          <div class="project-links">
+            <a href="/growseason/">Open app</a>
+            <a href="https://github.com/jasonpersinger/growseason">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="language shell">Shell</span>
+            <span class="status">Distro</span>
+          </div>
+          <h3>NOKENIX</h3>
+          <p>Early-stage Debian stable KDE distribution project with a live-build ISO scaffold, QEMU smoke tests, build scripts, decision logs, package policy, release checklist, and branding system for a maintainable community desktop.</p>
+          <div class="project-links">
+            <a href="https://github.com/jasonpersinger/NOKENIX">Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="language cpp">C++</span>
+            <span class="status">ESP32</span>
+          </div>
+          <h3>CYD ESP32 Pi-hole Dashboard</h3>
+          <p>Pi-hole v6 stats display for the ESP32-2432S028R Cheap Yellow Display. It polls the local Pi-hole API, rotates through three TFT slides, and presents block rate, query totals, cached traffic, clients, and gravity list size.</p>
+          <div class="project-links">
+            <a href="https://github.com/jasonpersinger/CYD-ESP32-PIHOLE-DASHBOARD">Repository</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="craft-title">
+      <div>
+        <p class="eyebrow">Summary method</p>
+        <h2 id="craft-title">AI-assisted blurbs, grounded in repo context</h2>
+      </div>
+      <p>
+        Each project summary is written from repository descriptions, README notes, and visible implementation details. The goal is to make the portfolio useful to a technical reader without forcing them to open every repo first.
+      </p>
+    </section>
+
+    <section class="section" id="repo-index" aria-labelledby="repo-title">
+      <div class="section-heading">
+        <p class="eyebrow">Repository index</p>
+        <h2 id="repo-title">Quick links</h2>
+      </div>
+
+      <div class="repo-list">
+        <a class="repo-row" href="https://github.com/jasonpersinger/sloplocks">
+          <span>sloplocks</span>
+          <span>Python</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/hollerworks">
+          <span>hollerworks</span>
+          <span>HTML</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/TURBOTRAINER">
+          <span>TURBOTRAINER</span>
+          <span>JavaScript</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/peambot">
+          <span>peambot</span>
+          <span>C++</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/NIXKEY">
+          <span>NIXKEY</span>
+          <span>HTML</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/emarx">
+          <span>emarx</span>
+          <span>Rust</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/jasonpersinger-cv">
+          <span>jasonpersinger-cv</span>
+          <span>HTML</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/growseason">
+          <span>growseason</span>
+          <span>JavaScript</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/NOKENIX">
+          <span>NOKENIX</span>
+          <span>Shell</span>
+        </a>
+        <a class="repo-row" href="https://github.com/jasonpersinger/CYD-ESP32-PIHOLE-DASHBOARD">
+          <span>CYD-ESP32-PIHOLE-DASHBOARD</span>
+          <span>C++</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Updated May 2026</span>
+    <a href="https://github.com/jasonpersinger">github.com/jasonpersinger</a>
+  </footer>
+</body>
+</html>
