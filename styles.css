@@ -32,6 +32,7 @@ h1, h2, h3, p { margin-top: 0; }
   z-index: 10;
   background: rgba(23, 21, 17, .92);
   border-bottom: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
@@ -65,7 +66,6 @@ h1, h2, h3, p { margin-top: 0; }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--muted);
 }
 .nav-links a:hover { color: var(--tea-green); }
 
@@ -150,8 +150,17 @@ h1 {
   font-family: 'Space Mono', monospace;
   font-size: .75rem;
   font-weight: 700;
+  transition: border-color .15s ease, opacity .15s ease;
 }
 .button:hover { border-color: var(--tea-green); }
+.button:focus-visible {
+  outline: 2px solid var(--tea-green);
+  outline-offset: 2px;
+}
+.repo-row:focus-visible {
+  outline: 2px solid var(--tea-green);
+  outline-offset: -2px;
+}
 .button.primary {
   background: var(--chocolate);
   border-color: var(--chocolate);
@@ -223,7 +232,7 @@ h1 {
 
 .section-heading {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 24px;
