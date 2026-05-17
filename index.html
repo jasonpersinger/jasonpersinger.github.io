@@ -62,7 +62,7 @@
 
     <section class="section cv-strip" id="cv" aria-labelledby="cv-title">
       <div>
-        <p class="eyebrow">Professional profile</p>
+        <p class="eyebrow">professional profile</p>
         <h2 id="cv-title">Support systems specialist and technical operator</h2>
       </div>
       <div class="cv-copy">
@@ -79,27 +79,16 @@
 
     <section class="section" id="projects" aria-labelledby="featured-title">
       <div class="section-heading">
-        <p class="eyebrow">Featured work</p>
-        <h2 id="featured-title">Selected GitHub projects</h2>
+        <div>
+          <p class="eyebrow">featured work</p>
+          <h2 id="featured-title">Selected GitHub projects</h2>
+        </div>
       </div>
 
       <div class="project-grid">
         <article class="project-card featured">
           <div class="project-topline">
-            <span class="language py">Python</span>
-            <span class="status">Modeling</span>
-          </div>
-          <h3>Sloplocks</h3>
-          <p>Multi-sport prediction engine that pulls schedules, results, and bookmaker odds, then blends sport-specific ensemble models with calibration and edge detection. The Python pipeline publishes static prediction data for a live frontend.</p>
-          <div class="project-links">
-            <a href="https://sloplocks.lol">Open site</a>
-            <a href="https://github.com/jasonpersinger/sloplocks">Repository</a>
-          </div>
-        </article>
-
-        <article class="project-card featured">
-          <div class="project-topline">
-            <span class="language html">HTML</span>
+            <span class="project-tag">[ html · job-board ]</span>
             <span class="status">Job board</span>
           </div>
           <h3>hollerworks</h3>
@@ -112,7 +101,7 @@
 
         <article class="project-card featured">
           <div class="project-topline">
-            <span class="language js">JavaScript</span>
+            <span class="project-tag">[ js · bookmarklet ]</span>
             <span class="status">Bookmarklet</span>
           </div>
           <h3>TURBOTRAINER</h3>
@@ -125,7 +114,7 @@
 
         <article class="project-card">
           <div class="project-topline">
-            <span class="language cpp">C++</span>
+            <span class="project-tag">[ c++ · voice-ai ]</span>
             <span class="status">Voice AI</span>
           </div>
           <h3>Peambot</h3>
@@ -137,7 +126,7 @@
 
         <article class="project-card">
           <div class="project-topline">
-            <span class="language html">HTML</span>
+            <span class="project-tag">[ html · storefront ]</span>
             <span class="status">Storefront</span>
           </div>
           <h3>NIXKEY</h3>
@@ -149,20 +138,7 @@
 
         <article class="project-card">
           <div class="project-topline">
-            <span class="language rust">Rust</span>
-            <span class="status">CLI/TUI</span>
-          </div>
-          <h3>emarx</h3>
-          <p>Offline-first Rust terminal reader for public-domain Marx and Engels texts. It ships a single executable with a full-screen TUI, plain-text command output, search, bookmarks, themes, source metadata, and script-friendly commands.</p>
-          <div class="project-links">
-            <a href="https://emarx.space">Open site</a>
-            <a href="https://github.com/jasonpersinger/emarx">Repository</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline">
-            <span class="language html">HTML</span>
+            <span class="project-tag">[ html · resume ]</span>
             <span class="status">Resume</span>
           </div>
           <h3>jasonpersinger-cv</h3>
@@ -176,20 +152,7 @@
 
         <article class="project-card">
           <div class="project-topline">
-            <span class="language js">JavaScript</span>
-            <span class="status">Dashboard</span>
-          </div>
-          <h3>GrowSeason</h3>
-          <p>Single-page Alpine dashboard for season planning: timeline, current phase, recurring tasks, journal entries, shopping state, light-dep mode, import/export, and localStorage persistence with a small validation script.</p>
-          <div class="project-links">
-            <a href="/growseason/">Open app</a>
-            <a href="https://github.com/jasonpersinger/growseason">Repository</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline">
-            <span class="language shell">Shell</span>
+            <span class="project-tag">[ shell · distro ]</span>
             <span class="status">Distro</span>
           </div>
           <h3>NOKENIX</h3>
@@ -201,7 +164,7 @@
 
         <article class="project-card">
           <div class="project-topline">
-            <span class="language cpp">C++</span>
+            <span class="project-tag">[ c++ · esp32 ]</span>
             <span class="status">ESP32</span>
           </div>
           <h3>CYD ESP32 Pi-hole Dashboard</h3>
@@ -213,27 +176,82 @@
       </div>
     </section>
 
-    <section class="section split" aria-labelledby="craft-title">
-      <div>
-        <p class="eyebrow">Summary method</p>
-        <h2 id="craft-title">AI-assisted blurbs, grounded in repo context</h2>
+    <section class="section" id="homelab" aria-labelledby="homelab-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">homelab</p>
+          <h2 id="homelab-title">HOMELAB</h2>
+        </div>
       </div>
-      <p>
-        Each project summary is written from repository descriptions, README notes, and visible implementation details. The goal is to make the portfolio useful to a technical reader without forcing them to open every repo first.
-      </p>
+      <p class="section-intro">Running self-hosted infrastructure on hardware I control — because owning your stack teaches you things SaaS never will. The "void" network spans a daily driver, a Pi Docker host, and a dedicated Home Assistant machine.</p>
+
+      <div class="homelab-top">
+        <div class="node-card">
+          <div class="node-header">
+            <span class="node-name">voidbox</span>
+            <span class="node-spec">Custom (MSI MS-7C87) · Ryzen 7 5700G · 32 GB · 480 GB btrfs</span>
+          </div>
+          <div class="service-tags">
+            <span class="service-tag">CachyOS</span>
+            <span class="service-tag">KDE Plasma 6</span>
+            <span class="service-tag">KWin (Wayland)</span>
+            <span class="service-tag">fish</span>
+            <span class="service-tag">ghostty</span>
+            <span class="service-tag">Docker</span>
+            <span class="service-tag">Btrfs</span>
+            <span class="service-tag">Tailscale</span>
+            <span class="service-tag">AUR</span>
+          </div>
+          <p>The daily driver and project bench. CachyOS on Plasma 6 / Wayland, fish in ghostty with BigBlueTerm Nerd Font. Ryzen 7 5700G APU driving a 1440p / 100 Hz panel on integrated Vega; a discrete RDNA card is queued as the next upgrade. Btrfs root, Tailscale-attached — where most projects originate before pieces migrate out to voidberry or voidframe.</p>
+        </div>
+      </div>
+
+      <div class="homelab-bottom">
+        <div class="node-card">
+          <div class="node-header">
+            <span class="node-name">voidberry</span>
+            <span class="node-spec">Raspberry Pi 4B · 4 GB</span>
+          </div>
+          <div class="service-tags">
+            <span class="service-tag">Pi-hole</span>
+            <span class="service-tag">Nginx Proxy Manager</span>
+            <span class="service-tag">Homepage</span>
+            <span class="service-tag">Uptime Kuma</span>
+            <span class="service-tag">Paperless-ngx</span>
+            <span class="service-tag">Actual Budget</span>
+            <span class="service-tag">Tailscale</span>
+            <span class="service-tag">rclone</span>
+          </div>
+          <p>Docker stack running on a USB SSD. Tailscale punches through CGNAT for remote access; rclone + systemd timers handle automated Google Drive backups.</p>
+        </div>
+
+        <div class="node-card">
+          <div class="node-header">
+            <span class="node-name">voidframe</span>
+            <span class="node-spec">Dell Inspiron 3650</span>
+          </div>
+          <div class="service-tags">
+            <span class="service-tag">Home Assistant OS</span>
+            <span class="service-tag">Zigbee2MQTT</span>
+            <span class="service-tag">SLZB-06p7u</span>
+            <span class="service-tag">HACS</span>
+            <span class="service-tag">T-Higrow sensors</span>
+            <span class="service-tag">Tuya Zigbee</span>
+          </div>
+          <p>Dedicated Home Assistant machine with a Zigbee coordinator, LILYGO T-Higrow plant sensors (soil moisture, conductivity, light, temp) on solar panels, and a Tuya device fleet. Roadmap: HA MCP server integration for Claude Desktop and a self-hosted voice assistant.</p>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="repo-index" aria-labelledby="repo-title">
       <div class="section-heading">
-        <p class="eyebrow">Repository index</p>
-        <h2 id="repo-title">Quick links</h2>
+        <div>
+          <p class="eyebrow">repository index</p>
+          <h2 id="repo-title">Quick links</h2>
+        </div>
       </div>
 
       <div class="repo-list">
-        <a class="repo-row" href="https://github.com/jasonpersinger/sloplocks">
-          <span>sloplocks</span>
-          <span>Python</span>
-        </a>
         <a class="repo-row" href="https://github.com/jasonpersinger/hollerworks">
           <span>hollerworks</span>
           <span>HTML</span>
@@ -250,17 +268,9 @@
           <span>NIXKEY</span>
           <span>HTML</span>
         </a>
-        <a class="repo-row" href="https://github.com/jasonpersinger/emarx">
-          <span>emarx</span>
-          <span>Rust</span>
-        </a>
         <a class="repo-row" href="https://github.com/jasonpersinger/jasonpersinger-cv">
           <span>jasonpersinger-cv</span>
           <span>HTML</span>
-        </a>
-        <a class="repo-row" href="https://github.com/jasonpersinger/growseason">
-          <span>growseason</span>
-          <span>JavaScript</span>
         </a>
         <a class="repo-row" href="https://github.com/jasonpersinger/NOKENIX">
           <span>NOKENIX</span>
@@ -275,7 +285,7 @@
   </main>
 
   <footer class="footer">
-    <span>Updated May 2026</span>
+    <span>// updated may 2026</span>
     <a href="https://github.com/jasonpersinger">github.com/jasonpersinger</a>
   </footer>
 </body>
