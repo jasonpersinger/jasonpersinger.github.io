@@ -360,20 +360,6 @@ h2 {
   letter-spacing: .02em;
 }
 
-.status {
-  font-family: 'Space Mono', monospace;
-  display: inline-flex;
-  align-items: center;
-  min-height: 22px;
-  padding: 0 8px;
-  border-radius: 2px;
-  font-size: .65rem;
-  font-weight: 700;
-  color: var(--tea-green);
-  border: 1px solid rgba(191, 219, 195, .28);
-  white-space: nowrap;
-}
-
 h3 {
   font-family: 'Space Mono', monospace;
   margin-bottom: 8px;
