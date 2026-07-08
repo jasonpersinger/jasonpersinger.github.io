@@ -172,7 +172,7 @@ h1 {
 .profile-card {
   background: var(--evergreen);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 3px;
   padding: 24px;
 }
 
@@ -341,9 +341,12 @@ h2 {
   padding: 18px;
   display: flex;
   flex-direction: column;
+  transition: border-color .15s ease;
 }
 
 .project-card.featured { background: var(--evergreen); }
+
+.project-card:hover { border-color: rgba(191, 219, 195, .45); }
 
 .project-topline {
   display: flex;
@@ -405,7 +408,10 @@ h3 {
   border: 1px solid var(--border);
   border-radius: 3px;
   padding: 18px;
+  transition: border-color .15s ease;
 }
+
+.node-card:hover { border-color: rgba(191, 219, 195, .45); }
 
 .node-header {
   display: flex;
