@@ -548,7 +548,7 @@ h1 .highlight {
 
 .timeline {
   list-style: none;
-  padding: 0;
+  padding: 0 0 0 32px;
   margin: 0;
   position: relative;
 }
@@ -556,68 +556,70 @@ h1 .highlight {
 .timeline::before {
   content: '';
   position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 100px;
-  width: 1px;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: 2px;
   background: var(--border-subtle);
 }
 
 .timeline-item {
-  display: grid;
-  grid-template-columns: 100px minmax(0, 1fr);
-  gap: 28px;
-  margin-bottom: 36px;
   position: relative;
+  margin-bottom: 36px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--accent-emerald);
+  box-shadow: 0 0 10px rgba(0, 245, 160, 0.45);
 }
 
 .timeline-meta {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
   font-family: var(--font-mono);
 }
 
 .timeline-dates {
-  display: block;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   color: var(--accent-emerald);
+  background: rgba(0, 245, 160, 0.08);
+  border: 1px solid rgba(0, 245, 160, 0.22);
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
 }
 
 .timeline-loc {
-  display: block;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   color: var(--text-dim);
-  margin-top: 2px;
-}
-
-.timeline-content {
-  position: relative;
-  padding-left: 12px;
-}
-
-.timeline-content::before {
-  content: '';
-  position: absolute;
-  left: -33px;
-  top: 6px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--bg-base);
-  border: 2px solid var(--accent-emerald);
 }
 
 .timeline-content h3 {
   font-family: var(--font-mono);
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   color: var(--text-main);
+  margin-top: 6px;
   margin-bottom: 8px;
 }
 
 .timeline-content p {
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -821,21 +823,6 @@ h1 .highlight {
   }
   .repo-desc {
     display: none;
-  }
-  .timeline::before {
-    left: 12px;
-  }
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding-left: 28px;
-  }
-  .timeline-meta {
-    text-align: left;
-  }
-  .timeline-content::before {
-    left: -20px;
-    top: -18px;
   }
   .footer-inner {
     flex-direction: column;
