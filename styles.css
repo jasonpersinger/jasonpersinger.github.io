@@ -731,8 +731,28 @@ h1 .highlight {
 }
 
 .social-card-icon {
-  font-size: 1.6rem;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-emerald);
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.social-card:hover .social-card-icon {
+  background: rgba(0, 245, 160, 0.12);
+  border-color: rgba(0, 245, 160, 0.35);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.social-svg {
+  display: block;
 }
 
 .social-card-body {
