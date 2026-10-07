@@ -112,15 +112,15 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 999px;
   background: rgba(0, 245, 160, 0.08);
   border: 1px solid rgba(0, 245, 160, 0.25);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   letter-spacing: 0.05em;
   color: var(--accent-emerald);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .status-dot {
@@ -139,21 +139,20 @@ main {
 
 /* ── HERO SECTION ── */
 .hero {
-  min-height: calc(90vh - 64px);
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) 360px;
+  grid-template-columns: minmax(0, 1.25fr) 350px;
   align-items: center;
-  gap: 56px;
-  padding: 64px 0 72px;
+  gap: 40px;
+  padding: 40px 0 48px;
 }
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent-amber);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .eyebrow::before {
   content: '// ';
@@ -162,12 +161,12 @@ main {
 
 h1 {
   font-family: var(--font-mono);
-  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-size: clamp(1.85rem, 3.8vw, 3rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--text-main);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 h1 .highlight {
@@ -176,17 +175,17 @@ h1 .highlight {
 }
 
 .intro {
-  max-width: 620px;
-  font-size: 1.08rem;
-  line-height: 1.7;
+  max-width: 600px;
+  font-size: 1.02rem;
+  line-height: 1.6;
   color: var(--text-muted);
 }
 
 .hero-actions {
   display: flex;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 36px;
+  margin-top: 24px;
 }
 
 /* ── BUTTONS ── */
@@ -195,11 +194,11 @@ h1 .highlight {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 42px;
-  padding: 0 18px;
+  min-height: 38px;
+  padding: 0 15px;
   border-radius: 4px;
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   cursor: pointer;
@@ -277,19 +276,19 @@ h1 .highlight {
 }
 
 .profile-card-body {
-  padding: 24px;
+  padding: 18px 20px;
 }
 
 .profile-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 22px;
+  gap: 14px;
+  margin-bottom: 16px;
 }
 
 .avatar {
-  width: 68px;
-  height: 68px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 2px solid var(--border-glow);
   box-shadow: 0 0 12px rgba(0, 245, 160, 0.15);
@@ -298,72 +297,72 @@ h1 .highlight {
 .profile-name {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-main);
 }
 
 .profile-meta {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--accent-amber);
 }
 
 .stats {
   margin: 0;
   display: grid;
-  gap: 14px;
+  gap: 10px;
 }
 
 .stats dt {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-dim);
 }
 
 .stats dd {
-  margin: 2px 0 0;
-  font-size: 0.85rem;
+  margin: 1px 0 0;
+  font-size: 0.82rem;
   color: var(--text-main);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 /* ── SECTION HEADER ── */
 .section {
-  padding: 80px 0;
+  padding: 34px 0;
   border-top: 1px solid var(--border-subtle);
 }
 
 .section-heading {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .section-heading h2 {
   font-family: var(--font-mono);
-  font-size: 1.85rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: var(--text-main);
 }
 
 .section-subtitle {
-  max-width: 680px;
+  max-width: 660px;
   color: var(--text-muted);
-  font-size: 0.98rem;
-  margin-top: 8px;
+  font-size: 0.92rem;
+  margin-top: 6px;
 }
 
 /* ── FEATURED PROJECTS GRID ── */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
 
 .project-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
-  padding: 30px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease;
@@ -386,22 +385,22 @@ h1 .highlight {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .project-meta-strip {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .project-badge {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 2px 7px;
   border-radius: 3px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -439,17 +438,17 @@ h1 .highlight {
 
 .project-tag {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--text-dim);
 }
 
 .project-status {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: var(--accent-emerald);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 .project-status::before {
   content: '';
@@ -461,25 +460,25 @@ h1 .highlight {
 
 .project-card h3 {
   font-family: var(--font-mono);
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .project-lead {
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 500;
   color: var(--accent-amber);
-  margin-bottom: 12px;
-  line-height: 1.5;
+  margin-bottom: 6px;
+  line-height: 1.45;
 }
 
 .project-desc {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.55;
+  margin-bottom: 12px;
   flex-grow: 1;
 }
 
@@ -495,30 +494,30 @@ h1 .highlight {
 .project-tech-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 6px;
+  margin-bottom: 16px;
 }
 
 .project-tech-pills span {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
-  padding: 2px 8px;
+  padding: 2px 7px;
   border-radius: 3px;
 }
 
 .project-links {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .action-btn {
-  font-size: 0.72rem;
-  min-height: 36px;
-  padding: 0 14px;
+  font-size: 0.7rem;
+  min-height: 32px;
+  padding: 0 12px;
 }
 .action-btn.secondary {
   background: transparent;
@@ -528,27 +527,27 @@ h1 .highlight {
 /* ── EXPERIENCE SECTION ── */
 .experience-layout {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
-  gap: 48px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 32px;
   align-items: start;
 }
 
 .experience-lede {
-  font-size: 0.98rem;
+  font-size: 0.94rem;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 24px;
+  line-height: 1.55;
+  margin-bottom: 16px;
 }
 
 .experience-cta {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .timeline {
   list-style: none;
-  padding: 0 0 0 32px;
+  padding: 0 0 0 28px;
   margin: 0;
   position: relative;
 }
@@ -565,7 +564,7 @@ h1 .highlight {
 
 .timeline-item {
   position: relative;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 }
 .timeline-item:last-child {
   margin-bottom: 0;
@@ -574,7 +573,7 @@ h1 .highlight {
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -32px;
+  left: -28px;
   top: 4px;
   width: 14px;
   height: 14px;
@@ -588,38 +587,38 @@ h1 .highlight {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   font-family: var(--font-mono);
 }
 
 .timeline-dates {
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--accent-emerald);
   background: rgba(0, 245, 160, 0.08);
   border: 1px solid rgba(0, 245, 160, 0.22);
-  padding: 2px 8px;
+  padding: 2px 7px;
   border-radius: 3px;
   letter-spacing: 0.04em;
 }
 
 .timeline-loc {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-dim);
 }
 
 .timeline-content h3 {
   font-family: var(--font-mono);
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   color: var(--text-main);
-  margin-top: 6px;
-  margin-bottom: 8px;
+  margin-top: 4px;
+  margin-bottom: 6px;
 }
 
 .timeline-content p {
-  font-size: 0.93rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.55;
   margin: 0;
 }
 
@@ -627,14 +626,14 @@ h1 .highlight {
 .homelab-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 14px;
 }
 
 .node-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
-  padding: 24px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
 }
@@ -708,14 +707,14 @@ h1 .highlight {
 .social-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 12px;
 }
 
 .social-card {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 22px 24px;
+  gap: 14px;
+  padding: 14px 18px;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
@@ -734,8 +733,8 @@ h1 .highlight {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
@@ -758,14 +757,14 @@ h1 .highlight {
 .social-card-body {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   flex-grow: 1;
   min-width: 0;
 }
 
 .social-platform {
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -774,7 +773,7 @@ h1 .highlight {
 
 .social-handle {
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-main);
   white-space: nowrap;
@@ -783,13 +782,13 @@ h1 .highlight {
 }
 
 .social-desc {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
 .social-arrow {
   font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-dim);
   transition: transform 0.15s ease, color 0.15s ease;
 }
@@ -801,8 +800,8 @@ h1 .highlight {
 /* ── FOOTER ── */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
-  padding: 36px 0;
-  margin-top: 60px;
+  padding: 24px 0;
+  margin-top: 36px;
 }
 
 .footer-inner {
