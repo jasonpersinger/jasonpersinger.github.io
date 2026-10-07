@@ -704,63 +704,78 @@ h1 .highlight {
   margin: 0;
 }
 
-/* ── REPO INDEX ── */
-.repo-list {
+/* ── CONNECT & SOCIAL CARDS ── */
+.social-grid {
   display: grid;
-  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
-.repo-row {
+.social-card {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
+  gap: 18px;
+  padding: 22px 24px;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-radius: 4px;
-  transition: all 0.15s ease;
+  border-radius: 6px;
+  transition: all 0.18s ease;
+  position: relative;
 }
 
-.repo-row:hover {
+.social-card:hover {
   background: var(--bg-card);
   border-color: var(--border-glow);
-  transform: translateX(3px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-.repo-row-left {
+.social-card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.social-card-body {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  flex-direction: column;
+  gap: 3px;
+  flex-grow: 1;
   min-width: 0;
 }
 
-.repo-icon {
-  font-size: 1rem;
+.social-platform {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-emerald);
 }
 
-.repo-name {
+.social-handle {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-main);
-}
-
-.repo-desc {
-  font-size: 0.82rem;
-  color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.repo-lang {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  padding: 3px 8px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
+.social-desc {
+  font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+.social-arrow {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+.social-card:hover .social-arrow {
+  color: var(--accent-emerald);
+  transform: translate(2px, -2px);
 }
 
 /* ── FOOTER ── */
@@ -808,6 +823,9 @@ h1 .highlight {
   .project-card.featured-large {
     grid-column: span 1;
   }
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
   .homelab-grid {
     grid-template-columns: 1fr;
   }
@@ -819,9 +837,6 @@ h1 .highlight {
 
 @media (max-width: 640px) {
   .nav-links {
-    display: none;
-  }
-  .repo-desc {
     display: none;
   }
   .footer-inner {
