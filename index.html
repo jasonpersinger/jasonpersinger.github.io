@@ -3,285 +3,467 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio and resume for Jason Persinger, a technical support engineer building hardware dashboards, self-hosted tools, command-line utilities, and home automation projects.">
-  <title>Jason Persinger | Portfolio & Resume</title>
+  <meta name="description" content="Jason Persinger — Technical Support Engineer and builder of embedded DSP hardware, self-hosted streaming stacks, and modern web tools.">
+  <title>Jason Persinger | Technical Support Engineer & Builder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a class="brand" href="/">JASON PERSINGER</a>
+      <a class="brand" href="/">
+        <span class="brand-glyph">⬡</span> JASON PERSINGER
+      </a>
       <div class="nav-links">
         <a href="#projects">projects</a>
-        <a href="#homelab">homelab</a>
         <a href="#experience">experience</a>
-        <a href="#repo-index">repos</a>
-        <a href="https://github.com/jasonpersinger">github</a>
+        <a href="#homelab">homelab</a>
+        <a href="#repos">repos</a>
+        <a href="https://github.com/jasonpersinger" target="_blank" rel="noopener noreferrer" class="nav-external">github ↗</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="page-title">
+    <!-- HERO SECTION -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">github portfolio</p>
-        <h1 id="page-title">Practical software, hardware, and self-hosted tools.<span class="cursor" aria-hidden="true"></span></h1>
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>AVAILABLE FOR SELECT ENGINEERING & SUPPORT ROLES</span>
+        </div>
+        <h1 id="hero-title">
+          Technical systems,<br>
+          embedded hardware,<br>
+          <span class="highlight">& self-hosted tools.</span>
+        </h1>
         <p class="intro">
-          I build compact dashboards, command-line utilities, embedded projects, and personal web apps that solve specific jobs without extra ceremony.
+          I'm a Technical Support Engineer and hands-on builder based in Roanoke, VA. 
+          I bridge enterprise support escalations and root-cause analysis with embedded firmware, audio DSP, and autonomous self-hosted infrastructure.
         </p>
-        <div class="hero-actions" aria-label="Profile links">
-          <a class="button primary" href="https://github.com/jasonpersinger">GitHub profile</a>
-          <a class="button" href="/PersingerJasonResume.pdf">Resume PDF</a>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View featured projects</a>
+          <a class="button" href="/PersingerJasonResume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+          <a class="button outline" href="mailto:jason.persinger@gmail.com">Get in touch</a>
         </div>
       </div>
+
       <aside class="profile-card" aria-label="Profile summary">
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/22330057?v=4" alt="Jason Persinger GitHub avatar">
-        <div>
-          <div class="profile-name">Jason Persinger</div>
-          <div class="profile-meta">Roanoke, VA</div>
+        <div class="profile-card-header">
+          <div class="window-controls">
+            <span class="win-btn close"></span>
+            <span class="win-btn min"></span>
+            <span class="win-btn max"></span>
+          </div>
+          <span class="terminal-title">node://voidbox</span>
         </div>
-        <dl class="stats">
-          <div>
-            <dt>Focus</dt>
-            <dd>Web, hardware, CLI</dd>
+        <div class="profile-card-body">
+          <div class="profile-header">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/22330057?v=4" alt="Jason Persinger GitHub avatar">
+            <div>
+              <div class="profile-name">Jason Persinger</div>
+              <div class="profile-meta">Roanoke, Virginia</div>
+            </div>
           </div>
-          <div>
-            <dt>Tools</dt>
-            <dd>Docker · Bash · Git · AI APIs</dd>
-          </div>
-          <div>
-            <dt>Tinkering in</dt>
-            <dd>JS · Python · C++ · Rust</dd>
-          </div>
-        </dl>
+          <dl class="stats">
+            <div>
+              <dt>Discipline</dt>
+              <dd>Technical Support · Systems · Embedded</dd>
+            </div>
+            <div>
+              <dt>Core Stack</dt>
+              <dd>Linux · Docker · C++ · TypeScript · Bash</dd>
+            </div>
+            <div>
+              <dt>Homelab Fleet</dt>
+              <dd>voidbox · voidberry · voidframe (Mesh)</dd>
+            </div>
+            <div>
+              <dt>Specialization</dt>
+              <dd>Root-cause triage, DSP audio, ESP32 IoT</dd>
+            </div>
+          </dl>
+        </div>
       </aside>
     </section>
 
-    <section class="section experience-strip" id="experience" aria-labelledby="experience-title">
-      <div>
-        <p class="eyebrow">professional experience</p>
-        <h2 id="experience-title">Technical support engineer</h2>
-        <p class="experience-lede">
-          5+ years resolving complex SaaS workflows, leading escalations, and building tooling that scales support quality.
-        </p>
-        <div class="experience-actions">
-          <a class="button primary" href="/PersingerJasonResume.pdf">Download resume PDF</a>
-          <a class="button" href="mailto:jason.persinger@gmail.com">Email me</a>
-        </div>
-      </div>
-      <ol class="timeline">
-        <li>
-          <span class="timeline-dates">2023 – 2026</span>
-          <div>
-            <h3>Software Support Analyst · AbsenceSoft <span class="timeline-loc">(Remote)</span></h3>
-            <p>Escalations and root cause analysis on enterprise leave management; built internal AI support tooling on the Claude API.</p>
-          </div>
-        </li>
-        <li>
-          <span class="timeline-dates">2021 – 2022</span>
-          <div>
-            <h3>Support Team Lead · Binance.US <span class="timeline-loc">(Remote)</span></h3>
-            <p>Led a team of ~8 analysts on a regulated US crypto exchange; cut average ticket resolution time 65%.</p>
-          </div>
-        </li>
-        <li>
-          <span class="timeline-dates">2018 – 2021</span>
-          <div>
-            <h3>Implementation PM / Online Solution Specialist · PowerSchool</h3>
-            <p>End-to-end SaaS implementations and training for K-12 school districts.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
+    <!-- SELECT FEATURED PROJECTS -->
     <section class="section" id="projects" aria-labelledby="featured-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">featured work</p>
-          <h2 id="featured-title">Projects</h2>
+          <p class="eyebrow">curated selection</p>
+          <h2 id="featured-title">Featured Projects</h2>
         </div>
+        <p class="section-subtitle">Five select projects spanning embedded synthesizer firmware, hardware network telemetry, audio engineering, and self-hosted infrastructure.</p>
       </div>
 
       <div class="project-grid">
-        <article class="project-card featured">
-          <div class="project-topline">
-            <span class="project-tag">[ html · job-board ]</span>
+
+        <!-- 1. GHOULBOX -->
+        <article class="project-card featured-large">
+          <div class="project-header">
+            <div class="project-meta-strip">
+              <span class="project-badge accent-amber">Embedded DSP Firmware</span>
+              <span class="project-tag">[ C / C++ · WebUSB · FM Synthesis ]</span>
+            </div>
+            <div class="project-status">v1.0 Live</div>
           </div>
-          <h3>hollerworks</h3>
-          <p>Moderated tech and tech-adjacent job board for Appalachia. The static frontend is backed by Firebase, Cloud Functions, Algolia search, Netlify redirects, Cloudflare Turnstile, structured job pages, and required compensation fields.</p>
+          <h3>GHOULBOX</h3>
+          <p class="project-lead">
+            Open-source dungeon-synth firmware and custom audio engine for the M-VAVE FM-1 pocket synthesizer.
+          </p>
+          <p class="project-desc">
+            Engineered on top of Felucca to convert portable hardware into a dedicated medieval ambient instrument: 
+            features a physical hurdy-gurdy model with buzz trompette, cathedral hall reverb extending to 12s decay, 
+            worn-cassette tape saturation stage, 36 custom atmospheric voices, and a retro-RPG pixel UI with sword cursor. 
+            Includes a direct WebUSB browser-based flasher for zero-install firmware deployment.
+          </p>
+          <div class="project-tech-pills">
+            <span>M-VAVE FM-1</span>
+            <span>C / C++</span>
+            <span>WebUSB API</span>
+            <span>DSP Reverb</span>
+            <span>FM Engine</span>
+          </div>
           <div class="project-links">
-            <a href="https://github.com/jasonpersinger/hollerworks">Repository</a>
+            <a class="button action-btn" href="https://jasonpersinger.github.io/ghoulbox-fm1-dungeon-synth/" target="_blank" rel="noopener noreferrer">Launch Web Installer ↗</a>
+            <a class="button action-btn secondary" href="https://github.com/jasonpersinger/ghoulbox-fm1-dungeon-synth" target="_blank" rel="noopener noreferrer">Source Code</a>
           </div>
         </article>
 
-        <article class="project-card featured">
-          <div class="project-topline">
-            <span class="project-tag">[ js · bookmarklet ]</span>
+        <!-- 2. PiPulse -->
+        <article class="project-card featured-large">
+          <div class="project-header">
+            <div class="project-meta-strip">
+              <span class="project-badge accent-emerald">Hardware Appliance</span>
+              <span class="project-tag">[ C++ · ESP32 · Cheap Yellow Display ]</span>
+            </div>
+            <div class="project-status">Active Build</div>
           </div>
-          <h3>TURBOTRAINER</h3>
-          <p>GemStone IV skill trainer helper that injects bulk rank controls into the browser page. It is a client-side JavaScript bookmarklet, so it stores no login data, sends nothing to a server, and works directly on the existing trainer UI.</p>
+          <h3>PiPulse</h3>
+          <p class="project-lead">
+            Dedicated ESP32 touchscreen hardware appliance for real-time Pi-hole v6 network telemetry.
+          </p>
+          <p class="project-desc">
+            Custom firmware designed for the ESP32-2432S028R (CYD) 2.8" color touchscreen. 
+            Directly polls the local Pi-hole REST API over secure WiFi, providing persistent desktop glanceability 
+            for network DNS block ratios, query frequency charts, gravity blocklist health, and active device telemetry across multi-slide views.
+          </p>
+          <div class="project-tech-pills">
+            <span>ESP32-S3</span>
+            <span>TFT_eSPI</span>
+            <span>REST API</span>
+            <span>Pi-hole v6</span>
+            <span>C++</span>
+          </div>
           <div class="project-links">
-            <a href="https://turbotrainer.gamemasters.lol">Open tool</a>
-            <a href="https://github.com/jasonpersinger/TURBOTRAINER">Repository</a>
+            <a class="button action-btn" href="https://github.com/jasonpersinger/PiPulse" target="_blank" rel="noopener noreferrer">Repository ↗</a>
           </div>
         </article>
 
+        <!-- 3. Phosphor Deck (VOX-84) -->
         <article class="project-card">
-          <div class="project-topline">
-            <span class="project-tag">[ c++ · voice-ai ]</span>
+          <div class="project-header">
+            <div class="project-meta-strip">
+              <span class="project-badge accent-green">Web Audio & Canvas</span>
+              <span class="project-tag">[ TypeScript · Web Audio · Canvas ]</span>
+            </div>
           </div>
-          <h3>Peambot</h3>
-          <p>Self-hosted AI desktop buddy built around a Waveshare ESP32-S3 AMOLED robot face and a Raspberry Pi server stack. The plan combines xiaozhi-esp32 firmware, Docker services, wake word, ASR, LLM, TTS, memory, and MCP automation.</p>
+          <h3>Phosphor Deck (VOX-84)</h3>
+          <p class="project-desc">
+            A retro 1980s rackmount Hi-Fi desktop radio and phosphor CRT oscilloscope display. 
+            Pairs continuous internet radio streaming with 4 procedurally synthesized ambient layers 
+            (rain, crypt drone, forest wind, cassette hiss) routed through tape age, wow/flutter LFOs, and waveshaping distortion filters.
+          </p>
+          <div class="project-tech-pills">
+            <span>Web Audio API</span>
+            <span>Vector Oscilloscope</span>
+            <span>Analog VU</span>
+            <span>Tape DSP</span>
+          </div>
           <div class="project-links">
-            <a href="https://github.com/jasonpersinger/peambot">Repository</a>
+            <a class="button action-btn secondary" href="https://github.com/jasonpersinger" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
         </article>
 
+        <!-- 4. Kobold.FM -->
         <article class="project-card">
-          <div class="project-topline">
-            <span class="project-tag">[ html · storefront ]</span>
+          <div class="project-header">
+            <div class="project-meta-strip">
+              <span class="project-badge accent-cyan">Self-Hosted Broadcast</span>
+              <span class="project-tag">[ Liquidsoap · Docker · Icecast ]</span>
+            </div>
+            <div class="project-status">24/7 Live</div>
+          </div>
+          <h3>Kobold.FM</h3>
+          <p class="project-desc">
+            Autonomous 24/7 subterranean dungeon synth radio station broadcast from a Raspberry Pi 4 (<code class="inline-code">voidberry</code>). 
+            Features Liquidsoap automated crossfades, a 35+ GB lossless library, AzuraCast AutoDJ scheduling, 
+            and reverse-proxied ingress over Let's Encrypt SSL via Nginx Proxy Manager.
+          </p>
+          <div class="project-tech-pills">
+            <span>Raspberry Pi 4</span>
+            <span>Docker</span>
+            <span>Liquidsoap</span>
+            <span>Nginx Proxy Manager</span>
+          </div>
+          <div class="project-links">
+            <a class="button action-btn" href="https://kobold.messy.quest" target="_blank" rel="noopener noreferrer">Listen Live ↗</a>
+          </div>
+        </article>
+
+        <!-- 5. NIXKEY -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-meta-strip">
+              <span class="project-badge accent-orange">Storefront & Tooling</span>
+              <span class="project-tag">[ HTML/CSS · Shell · Snipcart ]</span>
+            </div>
           </div>
           <h3>NIXKEY</h3>
-          <p>Premium static storefront for bootable Linux USB drives. The site pairs a dark teal/orange brand system with a curated distro catalog, Snipcart commerce wiring, product metadata, and operational scripts for USB flashing workflows.</p>
+          <p class="project-desc">
+            Premium brand and digital storefront for bootable Linux USB drives. 
+            Pairs a sharp dark teal/orange visual identity with Snipcart e-commerce integration, 
+            curated distribution packaging, and automated shell verification scripts for high-speed multi-distro USB flashing workflows.
+          </p>
+          <div class="project-tech-pills">
+            <span>E-Commerce</span>
+            <span>Shell Scripts</span>
+            <span>Linux ISOs</span>
+            <span>Brand Design</span>
+          </div>
           <div class="project-links">
-            <a href="https://github.com/jasonpersinger/NIXKEY">Repository</a>
+            <a class="button action-btn secondary" href="https://github.com/jasonpersinger/NIXKEY" target="_blank" rel="noopener noreferrer">Repository ↗</a>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-topline">
-            <span class="project-tag">[ shell · distro ]</span>
-          </div>
-          <h3>NOKENIX</h3>
-          <p>Early-stage Debian stable KDE distribution project with a live-build ISO scaffold, QEMU smoke tests, build scripts, decision logs, package policy, release checklist, and branding system for a maintainable community desktop.</p>
-          <div class="project-links">
-            <a href="https://github.com/jasonpersinger/NOKENIX">Repository</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline">
-            <span class="project-tag">[ c++ · esp32 ]</span>
-          </div>
-          <h3>CYD ESP32 Pi-hole Dashboard</h3>
-          <p>Pi-hole v6 stats display for the ESP32-2432S028R Cheap Yellow Display. It polls the local Pi-hole API, rotates through three TFT slides, and presents block rate, query totals, cached traffic, clients, and gravity list size.</p>
-          <div class="project-links">
-            <a href="https://github.com/jasonpersinger/CYD-ESP32-PIHOLE-DASHBOARD">Repository</a>
-          </div>
-        </article>
       </div>
     </section>
 
+    <!-- PROFESSIONAL EXPERIENCE SECTION -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">track record</p>
+          <h2 id="experience-title">Professional Experience</h2>
+        </div>
+        <p class="section-subtitle">5+ years resolving complex SaaS workflows, leading cross-functional escalations, and engineering internal support tooling.</p>
+      </div>
+
+      <div class="experience-layout">
+        <div class="experience-sidebar">
+          <p class="experience-lede">
+            Specialized in deep technical triage, API debugging, and bridging customer-facing escalations with product engineering teams.
+          </p>
+          <div class="experience-cta">
+            <a class="button primary full-width" href="/PersingerJasonResume.pdf" target="_blank" rel="noopener noreferrer">Download Resume (PDF)</a>
+            <a class="button outline full-width" href="mailto:jason.persinger@gmail.com">jason.persinger@gmail.com</a>
+          </div>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-dates">2023 – 2026</span>
+              <span class="timeline-loc">Remote</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Software Support Analyst · AbsenceSoft</h3>
+              <p>
+                Led tier-3 enterprise escalations and root-cause analysis for mission-critical leave management software. 
+                Investigated database inconsistencies, API payloads, and asynchronous queue failures; built internal AI support tooling on the Claude API to accelerate escalation resolution.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-dates">2021 – 2022</span>
+              <span class="timeline-loc">Remote</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Support Team Lead · Binance.US</h3>
+              <p>
+                Directed a high-tempo team of ~8 technical analysts on a regulated US exchange platform. 
+                Reduced average ticket resolution turnaround by 65% through standardized escalation runbooks, automated queue routing, and QA feedback loops.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-dates">2018 – 2021</span>
+              <span class="timeline-loc">Roanoke, VA</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Implementation PM / Online Solution Specialist · PowerSchool</h3>
+              <p>
+                Managed end-to-end technical SaaS onboarding, data migration schemas, and user acceptance testing across enterprise K-12 public school district deployments.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- HOMELAB INFRASTRUCTURE SECTION -->
     <section class="section" id="homelab" aria-labelledby="homelab-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">homelab</p>
-          <h2 id="homelab-title">HOMELAB</h2>
+          <p class="eyebrow">living infrastructure</p>
+          <h2 id="homelab-title">The "void" Homelab Fleet</h2>
         </div>
+        <p class="section-subtitle">Owning the physical stack teaches operational realities that SaaS abstractions hide. Connected 24/7 over encrypted Tailscale mesh.</p>
       </div>
-      <p class="section-intro">Running self-hosted infrastructure on hardware I control, because owning your stack teaches you things SaaS never will. The "void" network spans a daily driver, a Pi Docker host serving Pi-hole DNS filtering and a reverse-proxied app stack, and a dedicated Home Assistant OS machine automating the house: Zigbee sensors and devices, solar-powered plant monitors, and smart-home routines. Tailscale mesh networking stitches it all together, keeping every node reachable securely from anywhere without opening a single port.</p>
 
-      <div class="homelab-top">
+      <div class="homelab-grid">
+        <!-- Node 1: voidbox -->
         <div class="node-card">
           <div class="node-header">
-            <span class="node-name">voidbox</span>
-            <span class="node-spec">Custom (MSI MS-7C87) · Ryzen 7 5700G · 32 GB · 480 GB btrfs</span>
+            <div class="node-status-indicator">
+              <span class="node-pulse online"></span>
+              <span class="node-name">voidbox</span>
+            </div>
+            <span class="node-spec">AMD Ryzen 7 5700G · 32 GB · NVMe SSD</span>
           </div>
           <div class="service-tags">
-            <span class="service-tag">CachyOS</span>
-            <span class="service-tag">KDE Plasma 6</span>
-            <span class="service-tag">KWin (Wayland)</span>
-            <span class="service-tag">fish</span>
-            <span class="service-tag">ghostty</span>
+            <span class="service-tag highlight">Daily Driver & Lab</span>
+            <span class="service-tag">CachyOS (Arch)</span>
+            <span class="service-tag">KDE Plasma 6 / Wayland</span>
+            <span class="service-tag">Ghostty</span>
             <span class="service-tag">Docker</span>
-            <span class="service-tag">Btrfs</span>
-            <span class="service-tag">Tailscale</span>
-            <span class="service-tag">AUR</span>
+            <span class="service-tag">Tailscale Mesh</span>
           </div>
-          <p>The daily driver and project bench. CachyOS on Plasma 6 / Wayland, fish in ghostty with BigBlueTerm Nerd Font. Ryzen 7 5700G APU driving a 1440p / 100 Hz panel on integrated Vega; a discrete RDNA card is queued as the next upgrade. Btrfs root, Tailscale-attached. Most projects originate here before pieces migrate out to voidberry or voidframe.</p>
+          <p class="node-desc">
+            Primary workstation and engineering bench. Powers local LLM experimentation, firmware cross-compilation, and container development before services migrate to headless hardware.
+          </p>
         </div>
-      </div>
 
-      <div class="homelab-bottom">
+        <!-- Node 2: voidberry -->
         <div class="node-card">
           <div class="node-header">
-            <span class="node-name">voidberry</span>
-            <span class="node-spec">Raspberry Pi 4B · 4 GB</span>
+            <div class="node-status-indicator">
+              <span class="node-pulse online"></span>
+              <span class="node-name">voidberry</span>
+            </div>
+            <span class="node-spec">Raspberry Pi 4B · 4 GB · USB SSD</span>
           </div>
           <div class="service-tags">
-            <span class="service-tag">Pi-hole</span>
+            <span class="service-tag highlight">Kobold.FM Host</span>
+            <span class="service-tag">Pi-hole DNS</span>
             <span class="service-tag">Nginx Proxy Manager</span>
-            <span class="service-tag">Homepage</span>
             <span class="service-tag">Uptime Kuma</span>
-            <span class="service-tag">Paperless-ngx</span>
-            <span class="service-tag">Actual Budget</span>
-            <span class="service-tag">Tailscale</span>
-            <span class="service-tag">rclone</span>
+            <span class="service-tag">Docker Stack</span>
+            <span class="service-tag">SSL Termination</span>
           </div>
-          <p>Docker stack running on a USB SSD. Tailscale punches through CGNAT for remote access; rclone + systemd timers handle automated Google Drive backups.</p>
+          <p class="node-desc">
+            Dedicated 24/7 headless edge node. Manages network-wide DNS filtering, handles automated Let's Encrypt certificates, and hosts the autonomous Kobold.FM Dungeon Synth streaming server.
+          </p>
         </div>
 
+        <!-- Node 3: voidframe -->
         <div class="node-card">
           <div class="node-header">
-            <span class="node-name">voidframe</span>
-            <span class="node-spec">Dell Inspiron 3650</span>
+            <div class="node-status-indicator">
+              <span class="node-pulse online"></span>
+              <span class="node-name">voidframe</span>
+            </div>
+            <span class="node-spec">Dell Inspiron 3650 · Dedicated Appliance</span>
           </div>
           <div class="service-tags">
-            <span class="service-tag">Home Assistant OS</span>
+            <span class="service-tag highlight">Home Assistant OS</span>
             <span class="service-tag">Zigbee2MQTT</span>
             <span class="service-tag">SLZB-06p7u</span>
-            <span class="service-tag">HACS</span>
-            <span class="service-tag">T-Higrow sensors</span>
-            <span class="service-tag">Tuya Zigbee</span>
+            <span class="service-tag">T-Higrow Solar Sensors</span>
+            <span class="service-tag">Tuya Fleet</span>
           </div>
-          <p>Dedicated Home Assistant machine with a Zigbee coordinator, LILYGO T-Higrow plant sensors (soil moisture, conductivity, light, temp) on solar panels, and a Tuya device fleet. Roadmap: HA MCP server integration for Claude Desktop and a self-hosted voice assistant.</p>
+          <p class="node-desc">
+            Dedicated smart home automation controller. Coordinates Zigbee mesh network, real-time plant telemetry via solar-powered LILYGO T-Higrow sensors, and local voice pipeline integration.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="repo-index" aria-labelledby="repo-title">
+    <!-- REPO QUICK LINKS -->
+    <section class="section" id="repos" aria-labelledby="repo-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">repository index</p>
-          <h2 id="repo-title">Quick links</h2>
+          <p class="eyebrow">open source</p>
+          <h2 id="repo-title">Repository Quick Links</h2>
         </div>
       </div>
 
       <div class="repo-list">
-        <a class="repo-row" href="https://github.com/jasonpersinger/hollerworks">
-          <span>hollerworks</span>
-          <span>HTML</span>
+        <a class="repo-row" href="https://github.com/jasonpersinger/ghoulbox-fm1-dungeon-synth" target="_blank" rel="noopener noreferrer">
+          <div class="repo-row-left">
+            <span class="repo-icon">⚡</span>
+            <span class="repo-name">ghoulbox-fm1-dungeon-synth</span>
+            <span class="repo-desc">M-VAVE FM-1 dungeon synth firmware & WebUSB installer</span>
+          </div>
+          <span class="repo-lang lang-c">C / C++</span>
         </a>
-        <a class="repo-row" href="https://github.com/jasonpersinger/TURBOTRAINER">
-          <span>TURBOTRAINER</span>
-          <span>JavaScript</span>
+
+        <a class="repo-row" href="https://github.com/jasonpersinger/PiPulse" target="_blank" rel="noopener noreferrer">
+          <div class="repo-row-left">
+            <span class="repo-icon">📡</span>
+            <span class="repo-name">PiPulse</span>
+            <span class="repo-desc">ESP32 touchscreen real-time Pi-hole v6 stats appliance</span>
+          </div>
+          <span class="repo-lang lang-cpp">C++</span>
         </a>
-        <a class="repo-row" href="https://github.com/jasonpersinger/peambot">
-          <span>peambot</span>
-          <span>C++</span>
+
+        <a class="repo-row" href="https://github.com/jasonpersinger/NIXKEY" target="_blank" rel="noopener noreferrer">
+          <div class="repo-row-left">
+            <span class="repo-icon">🔑</span>
+            <span class="repo-name">NIXKEY</span>
+            <span class="repo-desc">Premium bootable Linux USB drive brand & automated flash tooling</span>
+          </div>
+          <span class="repo-lang lang-html">HTML / Shell</span>
         </a>
-        <a class="repo-row" href="https://github.com/jasonpersinger/NIXKEY">
-          <span>NIXKEY</span>
-          <span>HTML</span>
+
+        <a class="repo-row" href="https://github.com/jasonpersinger/hollerworks" target="_blank" rel="noopener noreferrer">
+          <div class="repo-row-left">
+            <span class="repo-icon">⛰️</span>
+            <span class="repo-name">hollerworks</span>
+            <span class="repo-desc">Appalachian tech job board backed by Firebase & Algolia</span>
+          </div>
+          <span class="repo-lang lang-html">HTML / Firebase</span>
         </a>
-        <a class="repo-row" href="https://github.com/jasonpersinger/NOKENIX">
-          <span>NOKENIX</span>
-          <span>Shell</span>
+
+        <a class="repo-row" href="https://github.com/jasonpersinger/TURBOTRAINER" target="_blank" rel="noopener noreferrer">
+          <div class="repo-row-left">
+            <span class="repo-icon">⚔️</span>
+            <span class="repo-name">TURBOTRAINER</span>
+            <span class="repo-desc">GemStone IV skill trainer bookmarklet client-side automation</span>
+          </div>
+          <span class="repo-lang lang-js">JavaScript</span>
         </a>
-        <a class="repo-row" href="https://github.com/jasonpersinger/CYD-ESP32-PIHOLE-DASHBOARD">
-          <span>CYD-ESP32-PIHOLE-DASHBOARD</span>
-          <span>C++</span>
+
+        <a class="repo-row" href="https://github.com/jasonpersinger/peambot" target="_blank" rel="noopener noreferrer">
+          <div class="repo-row-left">
+            <span class="repo-icon">🤖</span>
+            <span class="repo-name">peambot</span>
+            <span class="repo-desc">ESP32-S3 AMOLED robot face & self-hosted AI desktop companion</span>
+          </div>
+          <span class="repo-lang lang-cpp">C++</span>
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <span>// updated july 2026</span>
-    <a href="https://github.com/jasonpersinger">github.com/jasonpersinger</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="brand-glyph">⬡</span>
+        <span>Jason Persinger · Roanoke, VA</span>
+      </div>
+      <div class="footer-meta">
+        <span>// void-mesh: active</span>
+        <a href="https://github.com/jasonpersinger" target="_blank" rel="noopener noreferrer">github.com/jasonpersinger ↗</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
