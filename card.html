@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jason Persinger // Business Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #0d1112;
+      --bg-surface: #13181a;
+      --bg-card: #181f21;
+      --border-subtle: #242f33;
+      --border-glow: #34444a;
+      --text-main: #e6edf0;
+      --text-muted: #8b9ca3;
+      --text-dim: #596970;
+      --accent-emerald: #00f5a0;
+      --accent-amber: #ffb830;
+      --accent-cyan: #3fe8ff;
+      --font-mono: 'Space Mono', 'JetBrains Mono', monospace;
+      --font-sans: 'Space Grotesk', system-ui, sans-serif;
+
+      /* Standard US Business Card dimensions at 300 DPI */
+      --card-w: 1050px;
+      --card-h: 600px;
+      --card-scale: 0.75;
+    }
+
+    * { box-sizing: border-box; }
+    
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--bg-base);
+      background-image: 
+        radial-gradient(ellipse at 50% 15%, rgba(0, 245, 160, 0.05) 0%, transparent 60%),
+        linear-gradient(to bottom, rgba(13, 17, 18, 0.95), var(--bg-base));
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 30px 20px 60px;
+    }
+
+    /* --- Toolbar Controls --- */
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .btn {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 8px 18px;
+      border-radius: 4px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0, 245, 160, 0.15);
+    }
+
+    .btn.primary {
+      background: var(--accent-emerald);
+      color: #0d1112;
+      border-color: var(--accent-emerald);
+    }
+    .btn.primary:hover {
+      background: #25fdb0;
+      color: #0b1411;
+      box-shadow: 0 0 18px rgba(0, 245, 160, 0.35);
+    }
+
+    .card-preview-container {
+      perspective: 1200px;
+      margin: 10px auto 30px;
+      width: min(820px, calc(100vw - 40px));
+      aspect-ratio: 3.5 / 2;
+    }
+
+    .card-flipper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .card-flipper.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0f1416;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(20px, 4vw, 36px) clamp(24px, 5vw, 44px);
+    }
+
+    .card-front {
+      transform: rotateY(0deg);
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Substrate texture and grid lines */
+    .card-face::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(ellipse at 85% 15%, rgba(0, 245, 160, 0.08) 0%, transparent 50%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 36px 36px, 36px 36px;
+      pointer-events: none;
+    }
+
+    /* Precision corner ticks */
+    .corner-tick {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-color: rgba(0, 245, 160, 0.35);
+      pointer-events: none;
+    }
+    .corner-tick.tl { top: 18px; left: 18px; border-top: 1.5px solid; border-left: 1.5px solid; }
+    .corner-tick.tr { top: 18px; right: 18px; border-top: 1.5px solid; border-right: 1.5px solid; }
+    .corner-tick.bl { bottom: 18px; left: 18px; border-bottom: 1.5px solid; border-left: 1.5px solid; }
+    .corner-tick.br { bottom: 18px; right: 18px; border-bottom: 1.5px solid; border-right: 1.5px solid; }
+
+    /* Top Strip */
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .node-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      color: var(--accent-emerald);
+      background: rgba(0, 245, 160, 0.08);
+      border: 1px solid rgba(0, 245, 160, 0.25);
+      padding: 5px 14px;
+      border-radius: 4px;
+    }
+
+    .node-pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+    }
+
+    .card-meta-spec {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-amber);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Card Middle */
+    .card-mid {
+      position: relative;
+      z-index: 2;
+      margin: 18px 0;
+    }
+
+    .card-name {
+      font-family: var(--font-mono);
+      font-size: clamp(1.8rem, 3.6vw, 2.35rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      line-height: 1.05;
+      text-shadow: 0 0 20px rgba(0, 245, 160, 0.15);
+    }
+
+    .card-title {
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      font-weight: 600;
+      color: var(--accent-emerald);
+      margin: 0 0 4px 0;
+      letter-spacing: -0.01em;
+    }
+
+    .card-discipline {
+      font-family: var(--font-mono);
+      font-size: clamp(0.72rem, 1.3vw, 0.82rem);
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+    }
+
+    /* Card Bottom Info Grid */
+    .card-bottom {
+      display: grid;
+      grid-template-columns: 1.1fr 1.6fr 1.1fr;
+      gap: 12px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .info-label {
+      font-family: var(--font-mono);
+      font-size: clamp(0.6rem, 1vw, 0.68rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+    }
+
+    .info-value {
+      font-family: var(--font-mono);
+      font-size: clamp(0.76rem, 1.4vw, 0.9rem);
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .info-value.accent {
+      color: var(--accent-emerald);
+    }
+
+    /* ── CARD BACK ── */
+    .back-content {
+      display: grid;
+      grid-template-columns: 1fr clamp(130px, 18vw, 175px);
+      gap: clamp(16px, 3vw, 32px);
+      align-items: center;
+      height: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .back-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .back-brand {
+      font-family: var(--font-mono);
+      font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .back-brand .prompt {
+      color: var(--accent-emerald);
+    }
+
+    .back-summary {
+      font-size: clamp(0.8rem, 1.35vw, 0.92rem);
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin: 8px 0 14px;
+      max-width: 540px;
+    }
+
+    .back-projects-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .back-pill {
+      font-family: var(--font-mono);
+      font-size: clamp(0.65rem, 1.1vw, 0.72rem);
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+    .back-pill.amber {
+      color: var(--accent-amber);
+      border-color: rgba(255, 184, 48, 0.25);
+      background: rgba(255, 184, 48, 0.06);
+    }
+    .back-pill.emerald {
+      color: var(--accent-emerald);
+      border-color: rgba(0, 245, 160, 0.25);
+      background: rgba(0, 245, 160, 0.06);
+    }
+    .back-pill.cyan {
+      color: var(--accent-cyan);
+      border-color: rgba(63, 232, 255, 0.25);
+      background: rgba(63, 232, 255, 0.06);
+    }
+
+    .back-footer-meta {
+      font-family: var(--font-mono);
+      font-size: clamp(0.68rem, 1.1vw, 0.75rem);
+      color: var(--text-dim);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .back-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .qr-frame {
+      width: clamp(120px, 16vw, 155px);
+      height: clamp(120px, 16vw, 155px);
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid var(--accent-emerald);
+      box-shadow: 0 0 20px rgba(0, 245, 160, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-frame svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .qr-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .qr-sub {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+    }
+
+    /* --- Side-by-Side Dual View for Print/Sheet --- */
+    .sheet-view {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 20px;
+      width: 100%;
+      max-width: calc(var(--card-w) * var(--card-scale));
+    }
+
+    .sheet-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-amber);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      body {
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .toolbar, .sheet-label, .instructions {
+        display: none !important;
+      }
+      .card-preview-container {
+        display: none !important;
+      }
+      .sheet-view {
+        display: block !important;
+        max-width: none !important;
+        margin: 0 !important;
+      }
+      .card-face {
+        position: relative !important;
+        transform: none !important;
+        width: 3.5in !important;
+        height: 2in !important;
+        padding: 0.2in 0.25in !important;
+        page-break-after: always;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: #0d1112 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .card-face.card-back {
+        display: flex !important;
+      }
+      .card-name { font-size: 18pt !important; }
+      .card-title { font-size: 10pt !important; }
+      .card-discipline { font-size: 7pt !important; }
+      .info-value { font-size: 7.5pt !important; }
+      .info-label { font-size: 6pt !important; }
+      .node-badge { font-size: 6.5pt !important; padding: 2px 6px !important; }
+      .card-meta-spec { font-size: 6.5pt !important; }
+      .qr-frame { width: 1.1in !important; height: 1.1in !important; padding: 6px !important; }
+      .back-summary { font-size: 8pt !important; margin: 6px 0 !important; }
+      .back-brand { font-size: 12pt !important; }
+      .back-pill { font-size: 6pt !important; padding: 2px 6px !important; }
+      .back-footer-meta { font-size: 6.5pt !important; padding-top: 6px !important; }
+      .card-bottom { padding-top: 10px !important; }
+      .corner-tick { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top action toolbar -->
+  <div class="toolbar">
+    <button class="btn primary" onclick="flipCard()">
+      <span>🔄 Flip Card (Front / Back)</span>
+    </button>
+    <button class="btn" onclick="window.print()">
+      <span>🖨️ Print / Save as PDF</span>
+    </button>
+    <a class="btn" href="/" target="_blank">
+      <span>🌐 Visit Portfolio</span>
+    </a>
+  </div>
+
+  <div class="sheet-label">// INTERACTIVE 3D PREVIEW (CLICK CARD TO FLIP)</div>
+
+  <!-- Interactive 3D Card Preview -->
+  <div class="card-preview-container" onclick="flipCard()">
+    <div class="card-flipper" id="flipper">
+      
+      <!-- FRONT SIDE -->
+      <div class="card-face card-front">
+        <span class="corner-tick tl"></span>
+        <span class="corner-tick tr"></span>
+        <span class="corner-tick bl"></span>
+        <span class="corner-tick br"></span>
+
+        <div class="card-top">
+          <div class="node-badge">
+            <span class="node-pulse-dot"></span>
+            <span>node://voidbox [ONLINE]</span>
+          </div>
+          <div class="card-meta-spec">SYS.ID // 540-394-8222</div>
+        </div>
+
+        <div class="card-mid">
+          <h1 class="card-name">JASON PERSINGER</h1>
+          <div class="card-title">Technical Support Engineer</div>
+          <div class="card-discipline">Linux Systems · Self-Hosted Infrastructure · Hardware & IoT</div>
+        </div>
+
+        <div class="card-bottom">
+          <div class="info-block">
+            <span class="info-label">Direct Comms</span>
+            <span class="info-value">(540) 394-8222</span>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Encrypted Email</span>
+            <span class="info-value">jason.persinger@gmail.com</span>
+          </div>
+          <div class="info-block" style="text-align: right;">
+            <span class="info-label">Network Hub</span>
+            <span class="info-value accent">jasonpersinger.me</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BACK SIDE -->
+      <div class="card-face card-back">
+        <span class="corner-tick tl"></span>
+        <span class="corner-tick tr"></span>
+        <span class="corner-tick bl"></span>
+        <span class="corner-tick br"></span>
+
+        <div class="back-content">
+          <div class="back-left">
+            <div>
+              <div class="back-brand">
+                <span class="prompt">&gt;_</span> voidbox :: telemetry
+              </div>
+              <p class="back-summary">
+                Bridging enterprise support escalations and root-cause analysis with Linux administration, modern web tools, and autonomous homelab infrastructure.
+              </p>
+              <div class="back-projects-strip">
+                <span class="back-pill amber">GHOULBOX</span>
+                <span class="back-pill emerald">PiPulse</span>
+                <span class="back-pill cyan">Kobold.FM</span>
+                <span class="back-pill">Phosphor Deck</span>
+                <span class="back-pill">NIXKEY</span>
+              </div>
+            </div>
+
+            <div class="back-footer-meta">
+              <span>LOC // Roanoke, Virginia</span>
+              <span>HANDLE // @hollerknight</span>
+            </div>
+          </div>
+
+          <div class="back-right">
+            <div class="qr-frame">
+              <!-- Inline High-Precision Vector QR Code -->
+              <svg width="100%" height="100%" version="1.1" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,0H1V1H0zM1,0H2V1H1zM2,0H3V1H2zM3,0H4V1H3zM4,0H5V1H4zM5,0H6V1H5zM6,0H7V1H6zM13,0H14V1H13zM16,0H17V1H16zM18,0H19V1H18zM19,0H20V1H19zM20,0H21V1H20zM21,0H22V1H21zM22,0H23V1H22zM23,0H24V1H23zM24,0H25V1H24zM0,1H1V2H0zM6,1H7V2H6zM15,1H16V2H15zM16,1H17V2H16zM18,1H19V2H18zM24,1H25V2H24zM0,2H1V3H0zM2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM6,2H7V3H6zM8,2H9V3H8zM12,2H13V3H12zM14,2H15V3H14zM18,2H19V3H18zM20,2H21V3H20zM21,2H22V3H21zM22,2H23V3H22zM24,2H25V3H24zM0,3H1V4H0zM2,3H3V4H2zM3,3H4V4H3zM4,3H5V4H4zM6,3H7V4H6zM8,3H9V4H8zM9,3H10V4H9zM10,3H11V4H10zM12,3H13V4H12zM13,3H14V4H13zM14,3H15V4H14zM15,3H16V4H15zM16,3H17V4H16zM18,3H19V4H18zM20,3H21V4H20zM21,3H22V4H21zM22,3H23V4H22zM24,3H25V4H24zM0,4H1V5H0zM2,4H3V5H2zM3,4H4V5H3zM4,4H5V5H4zM6,4H7V5H6zM8,4H9V5H8zM10,4H11V5H10zM12,4H13V5H12zM13,4H14V5H13zM16,4H17V5H16zM18,4H19V5H18zM20,4H21V5H20zM21,4H22V5H21zM22,4H23V5H22zM24,4H25V5H24zM0,5H1V6H0zM6,5H7V6H6zM8,5H9V6H8zM12,5H13V6H12zM13,5H14V6H13zM14,5H15V6H14zM15,5H16V6H15zM18,5H19V6H18zM24,5H25V6H24zM0,6H1V7H0zM1,6H2V7H1zM2,6H3V7H2zM3,6H4V7H3zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM12,6H13V7H12zM14,6H15V7H14zM16,6H17V7H16zM18,6H19V7H18zM19,6H20V7H19zM20,6H21V7H20zM21,6H22V7H21zM22,6H23V7H22zM23,6H24V7H23zM24,6H25V7H24zM8,7H9V8H8zM11,7H12V8H11zM0,8H1V9H0zM2,8H3V9H2zM3,8H4V9H3zM4,8H5V9H4zM5,8H6V9H5zM6,8H7V9H6zM13,8H14V9H13zM14,8H15V9H14zM15,8H16V9H15zM16,8H17V9H16zM18,8H19V9H18zM19,8H20V9H19zM20,8H21V9H20zM21,8H22V9H21zM22,8H23V9H22zM0,9H1V10H0zM1,9H2V10H1zM3,9H4V10H3zM4,9H5V10H4zM7,9H8V10H7zM11,9H12V10H11zM16,9H17V10H16zM19,9H20V10H19zM23,9H24V10H23zM0,10H1V11H0zM3,10H4V11H3zM6,10H7V11H6zM7,10H8V11H7zM8,10H9V11H8zM9,10H10V11H9zM10,10H11V11H10zM13,10H14V11H13zM14,10H15V11H14zM15,10H16V11H15zM16,10H17V11H16zM18,10H19V11H18zM20,10H21V11H20zM21,10H22V11H21zM23,10H24V11H23zM24,10H25V11H24zM0,11H1V12H0zM2,11H3V12H2zM3,11H4V12H3zM4,11H5V12H4zM8,11H9V12H8zM11,11H12V12H11zM12,11H13V12H12zM14,11H15V12H14zM15,11H16V12H15zM16,11H17V12H16zM17,11H18V12H17zM18,11H19V12H18zM20,11H21V12H20zM24,11H25V12H24zM0,12H1V13H0zM6,12H7V13H6zM7,12H8V13H7zM9,12H10V13H9zM12,12H13V13H12zM13,12H14V13H13zM14,12H15V13H14zM15,12H16V13H15zM17,12H18V13H17zM18,12H19V13H18zM20,12H21V13H20zM22,12H23V13H22zM23,12H24V13H23zM24,12H25V13H24zM0,13H1V14H0zM2,13H3V14H2zM3,13H4V14H3zM4,13H5V14H4zM5,13H6V14H5zM7,13H8V14H7zM9,13H10V14H9zM16,13H17V14H16zM17,13H18V14H17zM19,13H20V14H19zM21,13H22V14H21zM23,13H24V14H23zM0,14H1V15H0zM4,14H5V15H4zM6,14H7V15H6zM7,14H8V15H7zM9,14H10V15H9zM11,14H12V15H11zM12,14H13V15H12zM14,14H15V15H14zM15,14H16V15H15zM18,14H19V15H18zM19,14H20V15H19zM20,14H21V15H20zM21,14H22V15H21zM23,14H24V15H23zM24,14H25V15H24zM0,15H1V16H0zM2,15H3V16H2zM3,15H4V16H3zM8,15H9V16H8zM9,15H10V16H9zM11,15H12V16H11zM14,15H15V16H14zM15,15H16V16H15zM17,15H18V16H17zM19,15H20V16H19zM20,15H21V16H20zM24,15H25V16H24zM0,16H1V17H0zM3,16H4V17H3zM4,16H5V17H4zM5,16H6V17H5zM6,16H7V17H6zM8,16H9V17H8zM9,16H10V17H9zM11,16H12V17H11zM12,16H13V17H12zM13,16H14V17H13zM14,16H15V17H14zM15,16H16V17H15zM16,16H17V17H16zM17,16H18V17H17zM18,16H19V17H18zM19,16H20V17H19zM20,16H21V17H20zM22,16H23V17H22zM8,17H9V18H8zM10,17H11V18H10zM12,17H13V18H12zM14,17H15V18H14zM16,17H17V18H16zM20,17H21V18H20zM21,17H22V18H21zM0,18H1V19H0zM1,18H2V19H1zM2,18H3V19H2zM3,18H4V19H3zM4,18H5V19H4zM5,18H6V19H5zM6,18H7V19H6zM13,18H14V19H13zM16,18H17V19H16zM18,18H19V19H18zM20,18H21V19H20zM22,18H23V19H22zM23,18H24V19H23zM24,18H25V19H24zM0,19H1V20H0zM6,19H7V20H6zM8,19H9V20H8zM10,19H11V20H10zM16,19H17V20H16zM20,19H21V20H20zM21,19H22V20H21zM23,19H24V20H23zM24,19H25V20H24zM0,20H1V21H0zM2,20H3V21H2zM3,20H4V21H3zM4,20H5V21H4zM6,20H7V21H6zM8,20H9V21H8zM9,20H10V21H9zM12,20H13V21H12zM13,20H14V21H13zM15,20H16V21H15zM16,20H17V21H16zM17,20H18V21H17zM18,20H19V21H18zM19,20H20V21H19zM20,20H21V21H20zM22,20H23V21H22zM0,21H1V22H0zM2,21H3V22H2zM3,21H4V22H3zM4,21H5V22H4zM6,21H7V22H6zM8,21H9V22H8zM9,21H10V22H9zM11,21H12V22H11zM13,21H14V22H13zM15,21H16V22H15zM16,21H17V22H16zM17,21H18V22H17zM18,21H19V22H18zM20,21H21V22H20zM21,21H22V22H21zM22,21H23V22H22zM23,21H24V22H23zM24,21H25V22H24zM0,22H1V23H0zM2,22H3V23H2zM3,22H4V23H3zM4,22H5V23H4zM6,22H7V23H6zM8,22H9V23H8zM10,22H11V23H10zM13,22H14V23H13zM14,22H15V23H14zM16,22H17V23H16zM21,22H22V23H21zM22,22H23V23H22zM24,22H25V23H24zM0,23H1V24H0zM6,23H7V24H6zM9,23H10V24H9zM10,23H11V24H10zM15,23H16V24H15zM16,23H17V24H16zM17,23H18V24H17zM19,23H20V24H19zM20,23H21V24H20zM21,23H22V24H21zM24,23H25V24H24zM0,24H1V25H0zM1,24H2V25H1zM2,24H3V25H2zM3,24H4V25H3zM4,24H5V25H4zM5,24H6V25H5zM6,24H7V25H6zM8,24H9V25H8zM11,24H12V25H11zM12,24H13V25H12zM13,24H14V25H13zM14,24H15V25H14zM17,24H18V25H17zM19,24H20V25H19zM20,24H21V25H20zM21,24H22V25H21zM22,24H23V25H22zM23,24H24V25H23zM24,24H25V25H24z" fill="#0d1112" />
+              </svg>
+            </div>
+            <div class="qr-label">SCAN TO CONNECT</div>
+            <div class="qr-sub">jasonpersinger.me</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function flipCard() {
+      const flipper = document.getElementById('flipper');
+      flipper.classList.toggle('flipped');
+    }
+  </script>
+</body>
+</html>
