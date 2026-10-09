@@ -6,12 +6,19 @@
   <title>Jason Persinger // Business Card Proofs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-page: #0f1214;
+      --bg-page: #0b0e10;
       --font-display: 'Space Grotesk', system-ui, sans-serif;
       --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      
+      /* Three-Tone Palette */
+      --c-slate: #121618;
+      --c-amber: #e88626;
+      --c-ivory: #f7f3e8;
+      --c-ivory-dim: #cfc9ba;
       --card-radius: 8px;
     }
 
@@ -23,7 +30,7 @@
       background: var(--bg-page);
       color: #e2e8f0;
       font-family: var(--font-body);
-      padding: 40px 20px 80px;
+      padding: 36px 20px 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -31,42 +38,42 @@
 
     header {
       text-align: center;
-      margin-bottom: 32px;
-      max-width: 600px;
+      margin-bottom: 28px;
+      max-width: 660px;
     }
 
     h1 {
       font-family: var(--font-display);
       font-size: 1.75rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: -0.02em;
-      margin: 0 0 8px;
-      color: #ffffff;
+      margin: 0 0 6px;
+      color: var(--c-ivory);
     }
 
     p.subtitle {
       font-size: 0.95rem;
       color: #8b9ca3;
-      margin: 0 0 24px;
+      margin: 0 0 20px;
       line-height: 1.5;
     }
 
-    /* --- Concept Switcher Tabs --- */
+    /* --- Variant Switcher Tabs --- */
     .tab-bar {
       display: inline-flex;
-      background: #181c1f;
+      background: #171b1e;
       padding: 4px;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       gap: 4px;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
     }
 
     .tab-btn {
       font-family: var(--font-display);
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 600;
-      padding: 9px 20px;
+      padding: 8px 18px;
       border-radius: 6px;
       border: none;
       background: transparent;
@@ -76,20 +83,20 @@
     }
 
     .tab-btn:hover {
-      color: #ffffff;
+      color: var(--c-ivory);
     }
 
     .tab-btn.active {
-      background: #252b30;
-      color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      background: #242a2f;
+      color: var(--c-ivory);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     }
 
     /* --- Action Controls --- */
     .controls {
       display: flex;
       gap: 12px;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -101,7 +108,7 @@
       padding: 8px 18px;
       border-radius: 6px;
       border: 1px solid rgba(255, 255, 255, 0.12);
-      background: #181d20;
+      background: #171c1f;
       color: #e2e8f0;
       cursor: pointer;
       display: inline-flex;
@@ -112,18 +119,18 @@
     }
 
     .action-btn:hover {
-      background: #232a2e;
-      border-color: rgba(255, 255, 255, 0.25);
-      color: #ffffff;
+      background: #22282d;
+      border-color: var(--c-amber);
+      color: var(--c-ivory);
       transform: translateY(-1px);
     }
 
     /* --- 3D Flip Card Container --- */
     .stage {
       perspective: 1400px;
-      width: min(630px, 92vw);
+      width: min(650px, 94vw);
       aspect-ratio: 3.5 / 2;
-      margin-bottom: 60px;
+      margin-bottom: 56px;
     }
 
     .card-flipper {
@@ -139,287 +146,245 @@
       transform: rotateY(180deg);
     }
 
-    /* --- Common Card Dimensions (Standard 3.5" x 2" Ratio) --- */
+    /* Standard Card Face */
     .card-face {
       position: absolute;
       inset: 0;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       border-radius: var(--card-radius);
-      padding: clamp(24px, 4.5vw, 36px) clamp(28px, 5.5vw, 44px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+      padding: clamp(22px, 4vw, 34px) clamp(26px, 5vw, 42px);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
-      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
 
     .card-front {
       transform: rotateY(0deg);
+      background: var(--c-slate);
+      border: 1px solid rgba(247, 243, 232, 0.12);
+      color: var(--c-ivory);
     }
 
     .card-back {
       transform: rotateY(180deg);
     }
 
-    /* ===================================================
-       CONCEPT 1: MINIMALIST MATTE DARK
-       Understated luxury carbon, subtle warm glow, clean sans
-       =================================================== */
-    .concept-dark .card-face {
-      background: #141719;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      color: #e5e9ec;
-    }
-
-    /* Concept 1 Front */
-    .concept-dark .c1-brand-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #ffffff;
-      letter-spacing: -0.05em;
-    }
-
-    .concept-dark .c1-name-group h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: #ffffff;
-      margin: 0 0 4px;
-      line-height: 1.1;
-    }
-
-    .concept-dark .c1-name-group .c1-title {
-      font-size: clamp(0.85rem, 1.6vw, 1.02rem);
-      font-weight: 500;
-      color: #00f5a0; /* Crisp emerald accent */
-      letter-spacing: -0.01em;
-      margin: 0;
-    }
-
-    .concept-dark .c1-contacts {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 18px;
-      font-size: clamp(0.75rem, 1.3vw, 0.86rem);
-      color: #9aa9b0;
-    }
-
-    .concept-dark .c1-contact-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .concept-dark .c1-contact-item a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .concept-dark .c1-contact-item a:hover {
-      color: #ffffff;
-    }
-    .concept-dark .c1-website {
-      color: #ffffff;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    /* Concept 1 Back */
-    .concept-dark .c1-back-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      gap: 28px;
-    }
-
-    .concept-dark .c1-back-left h3 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.6vw, 1.8rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: #ffffff;
-      margin: 0 0 6px;
-    }
-
-    .concept-dark .c1-back-left p {
-      font-size: clamp(0.8rem, 1.4vw, 0.92rem);
-      color: #8b9ca3;
-      margin: 0 0 16px;
-      max-width: 320px;
-      line-height: 1.45;
-    }
-
-    .concept-dark .c1-back-url {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #00f5a0;
-      display: inline-block;
-    }
-
-    .concept-dark .c1-qr-card {
-      background: #ffffff;
-      padding: 10px;
-      border-radius: 8px;
-      width: clamp(110px, 16vw, 140px);
-      height: clamp(110px, 16vw, 140px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      flex-shrink: 0;
-    }
-    .concept-dark .c1-qr-card svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* ===================================================
-       CONCEPT 2: EDITORIAL TWO-TONE
-       Matte Slate Front + Warm Ochre / Amber Accent Back
-       =================================================== */
-    .concept-twotone .card-front {
-      background: #111416;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #e5e9ec;
-    }
-
-    .concept-twotone .c2-header {
+    /* ── FRONT DESIGN ── */
+    .front-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      position: relative;
+      z-index: 2;
     }
 
-    .concept-twotone .c2-name {
+    .front-identity h2 {
       font-family: var(--font-display);
-      font-size: clamp(1.65rem, 3.3vw, 2.15rem);
+      font-size: clamp(1.65rem, 3.4vw, 2.2rem);
       font-weight: 700;
       letter-spacing: -0.03em;
-      color: #ffffff;
+      color: var(--c-ivory);
       margin: 0 0 4px;
       line-height: 1.1;
     }
 
-    .concept-twotone .c2-title {
-      font-size: clamp(0.85rem, 1.6vw, 1rem);
+    .front-title {
+      font-family: var(--font-display);
+      font-size: clamp(0.82rem, 1.5vw, 0.95rem);
       font-weight: 600;
-      color: #e2b053; /* Warm architectural ochre */
-      letter-spacing: 0.04em;
+      color: var(--c-amber);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 0.78rem;
       margin: 0;
     }
 
-    .concept-twotone .c2-loc {
-      font-size: 0.8rem;
-      color: #7b8b93;
+    .front-location {
+      font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+      color: var(--c-ivory-dim);
       font-weight: 500;
+      letter-spacing: 0.02em;
     }
 
-    .concept-twotone .c2-footer {
+    /* Middle Section with Salamander */
+    .front-middle {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      right: clamp(30px, 6vw, 54px);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .salamander-mascot {
+      width: clamp(130px, 21vw, 175px);
+      height: auto;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+    }
+
+    /* Bottom Contact Row */
+    .front-bottom {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      border-top: 1px solid rgba(255, 255, 255, 0.09);
-      padding-top: 18px;
+      border-top: 1px solid rgba(247, 243, 232, 0.12);
+      padding-top: 16px;
+      position: relative;
+      z-index: 2;
     }
 
-    .concept-twotone .c2-contact-list {
+    .contact-items {
       display: flex;
       flex-direction: column;
       gap: 5px;
       font-size: clamp(0.78rem, 1.35vw, 0.88rem);
-      color: #a4b2b8;
+      color: var(--c-ivory-dim);
     }
-    .concept-twotone .c2-contact-list a {
+    .contact-items a {
       color: inherit;
       text-decoration: none;
+      transition: color 0.15s;
     }
-    .concept-twotone .c2-contact-list a:hover {
-      color: #ffffff;
+    .contact-items a:hover {
+      color: var(--c-ivory);
     }
 
-    .concept-twotone .c2-url-badge {
+    .website-badge {
       font-family: var(--font-display);
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: #ffffff;
-      background: rgba(226, 176, 83, 0.12);
-      border: 1px solid rgba(226, 176, 83, 0.35);
+      font-size: clamp(0.8rem, 1.4vw, 0.92rem);
+      font-weight: 600;
+      color: var(--c-ivory);
+      background: rgba(247, 243, 232, 0.06);
+      border: 1px solid rgba(247, 243, 232, 0.2);
       padding: 6px 14px;
       border-radius: 6px;
-      color: #e2b053;
+      letter-spacing: 0.01em;
+      transition: all 0.2s;
+    }
+    .website-badge:hover {
+      border-color: var(--c-amber);
+      color: var(--c-amber);
     }
 
-    /* Concept 2 Back - High-Contrast Editorial Ochre */
-    .concept-twotone .card-back {
-      background: #e2b053;
-      border: 1px solid #d4a040;
-      color: #111416;
+    /* ── BACK OPTION A: WARM OCHRE / AMBER BACK ── */
+    .back-amber {
+      background: #de882b;
+      border: 1px solid #c9751e;
+      color: #121618;
     }
 
-    .concept-twotone .c2-back-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      gap: 28px;
-    }
-
-    .concept-twotone .c2-back-left h3 {
+    .back-amber .back-brand h3 {
       font-family: var(--font-display);
       font-size: clamp(1.4rem, 2.6vw, 1.85rem);
       font-weight: 700;
       letter-spacing: -0.03em;
-      color: #111416;
+      color: #121618;
       margin: 0 0 6px;
     }
 
-    .concept-twotone .c2-back-left p {
-      font-size: clamp(0.85rem, 1.4vw, 0.95rem);
-      color: #3d3420;
-      margin: 0 0 14px;
+    .back-amber .back-desc {
+      font-size: clamp(0.82rem, 1.4vw, 0.92rem);
+      color: #3b2812;
+      line-height: 1.45;
+      margin: 0 0 16px;
       max-width: 320px;
-      line-height: 1.4;
       font-weight: 500;
     }
 
-    .concept-twotone .c2-back-meta {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #111416;
+    .back-amber .back-site {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #121618;
     }
 
-    .concept-twotone .c2-qr-card {
-      background: #111416;
+    .back-amber .qr-box {
+      background: #121618;
       padding: 10px;
       border-radius: 8px;
-      width: clamp(110px, 16vw, 140px);
-      height: clamp(110px, 16vw, 140px);
+      width: clamp(110px, 16vw, 138px);
+      height: clamp(110px, 16vw, 138px);
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
       flex-shrink: 0;
     }
-    .concept-twotone .c2-qr-card svg path {
+    .back-amber .qr-box svg path {
       fill: #ffffff !important;
     }
 
-    /* --- Side-by-Side Static Review Gallery --- */
+    /* ── BACK OPTION B: WARM IVORY / LINEN BACK ── */
+    .back-ivory {
+      background: #f7f3e8;
+      border: 1px solid #ded8c8;
+      color: #121618;
+    }
+
+    .back-ivory .back-brand h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #121618;
+      margin: 0 0 6px;
+    }
+
+    .back-ivory .back-desc {
+      font-size: clamp(0.82rem, 1.4vw, 0.92rem);
+      color: #4a5459;
+      line-height: 1.45;
+      margin: 0 0 16px;
+      max-width: 320px;
+      font-weight: 500;
+    }
+
+    .back-ivory .back-site {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--c-amber);
+    }
+
+    .back-ivory .qr-box {
+      background: #121618;
+      padding: 10px;
+      border-radius: 8px;
+      width: clamp(110px, 16vw, 138px);
+      height: clamp(110px, 16vw, 138px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      flex-shrink: 0;
+    }
+    .back-ivory .qr-box svg path {
+      fill: #ffffff !important;
+    }
+
+    .back-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      gap: 24px;
+    }
+
+    .back-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* --- Gallery Comparison --- */
     .gallery-section {
       width: min(1080px, 95vw);
       margin-top: 40px;
@@ -430,9 +395,9 @@
     .gallery-title {
       font-family: var(--font-display);
       font-size: 1.15rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin: 0 0 8px;
+      font-weight: 700;
+      color: var(--c-ivory);
+      margin: 0 0 6px;
       text-align: center;
     }
     .gallery-sub {
@@ -477,7 +442,7 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     }
 
-    /* Print styling */
+    /* Print styles */
     @media print {
       body {
         background: transparent !important;
@@ -507,12 +472,12 @@
 
   <header>
     <h1>Jason Persinger // Business Card Proofs</h1>
-    <p class="subtitle">Two clean, modern directions designed for clean presentation without tech jargon or terminal tropes.</p>
+    <p class="subtitle">Three-Tone Palette: Deep Charcoal Slate + Warm Hellbender Amber + Rich Ivory Cream.</p>
     
     <!-- Tab Switcher -->
     <div class="tab-bar">
-      <button class="tab-btn active" onclick="setConcept('dark')">Concept 1: Minimalist Matte Dark</button>
-      <button class="tab-btn" onclick="setConcept('twotone')">Concept 2: Editorial Two-Tone</button>
+      <button class="tab-btn active" onclick="setBackTheme('amber')">Proof A: Amber Back</button>
+      <button class="tab-btn" onclick="setBackTheme('ivory')">Proof B: Ivory / Cream Back</button>
     </div>
 
     <!-- Action Toolbar -->
@@ -531,22 +496,18 @@
 
   <!-- Interactive 3D Preview Stage -->
   <div class="stage" onclick="flipCard()">
-    <div class="card-flipper concept-dark" id="flipper">
+    <div class="card-flipper" id="flipper">
 
       <!-- FRONT FACE -->
-      <div class="card-face card-front" id="active-front">
-        <!-- Injected dynamically via JS based on selected tab -->
-      </div>
+      <div class="card-face card-front" id="active-front"></div>
 
       <!-- BACK FACE -->
-      <div class="card-face card-back" id="active-back">
-        <!-- Injected dynamically via JS based on selected tab -->
-      </div>
+      <div class="card-face card-back back-amber" id="active-back"></div>
 
     </div>
   </div>
 
-  <!-- Shared Clean Vector QR Code Definition -->
+  <!-- Shared Vector QR Code -->
   <svg style="display: none;">
     <defs>
       <g id="shared-qr">
@@ -557,46 +518,46 @@
 
   <!-- Side-by-Side Review Section for Direct Comparison -->
   <section class="gallery-section">
-    <h2 class="gallery-title">Direct Comparison // Both Concepts Side-by-Side</h2>
-    <p class="gallery-sub">Review both the front and back of each design simultaneously.</p>
+    <h2 class="gallery-title">Direct Comparison // Both Reverse Colorways</h2>
+    <p class="gallery-sub">Same slate frontside with pixel salamander mascot, paired with Amber or Ivory reverse.</p>
 
-    <!-- Concept 1 Full Row -->
+    <!-- Proof A Row -->
     <div style="margin-bottom: 48px;">
-      <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: #00f5a0; margin-bottom: 14px;">
-        CONCEPT 1: Minimalist Matte Dark (Subtle Emerald Accent)
+      <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-amber); margin-bottom: 14px;">
+        PROOF A: Slate Front + Warm Amber Reverse
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
           <div class="gallery-label"><span>Front Side</span> <span>3.5" × 2"</span></div>
-          <div class="static-card-box concept-dark">
-            <div class="card-face card-front" id="static-c1-front"></div>
+          <div class="static-card-box">
+            <div class="card-face card-front" id="static-front-a"></div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="gallery-label"><span>Back Side (With QR)</span> <span>3.5" × 2"</span></div>
-          <div class="static-card-box concept-dark">
-            <div class="card-face card-back" style="transform: none;" id="static-c1-back"></div>
+          <div class="static-card-box">
+            <div class="card-face card-back back-amber" style="transform: none;" id="static-back-a"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Concept 2 Full Row -->
+    <!-- Proof B Row -->
     <div>
-      <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: #e2b053; margin-bottom: 14px;">
-        CONCEPT 2: Editorial Two-Tone (Charcoal Front + Ochre Accent Back)
+      <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-ivory); margin-bottom: 14px;">
+        PROOF B: Slate Front + Rich Ivory / Linen Reverse
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
           <div class="gallery-label"><span>Front Side</span> <span>3.5" × 2"</span></div>
-          <div class="static-card-box concept-twotone">
-            <div class="card-face card-front" id="static-c2-front"></div>
+          <div class="static-card-box">
+            <div class="card-face card-front" id="static-front-b"></div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="gallery-label"><span>Back Side (With QR)</span> <span>3.5" × 2"</span></div>
-          <div class="static-card-box concept-twotone">
-            <div class="card-face card-back" style="transform: none;" id="static-c2-back"></div>
+          <div class="static-card-box">
+            <div class="card-face card-back back-ivory" style="transform: none;" id="static-back-b"></div>
           </div>
         </div>
       </div>
@@ -604,103 +565,75 @@
   </section>
 
   <script>
-    // Templates for Concept 1 (Minimalist Matte Dark)
-    const c1FrontHtml = `
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div class="c1-brand-mark">JP</div>
-        <div style="font-size: 0.8rem; color: #73848c; font-weight: 500;">Roanoke, VA</div>
+    // Front Face HTML (Slate + Salamander Mascot + Ivory/Amber typography)
+    const frontHtml = `
+      <div class="front-top">
+        <div class="front-identity">
+          <h2>Jason Persinger</h2>
+          <div class="front-title">Technical Solutions</div>
+        </div>
+        <div class="front-location">Roanoke, VA</div>
       </div>
 
-      <div class="c1-name-group">
-        <h2>Jason Persinger</h2>
-        <div class="c1-title">Technical Solutions</div>
+      <div class="front-middle">
+        <img class="salamander-mascot" src="salamander-transparent.png" alt="Hellbender Salamander">
       </div>
 
-      <div class="c1-contacts">
-        <div class="c1-contact-item">
-          <span>(540) 394-8222</span>
-        </div>
-        <div class="c1-contact-item" style="justify-content: flex-end;">
-          <a class="c1-website" href="https://jasonpersinger.me">jasonpersinger.me</a>
-        </div>
-        <div class="c1-contact-item" style="grid-column: span 2;">
-          <a href="mailto:jason.persinger@gmail.com">jason.persinger@gmail.com</a>
-        </div>
-      </div>
-    `;
-
-    const c1BackHtml = `
-      <div class="c1-back-wrap">
-        <div class="c1-back-left">
-          <div>
-            <h3>Jason Persinger</h3>
-            <p>Solving complex technical problems across modern systems, web infrastructure, and custom hardware.</p>
-          </div>
-          <div>
-            <span class="c1-back-url">jasonpersinger.me</span>
-          </div>
-        </div>
-        <div class="c1-qr-card">
-          <svg viewBox="0 0 25 25" style="color: #111416;"><use href="#shared-qr" /></svg>
-        </div>
-      </div>
-    `;
-
-    // Templates for Concept 2 (Editorial Two-Tone)
-    const c2FrontHtml = `
-      <div class="c2-header">
-        <div>
-          <h2 class="c2-name">Jason Persinger</h2>
-          <div class="c2-title">Technical Solutions</div>
-        </div>
-        <div class="c2-loc">Roanoke, VA</div>
-      </div>
-
-      <div class="c2-footer">
-        <div class="c2-contact-list">
+      <div class="front-bottom">
+        <div class="contact-items">
           <div><a href="tel:+15403948222">(540) 394-8222</a></div>
-          <div><a href="mailto:jason.persinger@gmail.com">jason.persinger@gmail.com</a></div>
+          <div><a href="mailto:jason@hellbenderdigital.com">jason@hellbenderdigital.com</a></div>
         </div>
-        <div class="c2-url-badge">jasonpersinger.me</div>
+        <a class="website-badge" href="https://www.jasonpersinger.me" target="_blank">www.jasonpersinger.me</a>
       </div>
     `;
 
-    const c2BackHtml = `
-      <div class="c2-back-wrap">
-        <div class="c2-back-left">
-          <div>
+    // Back Face HTML - Amber Version
+    const backAmberHtml = `
+      <div class="back-layout">
+        <div class="back-left">
+          <div class="back-brand">
             <h3>Jason Persinger</h3>
-            <p>Technical troubleshooting, systems integration, and hands-on digital solutions.</p>
+            <p class="back-desc">Technical troubleshooting, systems integration, and hands-on digital solutions.</p>
           </div>
-          <div class="c2-back-meta">
-            <span>jasonpersinger.me</span>
-          </div>
+          <div class="back-site">www.jasonpersinger.me</div>
         </div>
-        <div class="c2-qr-card">
+        <div class="qr-box">
           <svg viewBox="0 0 25 25" style="color: #ffffff;"><use href="#shared-qr" /></svg>
         </div>
       </div>
     `;
 
-    let currentConcept = 'dark';
+    // Back Face HTML - Ivory Version
+    const backIvoryHtml = `
+      <div class="back-layout">
+        <div class="back-left">
+          <div class="back-brand">
+            <h3>Jason Persinger</h3>
+            <p class="back-desc">Technical troubleshooting, systems integration, and hands-on digital solutions.</p>
+          </div>
+          <div class="back-site">www.jasonpersinger.me</div>
+        </div>
+        <div class="qr-box">
+          <svg viewBox="0 0 25 25" style="color: #ffffff;"><use href="#shared-qr" /></svg>
+        </div>
+      </div>
+    `;
 
-    function setConcept(name) {
-      currentConcept = name;
-      const flipper = document.getElementById('flipper');
+    function setBackTheme(theme) {
+      const flipperBack = document.getElementById('active-back');
       const buttons = document.querySelectorAll('.tab-btn');
 
       buttons.forEach((btn, idx) => {
-        btn.classList.toggle('active', (name === 'dark' && idx === 0) || (name === 'twotone' && idx === 1));
+        btn.classList.toggle('active', (theme === 'amber' && idx === 0) || (theme === 'ivory' && idx === 1));
       });
 
-      if (name === 'dark') {
-        flipper.className = 'card-flipper concept-dark';
-        document.getElementById('active-front').innerHTML = c1FrontHtml;
-        document.getElementById('active-back').innerHTML = c1BackHtml;
+      if (theme === 'amber') {
+        flipperBack.className = 'card-face card-back back-amber';
+        flipperBack.innerHTML = backAmberHtml;
       } else {
-        flipper.className = 'card-flipper concept-twotone';
-        document.getElementById('active-front').innerHTML = c2FrontHtml;
-        document.getElementById('active-back').innerHTML = c2BackHtml;
+        flipperBack.className = 'card-face card-back back-ivory';
+        flipperBack.innerHTML = backIvoryHtml;
       }
     }
 
@@ -709,14 +642,14 @@
       flipper.classList.toggle('flipped');
     }
 
-    // Populate static comparison gallery
-    document.getElementById('static-c1-front').innerHTML = c1FrontHtml;
-    document.getElementById('static-c1-back').innerHTML = c1BackHtml;
-    document.getElementById('static-c2-front').innerHTML = c2FrontHtml;
-    document.getElementById('static-c2-back').innerHTML = c2BackHtml;
+    // Populate active and static gallery views
+    document.getElementById('active-front').innerHTML = frontHtml;
+    setBackTheme('amber');
 
-    // Initialize with Concept 1
-    setConcept('dark');
+    document.getElementById('static-front-a').innerHTML = frontHtml;
+    document.getElementById('static-back-a').innerHTML = backAmberHtml;
+    document.getElementById('static-front-b').innerHTML = frontHtml;
+    document.getElementById('static-back-b').innerHTML = backIvoryHtml;
   </script>
 </body>
 </html>
