@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jason Persinger // Business Card Proofs</title>
+  <title>Hellbender Digital // Business Card Proofs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -15,10 +15,11 @@
       --font-mono: 'Space Mono', monospace;
       
       /* Three-Tone Palette */
-      --c-slate: #121618;
-      --c-amber: #e88626;
+      --c-slate: #111517;
+      --c-amber: #de882b;
+      --c-amber-light: #f39c38;
       --c-ivory: #f7f3e8;
-      --c-ivory-dim: #cfc9ba;
+      --c-ivory-dim: #c9c3b4;
       --card-radius: 8px;
     }
 
@@ -39,12 +40,12 @@
     header {
       text-align: center;
       margin-bottom: 28px;
-      max-width: 660px;
+      max-width: 680px;
     }
 
     h1 {
       font-family: var(--font-display);
-      font-size: 1.75rem;
+      font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin: 0 0 6px;
@@ -181,22 +182,43 @@
       z-index: 2;
     }
 
+    .company-tag {
+      font-family: var(--font-display);
+      font-size: clamp(0.72rem, 1.25vw, 0.82rem);
+      font-weight: 700;
+      color: var(--c-amber);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .company-tag::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--c-amber);
+      border-radius: 50%;
+    }
+
     .front-identity h2 {
       font-family: var(--font-display);
-      font-size: clamp(1.65rem, 3.4vw, 2.2rem);
+      font-size: clamp(1.6rem, 3.2vw, 2.15rem);
       font-weight: 700;
       letter-spacing: -0.03em;
       color: var(--c-ivory);
-      margin: 0 0 4px;
+      margin: 0 0 3px;
       line-height: 1.1;
     }
 
     .front-title {
       font-family: var(--font-display);
-      font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+      font-size: clamp(0.78rem, 1.4vw, 0.9rem);
       font-weight: 600;
-      color: var(--c-amber);
-      letter-spacing: 0.08em;
+      color: var(--c-ivory-dim);
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       margin: 0;
     }
@@ -214,7 +236,7 @@
       align-items: center;
       justify-content: flex-end;
       position: absolute;
-      right: clamp(30px, 6vw, 54px);
+      right: clamp(28px, 5.5vw, 48px);
       top: 50%;
       transform: translateY(-50%);
       z-index: 1;
@@ -273,115 +295,139 @@
       color: var(--c-amber);
     }
 
-    /* ── BACK OPTION A: WARM OCHRE / AMBER BACK ── */
-    .back-amber {
-      background: #de882b;
-      border: 1px solid #c9751e;
+    /* ===================================================
+       PATTERN OPTION 1: TWO-TONE SPLIT BLOCK
+       Warm Ivory body with a rich Warm Amber QR Panel
+       =================================================== */
+    .back-split {
+      background: var(--c-ivory);
       color: #121618;
+      padding: 0 !important;
+      display: grid !important;
+      grid-template-columns: 1fr clamp(140px, 22vw, 185px);
+      border: 1px solid #ded8c8;
     }
 
-    .back-amber .back-brand h3 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: #121618;
-      margin: 0 0 6px;
+    .back-split-left {
+      padding: clamp(22px, 4vw, 34px) clamp(22px, 4vw, 34px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(222, 136, 43, 0.06) 0%, transparent 60%),
+        var(--c-ivory);
     }
 
-    .back-amber .back-desc {
-      font-size: clamp(0.82rem, 1.4vw, 0.92rem);
-      color: #3b2812;
-      line-height: 1.45;
-      margin: 0 0 16px;
-      max-width: 320px;
-      font-weight: 500;
+    .back-split-right {
+      background: var(--c-amber);
+      border-left: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
     }
 
-    .back-amber .back-site {
-      font-family: var(--font-display);
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #121618;
-    }
-
-    .back-amber .qr-box {
-      background: #121618;
-      padding: 10px;
+    .back-split-right .qr-box {
+      background: #111517;
+      padding: 9px;
       border-radius: 8px;
-      width: clamp(110px, 16vw, 138px);
-      height: clamp(110px, 16vw, 138px);
+      width: clamp(105px, 15vw, 130px);
+      height: clamp(105px, 15vw, 130px);
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-      flex-shrink: 0;
     }
-    .back-amber .qr-box svg path {
+    .back-split-right .qr-box svg path {
       fill: #ffffff !important;
     }
 
-    /* ── BACK OPTION B: WARM IVORY / LINEN BACK ── */
-    .back-ivory {
-      background: #f7f3e8;
-      border: 1px solid #ded8c8;
-      color: #121618;
-    }
-
-    .back-ivory .back-brand h3 {
+    .back-split-tag {
       font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+      font-size: 0.65rem;
       font-weight: 700;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: #121618;
-      margin: 0 0 6px;
+      margin-top: 10px;
     }
 
-    .back-ivory .back-desc {
-      font-size: clamp(0.82rem, 1.4vw, 0.92rem);
+    /* Common back copy typography */
+    .back-company-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #121618;
+      margin: 0 0 2px;
+      line-height: 1.15;
+    }
+    .back-company-sub {
+      font-family: var(--font-display);
+      font-size: clamp(0.72rem, 1.25vw, 0.8rem);
+      font-weight: 600;
+      color: var(--c-amber);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    .back-desc {
+      font-size: clamp(0.8rem, 1.35vw, 0.9rem);
       color: #4a5459;
       line-height: 1.45;
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       max-width: 320px;
       font-weight: 500;
     }
 
-    .back-ivory .back-site {
+    .back-site-link {
       font-family: var(--font-display);
-      font-size: 0.88rem;
+      font-size: clamp(0.8rem, 1.35vw, 0.88rem);
       font-weight: 700;
-      color: var(--c-amber);
+      color: #121618;
     }
 
-    .back-ivory .qr-box {
-      background: #121618;
-      padding: 10px;
-      border-radius: 8px;
-      width: clamp(110px, 16vw, 138px);
-      height: clamp(110px, 16vw, 138px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      flex-shrink: 0;
-    }
-    .back-ivory .qr-box svg path {
-      fill: #ffffff !important;
+    /* ===================================================
+       PATTERN OPTION 2: IVORY CANVAS + GEOMETRIC AMBER MICRO-GRID
+       Minimalist architectural grid pattern linking both colors
+       =================================================== */
+    .back-grid {
+      background-color: var(--c-ivory);
+      background-image: 
+        radial-gradient(rgba(222, 136, 43, 0.28) 1.2px, transparent 1.2px);
+      background-size: 16px 16px;
+      border: 1px solid #ded8c8;
+      color: #121618;
     }
 
-    .back-layout {
+    .back-grid-layout {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 100%;
       gap: 24px;
+      position: relative;
+      z-index: 2;
     }
 
-    .back-left {
+    .back-grid .qr-box {
+      background: #111517;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid var(--c-amber);
+      width: clamp(110px, 16vw, 138px);
+      height: clamp(110px, 16vw, 138px);
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      flex-shrink: 0;
+    }
+    .back-grid .qr-box svg path {
+      fill: #ffffff !important;
     }
 
     /* --- Gallery Comparison --- */
@@ -471,13 +517,13 @@
 <body>
 
   <header>
-    <h1>Jason Persinger // Business Card Proofs</h1>
-    <p class="subtitle">Three-Tone Palette: Deep Charcoal Slate + Warm Hellbender Amber + Rich Ivory Cream.</p>
+    <h1>Hellbender Digital // Business Card Proofs</h1>
+    <p class="subtitle">Unified Palette: Deep Slate Front + Hellbender Amber & Ivory Cream Pattern Reverse.</p>
     
     <!-- Tab Switcher -->
     <div class="tab-bar">
-      <button class="tab-btn active" onclick="setBackTheme('amber')">Proof A: Amber Back</button>
-      <button class="tab-btn" onclick="setBackTheme('ivory')">Proof B: Ivory / Cream Back</button>
+      <button class="tab-btn active" onclick="setBackTheme('split')">Proof 1: Two-Tone Split Block (Ivory + Amber QR)</button>
+      <button class="tab-btn" onclick="setBackTheme('grid')">Proof 2: Ivory + Amber Micro-Dot Grid</button>
     </div>
 
     <!-- Action Toolbar -->
@@ -502,7 +548,7 @@
       <div class="card-face card-front" id="active-front"></div>
 
       <!-- BACK FACE -->
-      <div class="card-face card-back back-amber" id="active-back"></div>
+      <div class="card-face card-back back-split" id="active-back"></div>
 
     </div>
   </div>
@@ -518,46 +564,46 @@
 
   <!-- Side-by-Side Review Section for Direct Comparison -->
   <section class="gallery-section">
-    <h2 class="gallery-title">Direct Comparison // Both Reverse Colorways</h2>
-    <p class="gallery-sub">Same slate frontside with pixel salamander mascot, paired with Amber or Ivory reverse.</p>
+    <h2 class="gallery-title">Direct Comparison // Both Backside Patterns</h2>
+    <p class="gallery-sub">Same slate frontside with HELLBENDER DIGITAL branding, paired with two pattern approaches.</p>
 
-    <!-- Proof A Row -->
+    <!-- Proof 1 Row -->
     <div style="margin-bottom: 48px;">
       <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-amber); margin-bottom: 14px;">
-        PROOF A: Slate Front + Warm Amber Reverse
+        PROOF 1: Two-Tone Split Block (Warm Ivory Left + Warm Amber QR Panel Right)
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
           <div class="gallery-label"><span>Front Side</span> <span>3.5" × 2"</span></div>
           <div class="static-card-box">
-            <div class="card-face card-front" id="static-front-a"></div>
+            <div class="card-face card-front" id="static-front-1"></div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="gallery-label"><span>Back Side (With QR)</span> <span>3.5" × 2"</span></div>
           <div class="static-card-box">
-            <div class="card-face card-back back-amber" style="transform: none;" id="static-back-a"></div>
+            <div class="card-face card-back back-split" style="transform: none;" id="static-back-1"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Proof B Row -->
+    <!-- Proof 2 Row -->
     <div>
       <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-ivory); margin-bottom: 14px;">
-        PROOF B: Slate Front + Rich Ivory / Linen Reverse
+        PROOF 2: Ivory Canvas + Geometric Amber Micro-Grid Pattern
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
           <div class="gallery-label"><span>Front Side</span> <span>3.5" × 2"</span></div>
           <div class="static-card-box">
-            <div class="card-face card-front" id="static-front-b"></div>
+            <div class="card-face card-front" id="static-front-2"></div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="gallery-label"><span>Back Side (With QR)</span> <span>3.5" × 2"</span></div>
           <div class="static-card-box">
-            <div class="card-face card-back back-ivory" style="transform: none;" id="static-back-b"></div>
+            <div class="card-face card-back back-grid" style="transform: none;" id="static-back-2"></div>
           </div>
         </div>
       </div>
@@ -565,10 +611,11 @@
   </section>
 
   <script>
-    // Front Face HTML (Slate + Salamander Mascot + Ivory/Amber typography)
+    // Front Face HTML (Slate + HELLBENDER DIGITAL Brand + Salamander Mascot + Ivory/Amber typography)
     const frontHtml = `
       <div class="front-top">
         <div class="front-identity">
+          <div class="company-tag">HELLBENDER DIGITAL</div>
           <h2>Jason Persinger</h2>
           <div class="front-title">Technical Solutions</div>
         </div>
@@ -588,31 +635,34 @@
       </div>
     `;
 
-    // Back Face HTML - Amber Version
-    const backAmberHtml = `
-      <div class="back-layout">
-        <div class="back-left">
-          <div class="back-brand">
-            <h3>Jason Persinger</h3>
-            <p class="back-desc">Technical troubleshooting, systems integration, and hands-on digital solutions.</p>
-          </div>
-          <div class="back-site">www.jasonpersinger.me</div>
+    // Back Face HTML - Proof 1: Split Two-Tone Block
+    const backSplitHtml = `
+      <div class="back-split-left">
+        <div>
+          <h3 class="back-company-name">HELLBENDER DIGITAL</h3>
+          <div class="back-company-sub">Jason Persinger // Solutions</div>
+          <p class="back-desc">Technical troubleshooting, web systems integration, and hands-on digital infrastructure.</p>
         </div>
+        <div class="back-site-link">www.jasonpersinger.me</div>
+      </div>
+      <div class="back-split-right">
         <div class="qr-box">
           <svg viewBox="0 0 25 25" style="color: #ffffff;"><use href="#shared-qr" /></svg>
         </div>
+        <div class="back-split-tag">SCAN TO CONNECT</div>
       </div>
     `;
 
-    // Back Face HTML - Ivory Version
-    const backIvoryHtml = `
-      <div class="back-layout">
-        <div class="back-left">
-          <div class="back-brand">
-            <h3>Jason Persinger</h3>
-            <p class="back-desc">Technical troubleshooting, systems integration, and hands-on digital solutions.</p>
+    // Back Face HTML - Proof 2: Ivory Canvas + Geometric Amber Micro-Grid Pattern
+    const backGridHtml = `
+      <div class="back-grid-layout" style="padding: clamp(22px, 4vw, 34px) clamp(24px, 4.5vw, 38px);">
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+          <div>
+            <h3 class="back-company-name">HELLBENDER DIGITAL</h3>
+            <div class="back-company-sub">Jason Persinger // Solutions</div>
+            <p class="back-desc">Technical troubleshooting, web systems integration, and hands-on digital infrastructure.</p>
           </div>
-          <div class="back-site">www.jasonpersinger.me</div>
+          <div class="back-site-link">www.jasonpersinger.me</div>
         </div>
         <div class="qr-box">
           <svg viewBox="0 0 25 25" style="color: #ffffff;"><use href="#shared-qr" /></svg>
@@ -625,15 +675,15 @@
       const buttons = document.querySelectorAll('.tab-btn');
 
       buttons.forEach((btn, idx) => {
-        btn.classList.toggle('active', (theme === 'amber' && idx === 0) || (theme === 'ivory' && idx === 1));
+        btn.classList.toggle('active', (theme === 'split' && idx === 0) || (theme === 'grid' && idx === 1));
       });
 
-      if (theme === 'amber') {
-        flipperBack.className = 'card-face card-back back-amber';
-        flipperBack.innerHTML = backAmberHtml;
+      if (theme === 'split') {
+        flipperBack.className = 'card-face card-back back-split';
+        flipperBack.innerHTML = backSplitHtml;
       } else {
-        flipperBack.className = 'card-face card-back back-ivory';
-        flipperBack.innerHTML = backIvoryHtml;
+        flipperBack.className = 'card-face card-back back-grid';
+        flipperBack.innerHTML = backGridHtml;
       }
     }
 
@@ -644,12 +694,12 @@
 
     // Populate active and static gallery views
     document.getElementById('active-front').innerHTML = frontHtml;
-    setBackTheme('amber');
+    setBackTheme('split');
 
-    document.getElementById('static-front-a').innerHTML = frontHtml;
-    document.getElementById('static-back-a').innerHTML = backAmberHtml;
-    document.getElementById('static-front-b').innerHTML = frontHtml;
-    document.getElementById('static-back-b').innerHTML = backIvoryHtml;
+    document.getElementById('static-front-1').innerHTML = frontHtml;
+    document.getElementById('static-back-1').innerHTML = backSplitHtml;
+    document.getElementById('static-front-2').innerHTML = frontHtml;
+    document.getElementById('static-back-2').innerHTML = backGridHtml;
   </script>
 </body>
 </html>
