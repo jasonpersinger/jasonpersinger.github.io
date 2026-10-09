@@ -17,8 +17,6 @@
       /* Exact Color Identity */
       --c-slate: #111416;
       --c-orange: #e06e01;       /* Exact Salamander Orange */
-      --c-cream: #f7f2ea;        /* Rich, classic warm cream / ivory */
-      --c-cream-dim: #ded4c3;    /* Secondary warm cream tone */
       --card-radius: 8px;
     }
 
@@ -39,16 +37,16 @@
     header {
       text-align: center;
       margin-bottom: 28px;
-      max-width: 680px;
+      max-width: 760px;
     }
 
     h1 {
       font-family: var(--font-display);
-      font-size: 1.8rem;
+      font-size: 1.85rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin: 0 0 6px;
-      color: var(--c-cream);
+      color: #ffffff;
     }
 
     p.subtitle {
@@ -58,38 +56,54 @@
       line-height: 1.5;
     }
 
-    /* --- Variant Switcher Tabs --- */
+    /* --- Shade Switcher Tabs --- */
     .tab-bar {
       display: inline-flex;
       background: #171b1e;
-      padding: 4px;
+      padding: 5px;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      gap: 4px;
+      gap: 5px;
       margin-bottom: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .tab-btn {
-      font-family: var(--font-display);
-      font-size: 0.86rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
       font-weight: 600;
-      padding: 8px 18px;
+      padding: 7px 14px;
       border-radius: 6px;
-      border: none;
+      border: 1px solid transparent;
       background: transparent;
       color: #8b9ca3;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       transition: all 0.2s ease;
     }
 
     .tab-btn:hover {
-      color: var(--c-cream);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .tab-btn.active {
       background: #242a2f;
-      color: var(--c-cream);
+      color: #ffffff;
+      border-color: var(--c-orange);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .tab-chip {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      display: inline-block;
+      flex-shrink: 0;
     }
 
     /* --- Action Controls --- */
@@ -121,7 +135,7 @@
     .action-btn:hover {
       background: #22282d;
       border-color: var(--c-orange);
-      color: var(--c-cream);
+      color: #ffffff;
       transform: translateY(-1px);
     }
 
@@ -159,20 +173,19 @@
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
+      user-select: none;
     }
 
+    /* ===================================================
+       FRONT FACE: Slate Dark Ground + Pixel Salamander
+       =================================================== */
     .card-front {
-      transform: rotateY(0deg);
-      background: var(--c-slate);
-      border: 1px solid rgba(250, 248, 245, 0.12);
-      color: var(--c-cream);
+      background-color: var(--c-slate);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
     }
 
-    .card-back {
-      transform: rotateY(180deg);
-    }
-
-    /* ── FRONT DESIGN ── */
     .front-top {
       display: flex;
       justify-content: space-between;
@@ -181,15 +194,20 @@
       z-index: 2;
     }
 
+    .front-identity {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
     .company-tag {
       font-family: var(--font-display);
       font-size: clamp(0.72rem, 1.25vw, 0.82rem);
       font-weight: 700;
-      color: var(--c-orange);
-      letter-spacing: 0.16em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 5px;
-      display: flex;
+      color: var(--c-orange);
+      display: inline-flex;
       align-items: center;
       gap: 7px;
     }
@@ -198,47 +216,40 @@
       display: inline-block;
       width: 6px;
       height: 6px;
-      background: var(--c-orange);
       border-radius: 50%;
+      background: var(--c-orange);
     }
 
-    .front-identity h2 {
+    .card-front h2 {
       font-family: var(--font-display);
-      font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+      font-size: clamp(1.4rem, 2.7vw, 1.95rem);
       font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--c-cream);
-      margin: 0 0 3px;
-      line-height: 1.1;
-      white-space: nowrap;
+      letter-spacing: -0.025em;
+      margin: 0;
+      color: #ffffff;
+      line-height: 1.15;
     }
 
     .front-title {
-      font-family: var(--font-display);
-      font-size: clamp(0.78rem, 1.4vw, 0.9rem);
+      font-size: clamp(0.72rem, 1.25vw, 0.82rem);
       font-weight: 600;
-      color: var(--c-cream-dim);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin: 0;
-      white-space: nowrap;
+      color: #94a3b8;
+      margin-top: 2px;
     }
 
     .front-location {
-      font-size: clamp(0.75rem, 1.3vw, 0.85rem);
-      color: var(--c-cream-dim);
-      font-weight: 500;
-      letter-spacing: 0.02em;
+      font-family: var(--font-mono);
+      font-size: clamp(0.68rem, 1.15vw, 0.78rem);
+      color: #64748b;
+      letter-spacing: 0.05em;
     }
 
-    /* Middle Section with Salamander */
     .front-middle {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
       position: absolute;
-      right: clamp(28px, 5.5vw, 48px);
-      top: 50%;
+      right: clamp(24px, 5vw, 42px);
+      top: 42%;
       transform: translateY(-50%);
       z-index: 1;
       pointer-events: none;
@@ -252,12 +263,11 @@
       filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
     }
 
-    /* Bottom Contact Row */
     .front-bottom {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      border-top: 1px solid rgba(250, 248, 245, 0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
       padding-top: 16px;
       position: relative;
       z-index: 2;
@@ -268,7 +278,7 @@
       flex-direction: column;
       gap: 5px;
       font-size: clamp(0.78rem, 1.35vw, 0.88rem);
-      color: var(--c-cream-dim);
+      color: #cbd5e1;
     }
     .contact-items a {
       color: inherit;
@@ -276,16 +286,16 @@
       transition: color 0.15s;
     }
     .contact-items a:hover {
-      color: var(--c-cream);
+      color: #ffffff;
     }
 
     .website-badge {
       font-family: var(--font-display);
       font-size: clamp(0.8rem, 1.4vw, 0.92rem);
       font-weight: 600;
-      color: var(--c-cream);
-      background: rgba(250, 248, 245, 0.06);
-      border: 1px solid rgba(250, 248, 245, 0.22);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.22);
       padding: 6px 14px;
       border-radius: 6px;
       letter-spacing: 0.01em;
@@ -297,12 +307,17 @@
     }
 
     /* ===================================================
-       PROOF 1: TWO-TONE SPLIT BLOCK
-       Vivid Salamander Orange Left + Rich Warm Cream/Ivory Right
+       BACK FACE: SPLIT TWO-TONE BLOCK
+       Left: Salamander Orange (#e06e01)
+       Right: Dynamic White / Cream / Ivory
        =================================================== */
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
     .back-split {
       background: var(--c-orange);
-      color: var(--c-cream);
+      color: #ffffff;
       padding: 0 !important;
       display: grid !important;
       grid-template-columns: 1fr clamp(140px, 22vw, 185px);
@@ -318,7 +333,6 @@
     }
 
     .back-split-right {
-      background: var(--c-cream);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -326,6 +340,7 @@
       padding: 16px;
       position: relative;
       border-left: 1px solid rgba(0, 0, 0, 0.08);
+      transition: background-color 0.25s ease;
     }
 
     .back-split-right .qr-box {
@@ -359,7 +374,7 @@
       font-size: clamp(1.2rem, 2.3vw, 1.55rem);
       font-weight: 700;
       letter-spacing: -0.02em;
-      color: var(--c-cream);
+      color: #ffffff;
       margin: 0 0 2px;
       line-height: 1.15;
       white-space: nowrap;
@@ -378,7 +393,7 @@
 
     .back-desc {
       font-size: clamp(0.8rem, 1.35vw, 0.9rem);
-      color: rgba(247, 242, 234, 0.92);
+      color: rgba(255, 255, 255, 0.94);
       line-height: 1.45;
       margin: 0 0 14px;
       max-width: 320px;
@@ -389,52 +404,13 @@
       font-family: var(--font-display);
       font-size: clamp(0.82rem, 1.4vw, 0.9rem);
       font-weight: 700;
-      color: var(--c-cream);
+      color: #ffffff;
       white-space: nowrap;
     }
 
-    /* ===================================================
-       PROOF 2: BRIGHT CREAM CANVAS + SALAMANDER ORANGE MICRO-DOT GRID
-       =================================================== */
-    .back-grid {
-      background-color: var(--c-cream);
-      background-image: 
-        radial-gradient(var(--c-orange) 1.2px, transparent 1.2px);
-      background-size: 16px 16px;
-      border: 1px solid #e5dfd2;
-      color: #111416;
-    }
-
-    .back-grid-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      gap: 24px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .back-grid .qr-box {
-      background: #111416;
-      padding: 10px;
-      border-radius: 8px;
-      border: 2px solid var(--c-orange);
-      width: clamp(110px, 16vw, 138px);
-      height: clamp(110px, 16vw, 138px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 24px rgba(224, 110, 1, 0.22);
-      flex-shrink: 0;
-    }
-    .back-grid .qr-box svg path {
-      fill: #ffffff !important;
-    }
-
-    /* --- Gallery Comparison --- */
+    /* --- Side-by-Side Review Section for All 6 Shades --- */
     .gallery-section {
-      width: min(1080px, 95vw);
+      width: min(1120px, 95vw);
       margin-top: 40px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 40px;
@@ -442,61 +418,122 @@
 
     .gallery-title {
       font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      color: var(--c-cream);
+      color: #ffffff;
       margin: 0 0 6px;
       text-align: center;
     }
     .gallery-sub {
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       color: #8b9ca3;
       text-align: center;
-      margin: 0 0 32px;
+      margin: 0 0 34px;
     }
 
-    .gallery-grid {
+    .shades-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px;
     }
 
-    .gallery-item {
+    @media (max-width: 820px) {
+      .shades-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .shade-card-item {
+      background: #14181b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .shade-card-item:hover {
+      border-color: var(--c-orange);
+      transform: translateY(-2px);
+    }
+
+    .shade-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .shade-meta {
+      display: flex;
+      align-items: center;
       gap: 10px;
     }
 
-    .gallery-label {
+    .shade-chip-lg {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .shade-name {
       font-family: var(--font-display);
-      font-size: 0.82rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .shade-hex {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--c-orange);
+      background: rgba(224, 110, 1, 0.12);
+      padding: 3px 8px;
+      border-radius: 4px;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #8b9ca3;
-      display: flex;
-      justify-content: space-between;
+    }
+
+    .shade-select-btn {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: #20272b;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .shade-select-btn:hover {
+      background: var(--c-orange);
+      color: #ffffff;
+      border-color: var(--c-orange);
     }
 
     .static-card-box {
-      width: 100%;
       aspect-ratio: 3.5 / 2;
+      width: 100%;
       position: relative;
     }
 
     .static-card-box .card-face {
       position: absolute;
       inset: 0;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
     }
 
-    /* Print styles */
+    /* Print & Export Rules */
     @media print {
       body {
-        background: transparent !important;
+        background: #ffffff !important;
         padding: 0 !important;
       }
-      header, .tab-bar, .controls, .gallery-section {
+      header, .gallery-section, .controls, .tab-bar {
         display: none !important;
       }
       .stage {
@@ -520,13 +557,10 @@
 
   <header>
     <h1>Hellbender Digital // Business Card Proofs</h1>
-    <p class="subtitle">Exact Palette: Deep Charcoal Slate + Salamander Orange (#e06e01) + Crisp Cream/Ivory (#faf8f5).</p>
+    <p class="subtitle">Concept 1: Two-Tone Split Card — Comparing 6 Requested White / Cream / Ivory Shades on the QR Panel.</p>
     
-    <!-- Tab Switcher -->
-    <div class="tab-bar">
-      <button class="tab-btn active" onclick="setBackTheme('split')">Proof 1: Two-Tone Split Block (Orange Left + Ivory QR Right)</button>
-      <button class="tab-btn" onclick="setBackTheme('grid')">Proof 2: Ivory Canvas + Orange Micro-Dot Grid</button>
-    </div>
+    <!-- Tab Switcher for 6 Shades -->
+    <div class="tab-bar" id="white-tabs"></div>
 
     <!-- Action Toolbar -->
     <div class="controls">
@@ -564,56 +598,28 @@
     </defs>
   </svg>
 
-  <!-- Side-by-Side Review Section for Direct Comparison -->
+  <!-- Side-by-Side Review Section for All 6 Shades -->
   <section class="gallery-section">
-    <h2 class="gallery-title">Direct Comparison // Both Backside Patterns</h2>
-    <p class="gallery-sub">Same slate frontside with HELLBENDER DIGITAL branding, paired with two pattern approaches.</p>
+    <h2 class="gallery-title">Side-by-Side Comparison // All 6 Requested White & Ivory Shades</h2>
+    <p class="gallery-sub">Review each shade on the right QR panel. Click "Preview in 3D" to load any shade onto the active card flipper above.</p>
 
-    <!-- Proof 1 Row -->
-    <div style="margin-bottom: 48px;">
-      <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-orange); margin-bottom: 14px;">
-        PROOF 1: Two-Tone Split Block (Salamander Orange Left + Cream/Ivory QR Panel Right)
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <div class="gallery-label"><span>Front Side</span> <span>3.5" × 2"</span></div>
-          <div class="static-card-box">
-            <div class="card-face card-front" id="static-front-1"></div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-label"><span>Back Side (With QR)</span> <span>3.5" × 2"</span></div>
-          <div class="static-card-box">
-            <div class="card-face card-back back-split" style="transform: none;" id="static-back-1"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Proof 2 Row -->
-    <div>
-      <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-cream); margin-bottom: 14px;">
-        PROOF 2: Cream Canvas + Salamander Orange Micro-Dot Grid Pattern
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <div class="gallery-label"><span>Front Side</span> <span>3.5" × 2"</span></div>
-          <div class="static-card-box">
-            <div class="card-face card-front" id="static-front-2"></div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-label"><span>Back Side (With QR)</span> <span>3.5" × 2"</span></div>
-          <div class="static-card-box">
-            <div class="card-face card-back back-grid" style="transform: none;" id="static-back-2"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="shades-grid" id="shades-gallery"></div>
   </section>
 
   <script>
-    // Front Face HTML (Slate + HELLBENDER DIGITAL Brand + Salamander Mascot + Cream/Orange typography)
+    // 6 Requested Color Candidates
+    const whiteCandidates = [
+      { id: 'FFEEDB', name: 'Warm Peach Ivory', hex: '#FFEEDB' },
+      { id: 'F2E9DC', name: 'Warm Linen / Almond', hex: '#F2E9DC' },
+      { id: 'EAFDF8', name: 'Pale Mint Ice White', hex: '#EAFDF8' },
+      { id: 'FFFCFF', name: 'Crisp Magenta White', hex: '#FFFCFF' },
+      { id: 'EAEAEA', name: 'Studio Pearl Gray', hex: '#EAEAEA' },
+      { id: 'EFF1F3', name: 'Porcelain Cool White', hex: '#EFF1F3' }
+    ];
+
+    let currentWhite = whiteCandidates[0]; // Default to #FFEEDB
+
+    // Front Face HTML
     const frontHtml = `
       <div class="front-top">
         <div class="front-identity">
@@ -637,28 +643,10 @@
       </div>
     `;
 
-    // Back Face HTML - Proof 1: Split Two-Tone Block (Single-line company + Single-line name)
-    const backSplitHtml = `
-      <div class="back-split-left">
-        <div>
-          <div class="back-line-company">HELLBENDER DIGITAL</div>
-          <div class="back-line-name">JASON PERSINGER</div>
-          <p class="back-desc">Technical troubleshooting, web systems integration, and hands-on digital infrastructure.</p>
-        </div>
-        <div class="back-site-link">www.jasonpersinger.me</div>
-      </div>
-      <div class="back-split-right">
-        <div class="qr-box">
-          <svg viewBox="0 0 25 25" style="color: #ffffff;"><use href="#shared-qr" /></svg>
-        </div>
-        <div class="back-split-tag">SCAN TO CONNECT</div>
-      </div>
-    `;
-
-    // Back Face HTML - Proof 2: Cream Canvas + Salamander Orange Micro-Grid Pattern
-    const backGridHtml = `
-      <div class="back-grid-layout" style="padding: clamp(22px, 4vw, 34px) clamp(24px, 4.5vw, 38px);">
-        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+    // Generator for Back Face with custom Right-Panel Background
+    function createBackHtml(whiteHex) {
+      return `
+        <div class="back-split-left">
           <div>
             <div class="back-line-company">HELLBENDER DIGITAL</div>
             <div class="back-line-name">JASON PERSINGER</div>
@@ -666,27 +654,31 @@
           </div>
           <div class="back-site-link">www.jasonpersinger.me</div>
         </div>
-        <div class="qr-box">
-          <svg viewBox="0 0 25 25" style="color: #ffffff;"><use href="#shared-qr" /></svg>
+        <div class="back-split-right" style="background-color: ${whiteHex} !important;">
+          <div class="qr-box">
+            <svg viewBox="0 0 25 25" style="color: #ffffff;"><use href="#shared-qr" /></svg>
+          </div>
+          <div class="back-split-tag">SCAN TO CONNECT</div>
         </div>
-      </div>
-    `;
+      `;
+    }
 
-    function setBackTheme(theme) {
-      const flipperBack = document.getElementById('active-back');
-      const buttons = document.querySelectorAll('.tab-btn');
+    // Tab buttons initialization
+    const tabsContainer = document.getElementById('white-tabs');
+    whiteCandidates.forEach((cand, idx) => {
+      const btn = document.createElement('button');
+      btn.className = `tab-btn ${idx === 0 ? 'active' : ''}`;
+      btn.innerHTML = `<span class="tab-chip" style="background-color: ${cand.hex};"></span>${cand.hex}`;
+      btn.onclick = () => selectShade(cand);
+      tabsContainer.appendChild(btn);
+    });
 
-      buttons.forEach((btn, idx) => {
-        btn.classList.toggle('active', (theme === 'split' && idx === 0) || (theme === 'grid' && idx === 1));
+    function selectShade(candidate) {
+      currentWhite = candidate;
+      document.querySelectorAll('#white-tabs .tab-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', whiteCandidates[idx].hex === candidate.hex);
       });
-
-      if (theme === 'split') {
-        flipperBack.className = 'card-face card-back back-split';
-        flipperBack.innerHTML = backSplitHtml;
-      } else {
-        flipperBack.className = 'card-face card-back back-grid';
-        flipperBack.innerHTML = backGridHtml;
-      }
+      document.getElementById('active-back').innerHTML = createBackHtml(candidate.hex);
     }
 
     function flipCard() {
@@ -694,14 +686,34 @@
       flipper.classList.toggle('flipped');
     }
 
-    // Populate active and static gallery views
+    // Populate active flip card
     document.getElementById('active-front').innerHTML = frontHtml;
-    setBackTheme('split');
+    document.getElementById('active-back').innerHTML = createBackHtml(currentWhite.hex);
 
-    document.getElementById('static-front-1').innerHTML = frontHtml;
-    document.getElementById('static-back-1').innerHTML = backSplitHtml;
-    document.getElementById('static-front-2').innerHTML = frontHtml;
-    document.getElementById('static-back-2').innerHTML = backGridHtml;
+    // Populate gallery with all 6 variations
+    const galleryContainer = document.getElementById('shades-gallery');
+    whiteCandidates.forEach(cand => {
+      const item = document.createElement('div');
+      item.className = 'shade-card-item';
+      item.innerHTML = `
+        <div class="shade-header">
+          <div class="shade-meta">
+            <span class="shade-chip-lg" style="background-color: ${cand.hex};"></span>
+            <div>
+              <div class="shade-name">${cand.name}</div>
+            </div>
+            <span class="shade-hex">${cand.hex}</span>
+          </div>
+          <button class="shade-select-btn" onclick="selectShade(whiteCandidates.find(c => c.hex === '${cand.hex}'))">Preview in 3D</button>
+        </div>
+        <div class="static-card-box">
+          <div class="card-face card-back back-split" style="transform: none;">
+            ${createBackHtml(cand.hex)}
+          </div>
+        </div>
+      `;
+      galleryContainer.appendChild(item);
+    });
   </script>
 </body>
 </html>
