@@ -17,8 +17,8 @@
       /* Exact Color Identity */
       --c-slate: #111416;
       --c-orange: #e06e01;       /* Exact Salamander Orange */
-      --c-cream: #faf8f5;        /* Bright, crisp warm cream / ivory */
-      --c-cream-dim: #c5c1b6;    /* Subtle secondary cream */
+      --c-cream: #f7f2ea;        /* Rich, classic warm cream / ivory */
+      --c-cream-dim: #ded4c3;    /* Secondary warm cream tone */
       --card-radius: 8px;
     }
 
@@ -298,15 +298,15 @@
 
     /* ===================================================
        PROOF 1: TWO-TONE SPLIT BLOCK
-       Pure Crisp Cream/Ivory Left + Vivid Salamander Orange Right
+       Vivid Salamander Orange Left + Rich Warm Cream/Ivory Right
        =================================================== */
     .back-split {
-      background: var(--c-cream);
-      color: #111416;
+      background: var(--c-orange);
+      color: var(--c-cream);
       padding: 0 !important;
       display: grid !important;
       grid-template-columns: 1fr clamp(140px, 22vw, 185px);
-      border: 1px solid #e5dfd2;
+      border: 1px solid rgba(224, 110, 1, 0.4);
     }
 
     .back-split-left {
@@ -314,17 +314,18 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background: var(--c-cream);
+      background: var(--c-orange);
     }
 
     .back-split-right {
-      background: var(--c-orange);
+      background: var(--c-cream);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 16px;
       position: relative;
+      border-left: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .back-split-right .qr-box {
@@ -336,7 +337,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
     }
     .back-split-right .qr-box svg path {
       fill: #ffffff !important;
@@ -348,17 +349,17 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #ffffff;
+      color: #111416;
       margin-top: 10px;
     }
 
-    /* Single-line Headings on Back */
+    /* Single-line Headings on Back - Orange Ground */
     .back-line-company {
       font-family: var(--font-display);
       font-size: clamp(1.2rem, 2.3vw, 1.55rem);
       font-weight: 700;
       letter-spacing: -0.02em;
-      color: #111416;
+      color: var(--c-cream);
       margin: 0 0 2px;
       line-height: 1.15;
       white-space: nowrap;
@@ -368,7 +369,7 @@
       font-family: var(--font-display);
       font-size: clamp(0.78rem, 1.4vw, 0.92rem);
       font-weight: 700;
-      color: var(--c-orange);
+      color: #111416;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin: 0 0 12px;
@@ -377,7 +378,7 @@
 
     .back-desc {
       font-size: clamp(0.8rem, 1.35vw, 0.9rem);
-      color: #4a5459;
+      color: rgba(247, 242, 234, 0.92);
       line-height: 1.45;
       margin: 0 0 14px;
       max-width: 320px;
@@ -388,7 +389,7 @@
       font-family: var(--font-display);
       font-size: clamp(0.82rem, 1.4vw, 0.9rem);
       font-weight: 700;
-      color: #111416;
+      color: var(--c-cream);
       white-space: nowrap;
     }
 
@@ -523,7 +524,7 @@
     
     <!-- Tab Switcher -->
     <div class="tab-bar">
-      <button class="tab-btn active" onclick="setBackTheme('split')">Proof 1: Two-Tone Split Block (Ivory + Orange QR)</button>
+      <button class="tab-btn active" onclick="setBackTheme('split')">Proof 1: Two-Tone Split Block (Orange Left + Ivory QR Right)</button>
       <button class="tab-btn" onclick="setBackTheme('grid')">Proof 2: Ivory Canvas + Orange Micro-Dot Grid</button>
     </div>
 
@@ -571,7 +572,7 @@
     <!-- Proof 1 Row -->
     <div style="margin-bottom: 48px;">
       <div style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-orange); margin-bottom: 14px;">
-        PROOF 1: Two-Tone Split Block (Crisp Cream Left + Salamander Orange QR Panel Right)
+        PROOF 1: Two-Tone Split Block (Salamander Orange Left + Cream/Ivory QR Panel Right)
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
