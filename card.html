@@ -63,7 +63,7 @@
       padding: 5px;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      gap: 5px;
+      gap: 6px;
       margin-bottom: 22px;
       flex-wrap: wrap;
       justify-content: center;
@@ -71,9 +71,9 @@
 
     .tab-btn {
       font-family: var(--font-mono);
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 600;
-      padding: 7px 14px;
+      padding: 8px 16px;
       border-radius: 6px;
       border: 1px solid transparent;
       background: transparent;
@@ -81,7 +81,7 @@
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
       transition: all 0.2s ease;
     }
 
@@ -98,8 +98,8 @@
     }
 
     .tab-chip {
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       border-radius: 3px;
       border: 1px solid rgba(0, 0, 0, 0.25);
       display: inline-block;
@@ -139,16 +139,18 @@
       transform: translateY(-1px);
     }
 
-    /* --- 3D Flip Card Container --- */
+    /* --- 3D Flip Card Container with Exact Proportions --- */
     .stage {
       perspective: 1400px;
       width: min(650px, 94vw);
       aspect-ratio: 3.5 / 2;
+      position: relative;
       margin-bottom: 56px;
     }
 
     .card-flipper {
-      position: relative;
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       transform-style: preserve-3d;
@@ -164,6 +166,8 @@
     .card-face {
       position: absolute;
       inset: 0;
+      width: 100%;
+      height: 100%;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       border-radius: var(--card-radius);
@@ -248,8 +252,8 @@
 
     .front-middle {
       position: absolute;
-      right: clamp(24px, 5vw, 42px);
-      top: 42%;
+      right: clamp(28px, 5.5vw, 50px);
+      top: 50%;
       transform: translateY(-50%);
       z-index: 1;
       pointer-events: none;
@@ -380,24 +384,45 @@
       white-space: nowrap;
     }
 
+    /* Name in pure black #000000 */
     .back-line-name {
       font-family: var(--font-display);
       font-size: clamp(0.78rem, 1.4vw, 0.92rem);
-      font-weight: 700;
-      color: #111416;
+      font-weight: 800;
+      color: #000000 !important;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin: 0 0 12px;
       white-space: nowrap;
     }
 
-    .back-desc {
-      font-size: clamp(0.8rem, 1.35vw, 0.9rem);
-      color: rgba(255, 255, 255, 0.94);
-      line-height: 1.45;
+    /* Tasks covered in bullet points */
+    .back-tasks {
+      list-style: none;
+      padding: 0;
       margin: 0 0 14px;
-      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .back-tasks li {
+      font-size: clamp(0.78rem, 1.3vw, 0.88rem);
+      color: rgba(255, 255, 255, 0.95);
       font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-tasks li::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #000000;
+      flex-shrink: 0;
     }
 
     .back-site-link {
@@ -408,7 +433,7 @@
       white-space: nowrap;
     }
 
-    /* --- Side-by-Side Review Section for All 6 Shades --- */
+    /* --- Side-by-Side Review Section for All 4 Shades --- */
     .gallery-section {
       width: min(1120px, 95vw);
       margin-top: 40px;
@@ -557,9 +582,9 @@
 
   <header>
     <h1>Hellbender Digital // Business Card Proofs</h1>
-    <p class="subtitle">Concept 1: Two-Tone Split Card — Comparing 6 Requested White / Cream / Ivory Shades on the QR Panel.</p>
+    <p class="subtitle">Two-Tone Split Card — Comparing 4 Refined White / Ivory Shades on the QR Panel with pure black name & bulleted tasks.</p>
     
-    <!-- Tab Switcher for 6 Shades -->
+    <!-- Tab Switcher for 4 Shades -->
     <div class="tab-bar" id="white-tabs"></div>
 
     <!-- Action Toolbar -->
@@ -576,7 +601,7 @@
     </div>
   </header>
 
-  <!-- Interactive 3D Preview Stage -->
+  <!-- Interactive 3D Preview Stage (Exact 3.5" x 2" Ratio) -->
   <div class="stage" onclick="flipCard()">
     <div class="card-flipper" id="flipper">
 
@@ -598,26 +623,24 @@
     </defs>
   </svg>
 
-  <!-- Side-by-Side Review Section for All 6 Shades -->
+  <!-- Side-by-Side Review Section for All 4 Refined Shades -->
   <section class="gallery-section">
-    <h2 class="gallery-title">Side-by-Side Comparison // All 6 Requested White & Ivory Shades</h2>
-    <p class="gallery-sub">Review each shade on the right QR panel. Click "Preview in 3D" to load any shade onto the active card flipper above.</p>
+    <h2 class="gallery-title">Side-by-Side Comparison // 4 Refined White & Ivory Shades</h2>
+    <p class="gallery-sub">Review each shade on the right QR panel. Name is rendered in pure black (#000000) and service offerings are bulleted.</p>
 
     <div class="shades-grid" id="shades-gallery"></div>
   </section>
 
   <script>
-    // 6 Requested Color Candidates
+    // 4 Color Candidates
     const whiteCandidates = [
-      { id: 'FFEEDB', name: 'Warm Peach Ivory', hex: '#FFEEDB' },
       { id: 'F2E9DC', name: 'Warm Linen / Almond', hex: '#F2E9DC' },
-      { id: 'EAFDF8', name: 'Pale Mint Ice White', hex: '#EAFDF8' },
-      { id: 'FFFCFF', name: 'Crisp Magenta White', hex: '#FFFCFF' },
-      { id: 'EAEAEA', name: 'Studio Pearl Gray', hex: '#EAEAEA' },
-      { id: 'EFF1F3', name: 'Porcelain Cool White', hex: '#EFF1F3' }
+      { id: 'FAFFFD', name: 'Crisp Mint Pearl White', hex: '#FAFFFD' },
+      { id: 'F4F4F8', name: 'Ghost Whisper Cool White', hex: '#F4F4F8' },
+      { id: 'F4EBD9', name: 'Soft Vanilla Cream / Ivory', hex: '#F4EBD9' }
     ];
 
-    let currentWhite = whiteCandidates[0]; // Default to #FFEEDB
+    let currentWhite = whiteCandidates[0]; // Default to #F2E9DC
 
     // Front Face HTML
     const frontHtml = `
@@ -643,14 +666,18 @@
       </div>
     `;
 
-    // Generator for Back Face with custom Right-Panel Background
+    // Generator for Back Face with custom Right-Panel Background, Pure Black Name, and Bulleted Tasks
     function createBackHtml(whiteHex) {
       return `
         <div class="back-split-left">
           <div>
             <div class="back-line-company">HELLBENDER DIGITAL</div>
             <div class="back-line-name">JASON PERSINGER</div>
-            <p class="back-desc">Technical troubleshooting, web systems integration, and hands-on digital infrastructure.</p>
+            <ul class="back-tasks">
+              <li>Technical troubleshooting</li>
+              <li>Web systems integration</li>
+              <li>Hands-on digital infrastructure</li>
+            </ul>
           </div>
           <div class="back-site-link">www.jasonpersinger.me</div>
         </div>
@@ -690,7 +717,7 @@
     document.getElementById('active-front').innerHTML = frontHtml;
     document.getElementById('active-back').innerHTML = createBackHtml(currentWhite.hex);
 
-    // Populate gallery with all 6 variations
+    // Populate gallery with all 4 variations
     const galleryContainer = document.getElementById('shades-gallery');
     whiteCandidates.forEach(cand => {
       const item = document.createElement('div');
