@@ -488,6 +488,13 @@
       min-width: 0;
     }
 
+    .s2-name-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
     .s2-big-name {
       font-family: var(--font-condensed);
       font-size: clamp(1.8rem, 3.8vw, 3.2rem);
@@ -497,18 +504,21 @@
       text-transform: uppercase;
       color: #1a1714;
       white-space: nowrap;
+      text-align: center;
     }
 
     .s2-role-title {
       font-family: var(--font-display);
-      font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+      font-size: clamp(0.72rem, 1.25vw, 0.85rem);
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #5a5349;
-      margin-top: 10px;
-      padding-bottom: 10px;
+      margin-top: 8px;
+      padding-bottom: 8px;
       border-bottom: 1px solid #c0b7a8;
+      width: 100%;
+      text-align: center;
     }
 
     .s2-contact-table {
@@ -550,61 +560,48 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 2px 0;
+      align-items: center;
+      text-align: center;
+      padding: 6px 0;
+    }
+
+    .s2-back-center-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: auto 0;
     }
 
     .s2-back-heading {
       font-family: var(--font-condensed);
-      font-size: clamp(1.4rem, 2.7vw, 2.1rem);
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
       font-weight: 700;
       letter-spacing: 0.02em;
       color: #1a1714;
-      line-height: 1.02;
+      line-height: 0.96;
       text-transform: uppercase;
+      text-align: center;
     }
 
     .s2-back-sub {
       font-family: var(--font-display);
-      font-size: clamp(0.68rem, 1.15vw, 0.78rem);
+      font-size: clamp(0.82rem, 1.5vw, 1.05rem);
       font-weight: 700;
       color: var(--c-orange);
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-top: 3px;
-      margin-bottom: 10px;
-    }
-
-    .s2-back-tasks {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .s2-back-tasks li {
-      font-size: clamp(0.7rem, 1.2vw, 0.82rem);
-      color: #3b352e;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .s2-back-tasks li::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: var(--c-orange);
-      flex-shrink: 0;
+      margin-top: 10px;
+      text-align: center;
     }
 
     .s2-back-web {
       font-family: var(--font-mono);
-      font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+      font-size: clamp(0.72rem, 1.25vw, 0.85rem);
       font-weight: 700;
       color: #1a1714;
-      margin-top: 6px;
+      text-align: center;
     }
 
     .s2-back-right {
@@ -894,13 +891,12 @@
             </div>
             <div class="s2-left-meta">
               <div class="s2-meta-row"><span class="s2-meta-label">base</span><span class="s2-meta-val">Roanoke, VA</span></div>
-              <div class="s2-meta-row"><span class="s2-meta-label">craft</span><span class="s2-meta-val">Solutions Eng</span></div>
             </div>
           </div>
           <div class="s2-right-col">
-            <div>
+            <div class="s2-name-block">
               <div class="s2-big-name">JASON<br>PERSINGER</div>
-              <div class="s2-role-title">TECHNICAL SUPPORT ENGINEER</div>
+              <div class="s2-role-title">TECHNICAL SOLUTIONS</div>
             </div>
             <div class="s2-contact-table">
               <div class="s2-contact-row"><span class="s2-c-label">email</span><span class="s2-c-val">jason@hellbenderdigital.com</span></div>
@@ -916,14 +912,9 @@
       <div class="s2-card" style="width:100%; height:100%;">
         <div class="s2-back-layout">
           <div class="s2-back-left">
-            <div>
-              <div class="s2-back-heading">HELLBENDER DIGITAL</div>
+            <div class="s2-back-center-block">
+              <div class="s2-back-heading">HELLBENDER<br>DIGITAL</div>
               <div class="s2-back-sub">TECHNICAL SOLUTIONS</div>
-              <ul class="s2-back-tasks">
-                <li>Technical troubleshooting</li>
-                <li>Web systems integration</li>
-                <li>Hands-on digital infrastructure</li>
-              </ul>
             </div>
             <div class="s2-back-web">www.hellbenderdigital.com</div>
           </div>
