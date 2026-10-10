@@ -334,6 +334,27 @@
       flex-direction: column;
       justify-content: space-between;
       background: var(--c-orange);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .back-watermark {
+      position: absolute;
+      right: -10px;
+      bottom: -15px;
+      width: clamp(140px, 22vw, 185px);
+      height: auto;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      opacity: 0.13;
+      filter: brightness(0);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .back-left-content {
+      position: relative;
+      z-index: 2;
     }
 
     .back-split-right {
@@ -666,11 +687,12 @@
       </div>
     `;
 
-    // Generator for Back Face with custom Right-Panel Background, Pure Black Name, and Bulleted Tasks
+    // Generator for Back Face with subtle Salamander Watermark, Pure Black Name, and Bulleted Tasks
     function createBackHtml(whiteHex) {
       return `
         <div class="back-split-left">
-          <div>
+          <img class="back-watermark" src="salamander-transparent.png" alt="" aria-hidden="true">
+          <div class="back-left-content">
             <div class="back-line-company">HELLBENDER DIGITAL</div>
             <div class="back-line-name">JASON PERSINGER</div>
             <ul class="back-tasks">
@@ -679,7 +701,7 @@
               <li>Hands-on digital infrastructure</li>
             </ul>
           </div>
-          <div class="back-site-link">www.jasonpersinger.me</div>
+          <div class="back-site-link back-left-content">www.jasonpersinger.me</div>
         </div>
         <div class="back-split-right" style="background-color: ${whiteHex} !important;">
           <div class="qr-box">
