@@ -3,116 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hellbender Digital // Business Card Proofs</title>
+  <title>Hellbender Digital // Digital Business Card</title>
+  <meta name="description" content="Hellbender Digital — Digital business card and contact details for Jason Persinger.">
+  <link rel="icon" type="image/png" href="salamander-transparent.png">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Oswald:wght@600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-page: #0a0d0e;
-      --font-display: 'Space Grotesk', system-ui, sans-serif;
-      --font-condensed: 'Oswald', 'Space Grotesk', sans-serif;
-      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
-      --font-mono: 'Space Mono', monospace;
-      
-      --c-slate: #111416;
+      --bg-page: #0e1113;
+      --card-cream: #ebe4d5;
+      --card-dark: #0e1113;
+      --c-slate: #1a1714;
       --c-orange: #e06e01;
-      --c-ivory: #E3DACA;
-      --card-radius: 12px;
+      --c-orange-hover: #c75e00;
+      --c-muted: #877d70;
+      --c-border: #c0b7a8;
+      
+      --font-display: 'Oswald', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --card-radius: 14px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
       min-height: 100vh;
       background: var(--bg-page);
       color: #e2e8f0;
-      font-family: var(--font-body);
-      padding: 36px 20px 80px;
+      font-family: var(--font-sans);
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
+      padding: 40px 20px 48px;
+      -webkit-font-smoothing: antialiased;
     }
 
     header {
       text-align: center;
-      margin-bottom: 24px;
-      max-width: 800px;
+      margin-bottom: 32px;
+      max-width: 650px;
+    }
+
+    .brand-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-orange);
+      margin-bottom: 10px;
+    }
+    .brand-tag::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--c-orange);
     }
 
     h1 {
       font-family: var(--font-display);
-      font-size: 1.85rem;
+      font-size: clamp(2rem, 5vw, 2.75rem);
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 0 0 6px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
       color: #ffffff;
+      line-height: 1.05;
+      margin-bottom: 8px;
     }
 
     p.subtitle {
       font-size: 0.95rem;
-      color: #8b9ca3;
-      margin: 0 0 20px;
+      color: #94a3b8;
       line-height: 1.5;
     }
 
-    /* --- Concept Switcher Tabs --- */
-    .concept-tabs {
-      display: inline-flex;
-      background: #171b1e;
-      padding: 5px;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      gap: 6px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .concept-btn {
-      font-family: var(--font-display);
-      font-size: 0.86rem;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 6px;
-      border: 1px solid transparent;
-      background: transparent;
-      color: #8b9ca3;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s ease;
-    }
-
-    .concept-btn:hover {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .concept-btn.active {
-      background: #242a2f;
-      color: #ffffff;
-      border-color: var(--c-orange);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-    }
-
-    /* --- Action Controls --- */
+    /* Controls Toolbar */
     .controls {
       display: flex;
       gap: 12px;
-      margin-bottom: 28px;
+      margin-bottom: 36px;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     .action-btn {
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.12);
       background: #171c1f;
       color: #e2e8f0;
@@ -120,24 +112,42 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
       text-decoration: none;
     }
 
     .action-btn:hover {
-      background: #22282d;
+      background: #22292e;
       border-color: var(--c-orange);
       color: #ffffff;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
-    /* --- 3D Flip Card Container with Exact Proportions --- */
+    .action-btn.primary {
+      background: var(--c-orange);
+      border-color: var(--c-orange);
+      color: #ffffff;
+    }
+    .action-btn.primary:hover {
+      background: var(--c-orange-hover);
+    }
+
+    /* 3D Interactive Stage */
+    .stage-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
     .stage {
       perspective: 1400px;
-      width: min(650px, 94vw);
+      width: min(650px, 92vw);
       aspect-ratio: 3.5 / 2;
       position: relative;
-      margin-bottom: 56px;
+      cursor: pointer;
     }
 
     .card-flipper {
@@ -147,14 +157,12 @@
       height: 100%;
       transform-style: preserve-3d;
       transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-      cursor: pointer;
     }
 
     .card-flipper.flipped {
       transform: rotateY(180deg);
     }
 
-    /* Standard Card Face */
     .card-face {
       position: absolute;
       inset: 0;
@@ -163,250 +171,30 @@
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       border-radius: var(--card-radius);
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0,0,0,0.4);
       overflow: hidden;
       user-select: none;
+      background-color: var(--card-cream);
+      color: var(--c-slate);
+      padding: clamp(20px, 3.8vw, 32px) clamp(22px, 4.2vw, 36px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .card-back {
       transform: rotateY(180deg);
     }
 
-    /* ===================================================
-       STYLE 1: TWO-TONE SPLIT BLOCK (Approved Design)
-       =================================================== */
-    .s1-front {
-      background-color: var(--c-slate);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: clamp(22px, 4vw, 34px) clamp(26px, 5vw, 42px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-    }
-
-    .s1-front-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      position: relative;
-      z-index: 2;
-    }
-
-    .s1-company-tag {
-      font-family: var(--font-display);
-      font-size: clamp(0.72rem, 1.25vw, 0.82rem);
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--c-orange);
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .s1-company-tag::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--c-orange);
-    }
-
-    .s1-front h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.7vw, 1.95rem);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      margin: 3px 0 0;
-      color: #ffffff;
-      line-height: 1.15;
-    }
-
-    .s1-front-title {
-      font-size: clamp(0.72rem, 1.25vw, 0.82rem);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #94a3b8;
-      margin-top: 2px;
-    }
-
-    .s1-front-location {
+    .hint-text {
       font-family: var(--font-mono);
-      font-size: clamp(0.68rem, 1.15vw, 0.78rem);
+      font-size: 0.76rem;
       color: #64748b;
       letter-spacing: 0.05em;
     }
 
-    .s1-front-middle {
-      position: absolute;
-      right: clamp(28px, 5.5vw, 50px);
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .s1-salamander {
-      width: clamp(130px, 21vw, 175px);
-      height: auto;
-      image-rendering: pixelated;
-      image-rendering: crisp-edges;
-      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
-    }
-
-    .s1-front-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding-top: 16px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .s1-contact-items {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      font-size: clamp(0.78rem, 1.35vw, 0.88rem);
-      color: #cbd5e1;
-    }
-
-    .s1-website-badge {
-      font-family: var(--font-display);
-      font-size: clamp(0.8rem, 1.4vw, 0.92rem);
-      font-weight: 600;
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      padding: 6px 14px;
-      border-radius: 6px;
-      letter-spacing: 0.01em;
-    }
-
-    .s1-back {
-      background: var(--c-orange);
-      color: #ffffff;
-      display: grid !important;
-      grid-template-columns: 1fr clamp(140px, 22vw, 185px);
-      border: 1px solid rgba(224, 110, 1, 0.4);
-    }
-
-    .s1-back-left {
-      padding: clamp(22px, 4vw, 34px) clamp(22px, 4vw, 34px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: var(--c-orange);
-    }
-
-    .s1-back-company {
-      font-family: var(--font-display);
-      font-size: clamp(1.2rem, 2.3vw, 1.55rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #ffffff;
-      margin: 0 0 2px;
-      line-height: 1.15;
-      white-space: nowrap;
-    }
-
-    .s1-back-name {
-      font-family: var(--font-display);
-      font-size: clamp(0.78rem, 1.4vw, 0.92rem);
-      font-weight: 800;
-      color: #000000 !important;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin: 0 0 12px;
-      white-space: nowrap;
-    }
-
-    .s1-back-tasks {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .s1-back-tasks li {
-      font-size: clamp(0.78rem, 1.3vw, 0.88rem);
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .s1-back-tasks li::before {
-      content: '';
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #000000;
-      flex-shrink: 0;
-    }
-
-    .s1-back-site-link {
-      font-family: var(--font-display);
-      font-size: clamp(0.82rem, 1.4vw, 0.9rem);
-      font-weight: 700;
-      color: #ffffff;
-      white-space: nowrap;
-    }
-
-    .s1-back-right {
-      background-color: var(--c-ivory);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      position: relative;
-      border-left: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .s1-qr-box {
-      background: #111416;
-      padding: 9px;
-      border-radius: 8px;
-      width: clamp(105px, 15vw, 130px);
-      height: clamp(105px, 15vw, 130px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-    }
-    .s1-qr-box svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .s1-qr-tag {
-      font-family: var(--font-display);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #111416;
-      margin-top: 10px;
-    }
-
-    /* ===================================================
-       STYLE 2: REFERENCE POSTER / IVORY CARD (Imgur Tribute)
-       =================================================== */
-    .s2-card {
-      background-color: #ebe4d5;
-      color: #1a1714;
-      padding: clamp(20px, 3.8vw, 32px) clamp(22px, 4.2vw, 36px);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .s2-front-layout {
+    /* ========================================================
+       CARD FRONT LAYOUT
+       ======================================================== */
+    .front-layout {
       width: 100%;
       height: 100%;
       display: grid;
@@ -414,16 +202,16 @@
       gap: clamp(16px, 3vw, 28px);
     }
 
-    .s2-left-col {
+    .left-col {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .s2-brand-badge {
-      font-family: var(--font-display);
+    .card-brand-badge {
+      font-family: var(--font-sans);
       font-size: clamp(0.68rem, 1.15vw, 0.78rem);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--c-orange);
@@ -432,7 +220,7 @@
       gap: 7px;
       white-space: nowrap;
     }
-    .s2-brand-badge::before {
+    .card-brand-badge::before {
       content: '';
       width: 6px;
       height: 6px;
@@ -441,46 +229,41 @@
       flex-shrink: 0;
     }
 
-    .s2-avatar-box {
+    .avatar-box {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background-color: #0e1113;
+      background-color: var(--card-dark);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     }
-    .s2-avatar-box img {
+    .avatar-box img {
       width: 72%;
       height: auto;
       image-rendering: pixelated;
-      image-rendering: crisp-edges;
     }
 
-    .s2-left-meta {
+    .left-meta {
       font-family: var(--font-mono);
       font-size: clamp(0.68rem, 1.15vw, 0.8rem);
       display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-    .s2-meta-row {
-      display: flex;
       gap: 10px;
+      align-items: baseline;
     }
-    .s2-meta-label {
-      color: #877d70;
+    .meta-label {
+      color: var(--c-muted);
       width: 40px;
       flex-shrink: 0;
     }
-    .s2-meta-val {
-      color: #1a1714;
+    .meta-val {
+      color: var(--c-slate);
       font-weight: 700;
       white-space: nowrap;
     }
 
-    .s2-right-col {
+    .right-col {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -488,40 +271,40 @@
       min-width: 0;
     }
 
-    .s2-name-block {
+    .name-block {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
 
-    .s2-big-name {
-      font-family: var(--font-condensed);
+    .big-name {
+      font-family: var(--font-display);
       font-size: clamp(1.8rem, 3.8vw, 3.2rem);
       font-weight: 700;
       line-height: 0.94;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: #1a1714;
+      color: var(--c-slate);
       white-space: nowrap;
       text-align: center;
     }
 
-    .s2-role-title {
-      font-family: var(--font-display);
+    .role-title {
+      font-family: var(--font-sans);
       font-size: clamp(0.72rem, 1.25vw, 0.85rem);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #5a5349;
       margin-top: 8px;
       padding-bottom: 8px;
-      border-bottom: 1px solid #c0b7a8;
+      border-bottom: 1px solid var(--c-border);
       width: 100%;
       text-align: center;
     }
 
-    .s2-contact-table {
+    .contact-table {
       font-family: var(--font-mono);
       font-size: clamp(0.68rem, 1.18vw, 0.8rem);
       display: flex;
@@ -529,26 +312,28 @@
       gap: 5px;
     }
 
-    .s2-contact-row {
+    .contact-row {
       display: flex;
       gap: 12px;
       align-items: baseline;
       white-space: nowrap;
     }
-    .s2-c-label {
-      color: #877d70;
+    .c-label {
+      color: var(--c-muted);
       width: 38px;
       font-size: clamp(0.64rem, 1.1vw, 0.76rem);
       flex-shrink: 0;
     }
-    .s2-c-val {
-      color: #1a1714;
+    .c-val {
+      color: var(--c-slate);
       font-weight: 700;
       letter-spacing: -0.01em;
     }
 
-    /* Style 2 Back */
-    .s2-back-layout {
+    /* ========================================================
+       CARD BACK LAYOUT
+       ======================================================== */
+    .back-layout {
       width: 100%;
       height: 100%;
       display: grid;
@@ -556,7 +341,7 @@
       gap: clamp(16px, 3vw, 28px);
     }
 
-    .s2-back-left {
+    .back-left {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -565,7 +350,7 @@
       padding: 6px 0;
     }
 
-    .s2-back-center-block {
+    .brand-center-block {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -574,21 +359,21 @@
       margin: auto 0;
     }
 
-    .s2-back-heading {
-      font-family: var(--font-condensed);
+    .back-heading {
+      font-family: var(--font-display);
       font-size: clamp(1.9rem, 4vw, 2.9rem);
       font-weight: 700;
       letter-spacing: 0.02em;
-      color: #1a1714;
+      color: var(--c-slate);
       line-height: 0.96;
       text-transform: uppercase;
       text-align: center;
     }
 
-    .s2-back-sub {
-      font-family: var(--font-display);
+    .back-sub {
+      font-family: var(--font-sans);
       font-size: clamp(0.82rem, 1.5vw, 1.05rem);
-      font-weight: 700;
+      font-weight: 800;
       color: var(--c-orange);
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -596,190 +381,96 @@
       text-align: center;
     }
 
-    .s2-back-web {
+    .back-web {
       font-family: var(--font-mono);
       font-size: clamp(0.72rem, 1.25vw, 0.85rem);
       font-weight: 700;
-      color: #1a1714;
+      color: var(--c-slate);
       text-align: center;
     }
 
-    .s2-back-right {
+    .back-right {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #0e1113;
+      background-color: var(--card-dark);
       border-radius: 12px;
       padding: 16px;
       color: #ffffff;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     }
-    .s2-back-right svg {
+    .back-right svg {
       width: 80%;
       height: auto;
       max-height: 80%;
+      color: #ffffff;
     }
-    .s2-qr-label {
-      font-family: var(--font-display);
+    .qr-label {
+      font-family: var(--font-sans);
       font-size: 0.62rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.12em;
       color: var(--c-orange);
       margin-top: 10px;
       text-transform: uppercase;
     }
 
-    /* --- Gallery Comparison Grid --- */
-    .gallery-section {
-      width: min(1120px, 95vw);
-      margin-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 40px;
-    }
-
-    .gallery-title {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0 0 6px;
-      text-align: center;
-    }
-    .gallery-sub {
-      font-size: 0.92rem;
-      color: #8b9ca3;
-      text-align: center;
-      margin: 0 0 34px;
-    }
-
-    .comparison-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-    }
-
-    .design-block {
-      background: #14181b;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 24px;
-    }
-
-    .design-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .design-title {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .pair-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    @media (max-width: 780px) {
-      .pair-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .card-slot {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .slot-label {
+    /* Footer */
+    footer {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: #8b9ca3;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      display: flex;
-      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #64748b;
+      text-align: center;
+    }
+    footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.15s ease;
+    }
+    footer a:hover {
+      color: var(--c-orange);
     }
 
-    .static-card-box {
-      aspect-ratio: 3.5 / 2;
-      width: 100%;
-      position: relative;
-    }
-    .static-card-box .card-face {
-      position: absolute;
-      inset: 0;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Print & Export Rules */
+    /* Print Styles */
     @media print {
       body {
-        background: #ffffff !important;
+        background: none !important;
         padding: 0 !important;
       }
-      header, .gallery-section, .controls, .concept-tabs {
+      header, .controls, .hint-text, footer {
         display: none !important;
       }
       .stage {
-        display: none !important;
+        width: 3.5in !important;
+        height: 2.0in !important;
+        perspective: none !important;
+        margin: 0 !important;
+      }
+      .card-flipper {
+        position: static !important;
+        transform: none !important;
       }
       .card-face {
         position: relative !important;
-        width: 3.5in !important;
-        height: 2in !important;
         page-break-after: always;
-        border-radius: 0 !important;
+        width: 3.5in !important;
+        height: 2.0in !important;
         box-shadow: none !important;
-        padding: 0.22in 0.26in !important;
+        border: none !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+      }
+      .card-back {
+        transform: none !important;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Hellbender Digital // Business Card Proofs</h1>
-    <p class="subtitle">Compare the Approved Two-Tone Split Card and the Reference Poster / Ivory Tribute.</p>
-    
-    <!-- Tab Switcher -->
-    <div class="concept-tabs">
-      <button class="concept-btn active" onclick="selectDesign('style1')">Design 1: Two-Tone Split Block (Approved)</button>
-      <button class="concept-btn" onclick="selectDesign('style2')">Design 2: Reference Ivory Poster (Clean Tribute)</button>
-    </div>
-
-    <!-- Action Toolbar -->
-    <div class="controls">
-      <button class="action-btn" onclick="flipCard()">
-        <span>🔄 Flip Active Card (Front / Back)</span>
-      </button>
-      <button class="action-btn" onclick="window.print()">
-        <span>🖨️ Print / Export PDF</span>
-      </button>
-      <a class="action-btn" href="/" target="_blank">
-        <span>🌐 View Portfolio</span>
-      </a>
-    </div>
-  </header>
-
-  <!-- Interactive 3D Preview Stage (Exact 3.5" x 2" Ratio) -->
-  <div class="stage" onclick="flipCard()">
-    <div class="card-flipper" id="flipper">
-      <div class="card-face" id="active-front"></div>
-      <div class="card-face card-back" id="active-back"></div>
-    </div>
-  </div>
-
-  <!-- Shared Vector QR Code -->
+  <!-- Shared Vector QR Definition -->
   <svg style="display: none;">
     <defs>
       <g id="shared-qr">
@@ -788,176 +479,94 @@
     </defs>
   </svg>
 
-  <!-- Side-by-Side Review Section for Both Complete Designs -->
-  <section class="gallery-section">
-    <h2 class="gallery-title">Side-by-Side Comparison // Both Complete Designs</h2>
-    <p class="gallery-sub">Compare Front & Back faces of both designs. Both use approved content: www.hellbenderdigital.com & pure black name.</p>
+  <header>
+    <div class="brand-tag">Hellbender Digital</div>
+    <h1>Business Card Proof</h1>
+    <p class="subtitle">Official 3.5" × 2.0" Ivory Poster layout for Jason Persinger.</p>
+  </header>
 
-    <div class="comparison-grid">
-      <!-- Design 1: Approved Two-Tone Split Block -->
-      <div class="design-block">
-        <div class="design-header">
-          <div class="design-title">Design 1: Two-Tone Split Block (Slate Ground + Orange / #E3DACA Split)</div>
-          <button class="action-btn" style="padding: 4px 12px; font-size: 0.76rem;" onclick="selectDesign('style1')">Preview in 3D</button>
-        </div>
-        <div class="pair-grid">
-          <div class="card-slot">
-            <div class="slot-label"><span>Front Face</span><span>3.5" × 2"</span></div>
-            <div class="static-card-box"><div class="card-face" id="d1-static-front"></div></div>
-          </div>
-          <div class="card-slot">
-            <div class="slot-label"><span>Back Face</span><span>3.5" × 2"</span></div>
-            <div class="static-card-box"><div class="card-face card-back" style="transform: none;" id="d1-static-back"></div></div>
-          </div>
-        </div>
-      </div>
+  <!-- Controls Toolbar -->
+  <div class="controls">
+    <button class="action-btn primary" onclick="flipCard()">
+      <span>🔄 Flip Card (Front / Back)</span>
+    </button>
+    <a class="action-btn" href="https://www.hellbenderdigital.com" target="_blank" rel="noopener">
+      <span>🌐 Hellbender Digital</span>
+    </a>
+    <button class="action-btn" onclick="window.print()">
+      <span>🖨️ Print / PDF</span>
+    </button>
+    <a class="action-btn" href="/" target="_blank">
+      <span>👤 Founder Portfolio</span>
+    </a>
+  </div>
 
-      <!-- Design 2: Reference Ivory Poster -->
-      <div class="design-block">
-        <div class="design-header">
-          <div class="design-title">Design 2: Reference Ivory Poster (Tribute to Imgur Layout, Non-Techy)</div>
-          <button class="action-btn" style="padding: 4px 12px; font-size: 0.76rem;" onclick="selectDesign('style2')">Preview in 3D</button>
-        </div>
-        <div class="pair-grid">
-          <div class="card-slot">
-            <div class="slot-label"><span>Front Face</span><span>3.5" × 2"</span></div>
-            <div class="static-card-box"><div class="card-face" id="d2-static-front"></div></div>
+  <!-- Interactive 3D Card Stage -->
+  <div class="stage-wrapper">
+    <div class="stage" onclick="flipCard()" title="Click or tap to flip card">
+      <div class="card-flipper" id="flipper">
+
+        <!-- FRONT FACE -->
+        <div class="card-face">
+          <div class="front-layout">
+            <div class="left-col">
+              <div class="card-brand-badge">HELLBENDER DIGITAL</div>
+              <div class="avatar-box">
+                <img src="salamander-transparent.png" alt="Hellbender Salamander">
+              </div>
+              <div class="left-meta">
+                <span class="meta-label">base</span>
+                <span class="meta-val">Roanoke, VA</span>
+              </div>
+            </div>
+
+            <div class="right-col">
+              <div class="name-block">
+                <div class="big-name">JASON<br>PERSINGER</div>
+                <div class="role-title">TECHNICAL SOLUTIONS</div>
+              </div>
+              <div class="contact-table">
+                <div class="contact-row"><span class="c-label">email</span><span class="c-val">jason@hellbenderdigital.com</span></div>
+                <div class="contact-row"><span class="c-label">phone</span><span class="c-val">(540) 394-8222</span></div>
+                <div class="contact-row"><span class="c-label">web</span><span class="c-val">www.hellbenderdigital.com</span></div>
+              </div>
+            </div>
           </div>
-          <div class="card-slot">
-            <div class="slot-label"><span>Back Face</span><span>3.5" × 2"</span></div>
-            <div class="static-card-box"><div class="card-face card-back" style="transform: none;" id="d2-static-back"></div></div>
+        </div>
+
+        <!-- BACK FACE -->
+        <div class="card-face card-back">
+          <div class="back-layout">
+            <div class="back-left">
+              <div class="brand-center-block">
+                <div class="back-heading">HELLBENDER<br>DIGITAL</div>
+                <div class="back-sub">TECHNICAL SOLUTIONS</div>
+              </div>
+              <div class="back-web">www.hellbenderdigital.com</div>
+            </div>
+
+            <div class="back-right">
+              <svg viewBox="0 0 2.9 2.9"><use href="#shared-qr" /></svg>
+              <div class="qr-label">SCAN TO CONNECT</div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
-  </section>
+    <div class="hint-text">👆 Click or tap anywhere on the card to flip</div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Hellbender Digital // Roanoke, Virginia</div>
+  </footer>
 
   <script>
-    // Templates for Design 1 (Approved Two-Tone Split)
-    const style1FrontHtml = `
-      <div class="s1-front" style="width:100%; height:100%;">
-        <div class="s1-front-top">
-          <div>
-            <div class="s1-company-tag">HELLBENDER DIGITAL</div>
-            <h2>Jason Persinger</h2>
-            <div class="s1-front-title">Technical Solutions</div>
-          </div>
-          <div class="s1-front-location">Roanoke, VA</div>
-        </div>
-        <div class="s1-front-middle">
-          <img class="s1-salamander" src="salamander-transparent.png" alt="Hellbender Salamander">
-        </div>
-        <div class="s1-front-bottom">
-          <div class="s1-contact-items">
-            <div>(540) 394-8222</div>
-            <div>jason@hellbenderdigital.com</div>
-          </div>
-          <div class="s1-website-badge">www.hellbenderdigital.com</div>
-        </div>
-      </div>
-    `;
-
-    const style1BackHtml = `
-      <div class="s1-back" style="width:100%; height:100%;">
-        <div class="s1-back-left">
-          <div>
-            <div class="s1-back-company">HELLBENDER DIGITAL</div>
-            <div class="s1-back-name">JASON PERSINGER</div>
-            <ul class="s1-back-tasks">
-              <li>Technical troubleshooting</li>
-              <li>Web systems integration</li>
-              <li>Hands-on digital infrastructure</li>
-            </ul>
-          </div>
-          <div class="s1-back-site-link">www.hellbenderdigital.com</div>
-        </div>
-        <div class="s1-back-right">
-          <div class="s1-qr-box">
-            <svg viewBox="0 0 2.9 2.9" style="color: #ffffff;"><use href="#shared-qr" /></svg>
-          </div>
-          <div class="s1-qr-tag">SCAN TO CONNECT</div>
-        </div>
-      </div>
-    `;
-
-    // Templates for Design 2 (Reference Ivory Poster Tribute)
-    const style2FrontHtml = `
-      <div class="s2-card" style="width:100%; height:100%;">
-        <div class="s2-front-layout">
-          <div class="s2-left-col">
-            <div class="s2-brand-badge">HELLBENDER DIGITAL</div>
-            <div class="s2-avatar-box">
-              <img src="salamander-transparent.png" alt="Hellbender Salamander">
-            </div>
-            <div class="s2-left-meta">
-              <div class="s2-meta-row"><span class="s2-meta-label">base</span><span class="s2-meta-val">Roanoke, VA</span></div>
-            </div>
-          </div>
-          <div class="s2-right-col">
-            <div class="s2-name-block">
-              <div class="s2-big-name">JASON<br>PERSINGER</div>
-              <div class="s2-role-title">TECHNICAL SOLUTIONS</div>
-            </div>
-            <div class="s2-contact-table">
-              <div class="s2-contact-row"><span class="s2-c-label">email</span><span class="s2-c-val">jason@hellbenderdigital.com</span></div>
-              <div class="s2-contact-row"><span class="s2-c-label">phone</span><span class="s2-c-val">(540) 394-8222</span></div>
-              <div class="s2-contact-row"><span class="s2-c-label">web</span><span class="s2-c-val">www.hellbenderdigital.com</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    const style2BackHtml = `
-      <div class="s2-card" style="width:100%; height:100%;">
-        <div class="s2-back-layout">
-          <div class="s2-back-left">
-            <div class="s2-back-center-block">
-              <div class="s2-back-heading">HELLBENDER<br>DIGITAL</div>
-              <div class="s2-back-sub">TECHNICAL SOLUTIONS</div>
-            </div>
-            <div class="s2-back-web">www.hellbenderdigital.com</div>
-          </div>
-          <div class="s2-back-right">
-            <svg viewBox="0 0 2.9 2.9" style="color: #ffffff;"><use href="#shared-qr" /></svg>
-            <div class="s2-qr-label">SCAN TO CONNECT</div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    let activeDesign = 'style1';
-
-    function selectDesign(design) {
-      activeDesign = design;
-      document.querySelectorAll('.concept-btn').forEach((btn, idx) => {
-        btn.classList.toggle('active', (design === 'style1' && idx === 0) || (design === 'style2' && idx === 1));
-      });
-
-      const frontEl = document.getElementById('active-front');
-      const backEl = document.getElementById('active-back');
-
-      if (design === 'style1') {
-        frontEl.innerHTML = style1FrontHtml;
-        backEl.innerHTML = style1BackHtml;
-      } else {
-        frontEl.innerHTML = style2FrontHtml;
-        backEl.innerHTML = style2BackHtml;
-      }
-    }
-
     function flipCard() {
       const flipper = document.getElementById('flipper');
       flipper.classList.toggle('flipped');
     }
-
-    // Initialize Active Card & Static Galleries
-    selectDesign('style1');
-
-    document.getElementById('d1-static-front').innerHTML = style1FrontHtml;
-    document.getElementById('d1-static-back').innerHTML = style1BackHtml;
-    document.getElementById('d2-static-front').innerHTML = style2FrontHtml;
-    document.getElementById('d2-static-back').innerHTML = style2BackHtml;
   </script>
+
 </body>
 </html>
