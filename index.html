@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="salamander">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jason Persinger — Technical Support Engineer and builder of embedded DSP hardware, self-hosted streaming stacks, and modern web tools.">
-  <title>Jason Persinger | Technical Support Engineer & Builder</title>
+  <meta name="description" content="Jason Persinger — IT & Technical Support Professional, hardware diagnostician, and builder of Linux systems, ESP32 telemetry appliances, and self-hosted infrastructure in Roanoke, VA.">
+  <title>Jason Persinger | IT & Technical Support · Systems & Hardware</title>
+  <link rel="icon" type="image/png" href="salamander-transparent.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="/">
-        <span class="brand-glyph">⬡</span> JASON PERSINGER
+        <span class="brand-glyph">⬡</span>
+        <span class="brand-text">JASON PERSINGER</span>
+        <span class="brand-sub">// RVA</span>
       </a>
+
       <div class="nav-links">
-        <a href="#projects">projects</a>
-        <a href="#experience">experience</a>
-        <a href="#homelab">homelab</a>
-        <a href="#connect">connect</a>
+        <a href="#experience"><span class="nav-idx">01.</span>experience</a>
+        <a href="#projects"><span class="nav-idx">02.</span>projects</a>
+        <a href="#stack"><span class="nav-idx">03.</span>stack</a>
+        <a href="#homelab"><span class="nav-idx">04.</span>homelab</a>
+        <a href="#connect"><span class="nav-idx">05.</span>connect</a>
         <a href="https://github.com/jasonpersinger" target="_blank" rel="noopener noreferrer" class="nav-external">github ↗</a>
       </div>
+
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark and light theme">
+        <span class="theme-toggle-dot"></span>
+        <span id="theme-toggle-label">THEME: DARK</span>
+      </button>
     </nav>
   </header>
 
@@ -32,94 +42,168 @@
       <div class="hero-copy">
         <div class="status-pill">
           <span class="status-dot"></span>
-          <span>AVAILABLE FOR SELECT ENGINEERING & SUPPORT ROLES</span>
+          <span>AVAILABLE FOR IT OPERATIONS &amp; TECHNICAL SUPPORT ROLES · ROANOKE, VA</span>
         </div>
         <h1 id="hero-title">
           Technical support,<br>
           Linux systems,<br>
-          <span class="highlight">& self-hosted tools.</span>
+          <span class="highlight">&amp; hands-on hardware.</span>
         </h1>
         <p class="intro">
-          I'm a Technical Support Engineer and hands-on builder based in Roanoke, VA. 
-          I bridge enterprise support escalations and root-cause analysis with Linux systems, modern web tools, and autonomous self-hosted infrastructure.
+          Support professional with 5+ years of technical support, escalation ownership, and team leadership, plus hands-on hardware repair, Linux systems administration, and self-hosted network infrastructure.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#projects">View featured projects</a>
-          <a class="button" href="/PersingerJasonResume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+          <a class="button" href="/PersingerJasonResume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF) ↗</a>
           <a class="button" href="tel:+15403948222">📞 (540) 394-8222</a>
-          <a class="button outline" href="mailto:jason.persinger@gmail.com">Get in touch</a>
+          <a class="button outline" href="mailto:jason.persinger@gmail.com">✉️ Get in touch</a>
         </div>
       </div>
 
-      <aside class="profile-card" aria-label="Profile summary">
-        <div class="profile-card-header">
-          <div class="window-controls">
-            <span class="win-btn close"></span>
-            <span class="win-btn min"></span>
-            <span class="win-btn max"></span>
-          </div>
-          <span class="terminal-title">node://voidbox</span>
-        </div>
+      <aside class="profile-card" aria-label="System & operator summary">
         <div class="profile-card-body">
           <div class="profile-header">
-            <img class="avatar" src="https://avatars.githubusercontent.com/u/22330057?v=4" alt="Jason Persinger GitHub avatar">
+            <img class="avatar" src="salamander-avatar.png" alt="Jason Persinger Salamander emblem">
             <div>
               <div class="profile-name">Jason Persinger</div>
-              <div class="profile-meta">Roanoke, Virginia</div>
+              <div class="profile-meta">IT Support Technician &amp; Builder</div>
             </div>
           </div>
           <dl class="stats">
             <div>
-              <dt>Discipline</dt>
-              <dd>Technical Support · Linux Administration · Hardware & IoT</dd>
+              <dt>01 // Discipline</dt>
+              <dd>IT &amp; Technical Support · Hardware Repair · Linux Ops</dd>
             </div>
             <div>
-              <dt>Core Stack</dt>
-              <dd>Linux · Docker · C++ · TypeScript · Bash</dd>
+              <dt>02 // Core Stack</dt>
+              <dd>Windows 10/11 · Linux · Docker · Python · Bash · C++</dd>
             </div>
             <div>
-              <dt>Homelab Fleet</dt>
-              <dd>voidbox · voidberry · voidframe (Mesh)</dd>
+              <dt>03 // Homelab Fleet</dt>
+              <dd>voidbox · voidberry · voidframe (Tailscale Mesh)</dd>
             </div>
             <div>
-              <dt>Specialization</dt>
-              <dd>Root-cause triage, system telemetry, ESP32 appliances</dd>
+              <dt>04 // Focus</dt>
+              <dd>Escalations, workstation recovery, network telemetry</dd>
             </div>
           </dl>
         </div>
       </aside>
     </section>
 
-    <!-- SELECT FEATURED PROJECTS -->
+    <!-- 01 / PROFESSIONAL EXPERIENCE -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <div class="section-index">
+          <span class="sec-num">01/</span>
+          <span class="sec-tag">WORK</span>
+        </div>
+        <div class="section-title-group">
+          <h2 id="experience-title">Professional Experience</h2>
+          <p class="section-subtitle">5+ years of technical support, escalation ownership, and team leadership, plus commercial and residential hardware repair.</p>
+        </div>
+      </div>
+
+      <div class="experience-layout">
+        <div class="experience-sidebar">
+          <p class="experience-lede">
+            Known for clear documentation, patient user training at every comfort level, and escalations that arrive with the evidence already gathered.
+          </p>
+          <div class="experience-cta">
+            <a class="button primary full-width" href="/PersingerJasonResume.pdf" target="_blank" rel="noopener noreferrer">Download Resume (PDF) ↗</a>
+            <a class="button full-width" href="tel:+15403948222">📞 (540) 394-8222</a>
+            <a class="button full-width" href="mailto:jason.persinger@gmail.com">✉️ jason.persinger@gmail.com</a>
+          </div>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-dates">AUG 2025 – PRESENT</span>
+              <span class="timeline-loc">Roanoke, VA · pixelpatcher.com</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Owner &amp; Technician · <span class="company-accent">Pixel Patcher</span></h3>
+              <p>
+                Diagnose and repair desktops and laptops on-site for residential and commercial clients across the Roanoke Valley, covering hardware faults, failing drives, and OS issues. 
+                Perform SSD/HDD/RAM upgrades with drive cloning and pre-service backups, restore commercial workstations around business hours, and operate a self-hosted RustDesk relay for secure remote sessions.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-dates">JAN 2023 – JUL 2026</span>
+              <span class="timeline-loc">Denver, CO (Remote)</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Software Support Analyst · <span class="company-accent">AbsenceSoft</span></h3>
+              <p>
+                Owned a variety of technical issues for enterprise customers, tracing issues across application workflows, configuration, logs, and third-party integrations to root cause. 
+                Escalated defects through Jira with reproducible steps, authored troubleshooting runbooks and KB articles, and built internal Claude API tools for ticket triage and escalation packaging.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-dates">JUL 2021 – DEC 2022</span>
+              <span class="timeline-loc">San Francisco, CA (Remote)</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Support Team Lead · <span class="company-accent">Binance.US</span></h3>
+              <p>
+                Led a team of ~8 support analysts handling escalated, time-sensitive cases on a regulated US exchange, cutting average ticket resolution time by 65%. 
+                Mentored analysts through structured case review and built the onboarding programs and knowledge base used for day-to-day troubleshooting.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-dates">NOV 2018 – JUN 2021</span>
+              <span class="timeline-loc">Roanoke, VA</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Implementation Project Manager &amp; Online Solution Specialist · <span class="company-accent">PowerSchool</span></h3>
+              <p>
+                Managed SaaS rollouts for K-12 school districts from configuration through go-live, working with district IT and internal engineering to resolve integration issues and training administrators, teachers, and IT staff across technical comfort levels.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 02 / FEATURED PROJECTS -->
     <section class="section" id="projects" aria-labelledby="featured-title">
       <div class="section-heading">
-        <div>
-          <p class="eyebrow">curated selection</p>
-          <h2 id="featured-title">Featured Projects</h2>
+        <div class="section-index">
+          <span class="sec-num">02/</span>
+          <span class="sec-tag">BUILD</span>
         </div>
-        <p class="section-subtitle">Five select projects spanning hardware appliances, audio DSP synthesis, self-hosted streaming, and Linux tooling.</p>
+        <div class="section-title-group">
+          <h2 id="featured-title">Featured Projects</h2>
+          <p class="section-subtitle">Select builds spanning embedded synthesizer firmware, network telemetry appliances, automated civic data pipelines, and self-hosted broadcast infrastructure.</p>
+        </div>
       </div>
 
       <div class="project-grid">
 
         <!-- 1. GHOULBOX -->
-        <article class="project-card featured-large">
+        <article class="project-card">
           <div class="project-header">
             <div class="project-meta-strip">
-              <span class="project-badge accent-amber">Synthesizer Firmware</span>
-              <span class="project-tag">[ C / C++ · WebUSB · FM Synthesis ]</span>
+              <span class="project-badge accent-primary">01 · Synthesizer Firmware</span>
+              <span class="project-tag">[ C / C++ · WebUSB · DSP ]</span>
             </div>
-            <div class="project-status">v1.0 Live</div>
+            <div class="project-status">v2.3.2 · 68★</div>
           </div>
           <h3>GHOULBOX</h3>
           <p class="project-lead">
-            Open-source dungeon-synth firmware and custom audio engine for the M-VAVE FM-1 pocket synthesizer.
+            Open-source dungeon-synth firmware, custom DSP engine, and browser WebUSB flasher for the M-VAVE FM-1 pocket synthesizer.
           </p>
           <p class="project-desc">
-            Engineered on top of Felucca to convert portable hardware into a dedicated medieval ambient instrument: 
-            features a physical hurdy-gurdy model with buzz trompette, cathedral hall reverb extending to 12s decay, 
-            worn-cassette tape saturation stage, 36 custom atmospheric voices, and a retro-RPG pixel UI with sword cursor. 
-            Includes a direct WebUSB browser-based flasher for zero-install firmware deployment.
+            Engineered on top of Felucca to transform portable hardware into a dedicated medieval ambient instrument: features a physical hurdy-gurdy model with buzz trompette, 12-second cathedral hall reverb, worn-cassette tape saturation, 59 curated atmospheric voices, and a retro-RPG pixel UI. Includes a zero-install WebUSB browser flasher and an illustrated v2.3.2 operator manual.
           </p>
           <div class="project-tech-pills">
             <span>M-VAVE FM-1</span>
@@ -129,17 +213,17 @@
             <span>FM Engine</span>
           </div>
           <div class="project-links">
-            <a class="button action-btn" href="https://jasonpersinger.github.io/ghoulbox-fm1-dungeon-synth/" target="_blank" rel="noopener noreferrer">Launch Web Installer ↗</a>
-            <a class="button action-btn secondary" href="https://github.com/jasonpersinger/ghoulbox-fm1-dungeon-synth" target="_blank" rel="noopener noreferrer">Source Code</a>
+            <a class="button action-btn primary" href="https://jasonpersinger.github.io/ghoulbox-fm1-dungeon-synth/" target="_blank" rel="noopener noreferrer">Launch Web Installer ↗</a>
+            <a class="button action-btn secondary" href="https://github.com/jasonpersinger/ghoulbox-fm1-dungeon-synth" target="_blank" rel="noopener noreferrer">Source Code (68★)</a>
           </div>
         </article>
 
         <!-- 2. PiPulse -->
-        <article class="project-card featured-large">
+        <article class="project-card">
           <div class="project-header">
             <div class="project-meta-strip">
-              <span class="project-badge accent-emerald">Hardware Appliance</span>
-              <span class="project-tag">[ C++ · ESP32 · Cheap Yellow Display ]</span>
+              <span class="project-badge accent-secondary">02 · Hardware Appliance</span>
+              <span class="project-tag">[ C++ · ESP32 · REST API ]</span>
             </div>
             <div class="project-status">Active Build</div>
           </div>
@@ -148,12 +232,11 @@
             Dedicated ESP32 touchscreen hardware appliance for real-time Pi-hole v6 network telemetry.
           </p>
           <p class="project-desc">
-            Custom firmware designed for the ESP32-2432S028R (CYD) 2.8" color touchscreen. 
-            Directly polls the local Pi-hole REST API over secure WiFi, providing persistent desktop glanceability 
-            for network DNS block ratios, query frequency charts, gravity blocklist health, and active device telemetry across multi-slide views.
+            Custom C++ firmware built for the ESP32-2432S028R (CYD) 2.8" color touchscreen. 
+            Directly polls the local Pi-hole v6 REST API over Wi-Fi, providing persistent desktop glanceability for DNS block ratios, query volume charts, gravity health, and active client telemetry across multi-slide views.
           </p>
           <div class="project-tech-pills">
-            <span>ESP32-S3</span>
+            <span>ESP32</span>
             <span>TFT_eSPI</span>
             <span>REST API</span>
             <span>Pi-hole v6</span>
@@ -164,30 +247,33 @@
           </div>
         </article>
 
-        <!-- 3. Phosphor Deck (VOX-84) -->
+        <!-- 3. STAR(city)GAZER -->
         <article class="project-card">
           <div class="project-header">
             <div class="project-meta-strip">
-              <span class="project-badge accent-green">Web Audio & Canvas</span>
-              <span class="project-tag">[ TypeScript · Web Audio · Canvas ]</span>
+              <span class="project-badge accent-primary">03 · Civic Data Pipeline</span>
+              <span class="project-tag">[ Python · SQLite · systemd ]</span>
             </div>
+            <div class="project-status">Live</div>
           </div>
-          <h3>Phosphor Deck (VOX-84)</h3>
+          <h3>starcitygazer.org</h3>
           <p class="project-lead">
-            Retro 1980s rackmount Hi-Fi desktop radio and vector CRT oscilloscope display.
+            Automated civic records archive and search platform for Roanoke, VA City Council.
           </p>
           <p class="project-desc">
-            Pairs continuous internet radio streaming with 4 procedurally synthesized ambient layers 
-            (rain, crypt drone, forest wind, cassette hiss) routed through tape age, wow/flutter LFOs, and waveshaping distortion filters.
+            Ingests meeting agendas, minutes, packets, and video links from CivicClerk into SQLite and a SHA-256 content-addressed PDF store. 
+            Orchestrated on voidbox via 6 user-level systemd timers with automated health checks, OnFailure Discord journalctl alerting, immutable rclone backups, and static Jinja2 + Pagefind search deployment.
           </p>
           <div class="project-tech-pills">
-            <span>Web Audio API</span>
-            <span>Vector Oscilloscope</span>
-            <span>Analog VU</span>
-            <span>Tape DSP</span>
+            <span>Python</span>
+            <span>SQLite</span>
+            <span>systemd Timers</span>
+            <span>rclone</span>
+            <span>Pagefind</span>
           </div>
           <div class="project-links">
-            <a class="button action-btn" href="https://github.com/jasonpersinger/phosphor-deck" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+            <a class="button action-btn" href="https://starcitygazer.org" target="_blank" rel="noopener noreferrer">Launch Site ↗</a>
+            <a class="button action-btn secondary" href="https://github.com/jasonpersinger/starcitygazer-site" target="_blank" rel="noopener noreferrer">Repository</a>
           </div>
         </article>
 
@@ -195,135 +281,86 @@
         <article class="project-card">
           <div class="project-header">
             <div class="project-meta-strip">
-              <span class="project-badge accent-cyan">Self-Hosted Broadcast</span>
+              <span class="project-badge accent-secondary">04 · Self-Hosted Broadcast</span>
               <span class="project-tag">[ Liquidsoap · Docker · Icecast ]</span>
             </div>
             <div class="project-status">24/7 Live</div>
           </div>
           <h3>Kobold.FM</h3>
           <p class="project-lead">
-            Subterranean 24/7 dungeon synth radio station broadcast live from a Raspberry Pi 4.
+            Subterranean 24/7 dungeon synth radio station and automation stack broadcast live from a Raspberry Pi 4.
           </p>
           <p class="project-desc">
-            Autonomous streaming setup powered by Liquidsoap automated crossfades, a 35+ GB lossless library, AzuraCast AutoDJ scheduling, 
-            and reverse-proxied ingress over Let's Encrypt SSL via Nginx Proxy Manager.
+            Autonomous streaming setup powered by Liquidsoap crossfades, a 35+ GB lossless library, AzuraCast scheduling, and Let's Encrypt SSL via Nginx Proxy Manager—paired with a synchronized Foundry VTT WebSocket audio module, Discord voice bot, and Bluesky/Mastodon webhook dispatcher.
           </p>
           <div class="project-tech-pills">
             <span>Raspberry Pi 4</span>
             <span>Docker</span>
             <span>Liquidsoap</span>
             <span>Nginx Proxy Manager</span>
+            <span>WebSockets</span>
           </div>
           <div class="project-links">
             <a class="button action-btn" href="https://kobold.messy.quest/public/kobold.fm" target="_blank" rel="noopener noreferrer">Listen Live ↗</a>
-          </div>
-        </article>
-
-        <!-- 5. NIXKEY -->
-        <article class="project-card">
-          <div class="project-header">
-            <div class="project-meta-strip">
-              <span class="project-badge accent-orange">Storefront & Tooling</span>
-              <span class="project-tag">[ HTML/CSS · Shell · Snipcart ]</span>
-            </div>
-          </div>
-          <h3>NIXKEY</h3>
-          <p class="project-lead">
-            Curated brand and storefront for bootable Linux USB drives and verified flashing tools.
-          </p>
-          <p class="project-desc">
-            Pairs a sharp dark teal/orange visual identity with Snipcart e-commerce integration, 
-            curated distribution packaging, and automated shell verification scripts for high-speed multi-distro USB flashing workflows.
-          </p>
-          <div class="project-tech-pills">
-            <span>E-Commerce</span>
-            <span>Shell Scripts</span>
-            <span>Linux ISOs</span>
-            <span>Brand Design</span>
-          </div>
-          <div class="project-links">
-            <a class="button action-btn secondary" href="https://github.com/jasonpersinger/NIXKEY" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+            <a class="button action-btn secondary" href="https://github.com/jasonpersinger/kobold-fm-stream" target="_blank" rel="noopener noreferrer">Foundry Module</a>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- PROFESSIONAL EXPERIENCE SECTION -->
-    <section class="section" id="experience" aria-labelledby="experience-title">
+    <!-- 03 / TECHNICAL STACK -->
+    <section class="section" id="stack" aria-labelledby="stack-title">
       <div class="section-heading">
-        <div>
-          <p class="eyebrow">track record</p>
-          <h2 id="experience-title">Professional Experience</h2>
+        <div class="section-index">
+          <span class="sec-num">03/</span>
+          <span class="sec-tag">STACK</span>
         </div>
-        <p class="section-subtitle">5+ years resolving complex SaaS workflows, leading cross-functional escalations, and engineering internal support tooling.</p>
+        <div class="section-title-group">
+          <h2 id="stack-title">Technical Specifications</h2>
+          <p class="section-subtitle">Hands-on operational toolkit spanning physical workstation repair, network administration, Linux services, and enterprise escalation tooling.</p>
+        </div>
       </div>
 
-      <div class="experience-layout">
-        <div class="experience-sidebar">
-          <p class="experience-lede">
-            Specialized in deep technical triage, API debugging, and bridging customer-facing escalations with product engineering teams.
-          </p>
-          <div class="experience-cta">
-            <a class="button primary full-width" href="/PersingerJasonResume.pdf" target="_blank" rel="noopener noreferrer">Download Resume (PDF)</a>
-            <a class="button outline full-width" href="tel:+15403948222">📞 (540) 394-8222</a>
-            <a class="button outline full-width" href="mailto:jason.persinger@gmail.com">✉️ jason.persinger@gmail.com</a>
-          </div>
+      <div class="stack-grid">
+        <div class="stack-card">
+          <div class="stack-cat">01 // HARDWARE &amp; ENDPOINTS</div>
+          <p class="stack-items">Desktop &amp; laptop diagnosis/repair, custom PC builds, SSD/HDD/RAM upgrades, drive cloning &amp; safe data migration, Raspberry Pi, ESP32 touchscreen appliances.</p>
         </div>
-
-        <ol class="timeline">
-          <li class="timeline-item">
-            <div class="timeline-meta">
-              <span class="timeline-dates">2023 – 2026</span>
-              <span class="timeline-loc">Remote</span>
-            </div>
-            <div class="timeline-content">
-              <h3>Software Support Analyst · AbsenceSoft</h3>
-              <p>
-                Led tier-3 enterprise escalations and root-cause analysis for mission-critical leave management software. 
-                Investigated database inconsistencies, API payloads, and asynchronous queue failures; built internal AI support tooling on the Claude API to accelerate escalation resolution.
-              </p>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-meta">
-              <span class="timeline-dates">2021 – 2022</span>
-              <span class="timeline-loc">Remote</span>
-            </div>
-            <div class="timeline-content">
-              <h3>Support Team Lead · Binance.US</h3>
-              <p>
-                Directed a high-tempo team of ~8 technical analysts on a regulated US exchange platform. 
-                Reduced average ticket resolution turnaround by 65% through standardized escalation runbooks, automated queue routing, and QA feedback loops.
-              </p>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-meta">
-              <span class="timeline-dates">2018 – 2021</span>
-              <span class="timeline-loc">Roanoke, VA</span>
-            </div>
-            <div class="timeline-content">
-              <h3>Implementation PM / Online Solution Specialist · PowerSchool</h3>
-              <p>
-                Managed end-to-end technical SaaS onboarding, data migration schemas, and user acceptance testing across enterprise K-12 public school district deployments.
-              </p>
-            </div>
-          </li>
-        </ol>
+        <div class="stack-card">
+          <div class="stack-cat">02 // NETWORKING &amp; EDGE</div>
+          <p class="stack-items">TCP/IP, DNS (Pi-hole v6 + encrypted upstream DNS), DHCP, Tailscale mesh VPN across CGNAT, reverse proxy (Nginx Proxy Manager), Let's Encrypt SSL/TLS, LAN troubleshooting.</p>
+        </div>
+        <div class="stack-card">
+          <div class="stack-cat">03 // OS &amp; ENVIRONMENT</div>
+          <p class="stack-items">Windows 10/11 desktop support &amp; OS recovery, Linux daily driver (CachyOS / Arch / Debian), Active Directory fundamentals, Bash shell, Git version control.</p>
+        </div>
+        <div class="stack-card">
+          <div class="stack-cat">04 // SELF-HOSTED SERVICES</div>
+          <p class="stack-items">Docker &amp; Compose, Pi-hole, Nginx Proxy Manager, Uptime Kuma monitoring, CrowdSec intrusion prevention, Restic &amp; rclone automated backups, Home Assistant, systemd timers.</p>
+        </div>
+        <div class="stack-card">
+          <div class="stack-cat">05 // SUPPORT &amp; ITSM</div>
+          <p class="stack-items">Escalation ownership, Jira, Salesforce, Zendesk, self-hosted RustDesk remote-support relay, troubleshooting runbooks &amp; KB authoring, SSO/SAML/OAuth debugging.</p>
+        </div>
+        <div class="stack-card">
+          <div class="stack-cat">06 // SCRIPTING &amp; AI TOOLING</div>
+          <p class="stack-items">Python (CLI data pipelines, FastAPI, SQLite), Bash scripting, SQL queries, JavaScript/TypeScript, Claude &amp; Gemini API workflows for ticket triage and RCA packaging.</p>
+        </div>
       </div>
     </section>
 
-    <!-- HOMELAB INFRASTRUCTURE SECTION -->
+    <!-- 04 / HOMELAB INFRASTRUCTURE SECTION -->
     <section class="section" id="homelab" aria-labelledby="homelab-title">
       <div class="section-heading">
-        <div>
-          <p class="eyebrow">living infrastructure</p>
-          <h2 id="homelab-title">The "void" Homelab Fleet</h2>
+        <div class="section-index">
+          <span class="sec-num">04/</span>
+          <span class="sec-tag">FLEET</span>
         </div>
-        <p class="section-subtitle">Owning the physical stack teaches operational realities that SaaS abstractions hide. Connected 24/7 over encrypted Tailscale mesh.</p>
+        <div class="section-title-group">
+          <h2 id="homelab-title">The "voidlab" Homelab Fleet</h2>
+          <p class="section-subtitle">Owning the physical stack teaches operational realities that SaaS abstractions hide. Hardwired LAN connected 24/7 over an encrypted Tailscale mesh VPN.</p>
+        </div>
       </div>
 
       <div class="homelab-grid">
@@ -337,15 +374,15 @@
             <span class="node-spec">AMD Ryzen 7 5700G · 32 GB · NVMe SSD</span>
           </div>
           <div class="service-tags">
-            <span class="service-tag highlight">Daily Driver & Lab</span>
+            <span class="service-tag highlight">Primary Workstation &amp; Ingester</span>
             <span class="service-tag">CachyOS (Arch)</span>
-            <span class="service-tag">KDE Plasma 6 / Wayland</span>
-            <span class="service-tag">Ghostty</span>
+            <span class="service-tag">KDE Plasma 6</span>
+            <span class="service-tag">systemd Timers</span>
             <span class="service-tag">Docker</span>
             <span class="service-tag">Tailscale Mesh</span>
           </div>
           <p class="node-desc">
-            Primary workstation and engineering bench. Powers local LLM experimentation, firmware cross-compilation, and container development before services migrate to headless hardware.
+            Primary Linux workstation and engineering bench. Runs automated systemd ingestion pipelines (starcitygazer.org), firmware cross-compilation, QEMU boot smoke testing, and immutable off-site backups.
           </p>
         </div>
 
@@ -359,15 +396,15 @@
             <span class="node-spec">Raspberry Pi 4B · 4 GB · USB SSD</span>
           </div>
           <div class="service-tags">
-            <span class="service-tag highlight">Kobold.FM Host</span>
-            <span class="service-tag">Pi-hole DNS</span>
+            <span class="service-tag highlight">24/7 Edge &amp; Broadcast Node</span>
+            <span class="service-tag">Pi-hole + Encrypted DNS</span>
             <span class="service-tag">Nginx Proxy Manager</span>
             <span class="service-tag">Uptime Kuma</span>
-            <span class="service-tag">Docker Stack</span>
-            <span class="service-tag">SSL Termination</span>
+            <span class="service-tag">CrowdSec IPS</span>
+            <span class="service-tag">Restic Backups</span>
           </div>
           <p class="node-desc">
-            Dedicated 24/7 headless edge node. Manages network-wide DNS filtering, handles automated Let's Encrypt certificates, and hosts the autonomous Kobold.FM Dungeon Synth streaming server.
+            Dedicated 24/7 headless edge node. Manages network-wide DNS filtering with encrypted upstream DNS, Let's Encrypt SSL termination, CrowdSec intrusion prevention, Uptime Kuma monitoring, and the Kobold.FM broadcast stack.
           </p>
         </div>
 
@@ -384,24 +421,27 @@
             <span class="service-tag highlight">Home Assistant OS</span>
             <span class="service-tag">Zigbee2MQTT</span>
             <span class="service-tag">SLZB-06p7u</span>
-            <span class="service-tag">T-Higrow Solar Sensors</span>
-            <span class="service-tag">Tuya Fleet</span>
+            <span class="service-tag">T-Higrow Sensors</span>
+            <span class="service-tag">Local Automation</span>
           </div>
           <p class="node-desc">
-            Dedicated smart home automation controller. Coordinates Zigbee mesh network, real-time plant telemetry via solar-powered LILYGO T-Higrow sensors, and local voice pipeline integration.
+            Dedicated smart home and environmental telemetry appliance. Coordinates a local Zigbee device mesh, solar-powered sensor telemetry, and automated multi-machine Restic backup verification.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CONNECT & SOCIALS SECTION -->
+    <!-- 05 / CONNECT & SOCIALS SECTION -->
     <section class="section" id="connect" aria-labelledby="connect-title">
       <div class="section-heading">
-        <div>
-          <p class="eyebrow">channels & network</p>
-          <h2 id="connect-title">Get in Touch</h2>
+        <div class="section-index">
+          <span class="sec-num">05/</span>
+          <span class="sec-tag">CHANNELS</span>
         </div>
-        <p class="section-subtitle">Reach out directly for technical support roles, solutions engineering opportunities, or hardware & open-source collaborations.</p>
+        <div class="section-title-group">
+          <h2 id="connect-title">Get in Touch</h2>
+          <p class="section-subtitle">Reach out directly for IT operations roles, technical support opportunities, or hardware and open-source collaborations in the Roanoke Valley or remote.</p>
+        </div>
       </div>
 
       <div class="social-grid">
@@ -431,7 +471,7 @@
           <div class="social-card-body">
             <span class="social-platform">Phone</span>
             <span class="social-handle">(540) 394-8222</span>
-            <span class="social-desc">Voice and SMS</span>
+            <span class="social-desc">Voice and SMS · Roanoke, VA</span>
           </div>
           <span class="social-arrow">↗</span>
         </a>
@@ -506,7 +546,7 @@
           <div class="social-card-body">
             <span class="social-platform">Mastodon</span>
             <span class="social-handle">@hollerknight@mastodon.social</span>
-            <span class="social-desc">Decentralized federation & FOSS discussions</span>
+            <span class="social-desc">Decentralized federation &amp; FOSS discussions</span>
           </div>
           <span class="social-arrow">↗</span>
         </a>
@@ -536,10 +576,36 @@
         <span>Jason Persinger · Roanoke, VA</span>
       </div>
       <div class="footer-meta">
-        <span>// void-mesh: active</span>
+        <span>SYS // VOIDLAB-MESH: ONLINE</span>
         <a href="https://github.com/jasonpersinger" target="_blank" rel="noopener noreferrer">github.com/jasonpersinger ↗</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const html = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const label = document.getElementById('theme-toggle-label');
+      const saved = localStorage.getItem('jp-palette');
+      const initial = saved === 'manual' ? 'manual' : 'salamander';
+
+      function applyTheme(name) {
+        html.setAttribute('data-theme', name);
+        localStorage.setItem('jp-palette', name);
+        if (label) {
+          label.textContent = name === 'manual' ? 'THEME: LIGHT' : 'THEME: DARK';
+        }
+      }
+
+      applyTheme(initial);
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const next = html.getAttribute('data-theme') === 'manual' ? 'salamander' : 'manual';
+          applyTheme(next);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
